@@ -1,0 +1,303 @@
+﻿@page "/roles-obsoleted"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using System.ComponentModel.DataAnnotations
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using Microsoft.AspNetCore.Identity
+@using MagicPropsComponents.ViewModels.DataGrid
+@using MagicPropsComponents.ViewModels.Modal
+@inject UserManager<ApplicationUser> _userManager;
+@inject RoleManager<ApplicationRole> _roleManager;
+@inject SignInManager<ApplicationUser> _signInManager
+<div class="card-container">
+    <MagicPropsComponents.Components.DataGrid.MPDataGrid @ref=_grid Datasource="@datasource" SelectedRowChanged="HandleChangeSelectedRole" CustomToolBtns="@_myToolBtn" EditMode=EditMode.Dialog PaginationSettings="_paginationSettings" Height="612"
+                                                         OperationSettings="@GetOperationSettings()" NoDataText="@L["Result.NoData"]" OnDeleteRowData="DeleteRole"
+                                                         SaveText="@(L["Action.Save"])" AddText="@(L["Action.Add"])" EditText="@(L["Action.Edit"])" DeleteText="@(L["Action.Delete"])" CancelText="@(L["Action.Cancel"])" ConfirmText="@(L["Action.Confirm"])"
+                                                         AddDialogTitle="@(L["RolePage.CreateRoleTitle"])" EditDialogTitle="@(L["RolePage.UpdateRoleTitle"])" DeleteDialogTitle="@(L["RolePage.DeleteRoleTitle"])">
+
+        <DeleteDialogTemplate>
+            <div class="mt-3">
+                @L["Result.DeleteConfirm"]<span style="color:red">@_editRole.RoleName</span> ?
+            </div>
+        </DeleteDialogTemplate>
+        <EditDialogTemplate Context="dialogContext">
+            @if (_grid.NewData != null)
+            {
+                <EditForm Model="_editRole" OnValidSubmit="@(async()=>{await _loader.AwaitFor(CreateRole());})">
+                    <DataAnnotationsValidator />
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.RoleName"]" @bind-Value=@_editRole.RoleName FixedTitle Width="450" ValidationFieldName="RoleName" />
+                        <ValidationMessage For="()=>_editRole.RoleName" />
+                    </div>
+                    <div class="mx-4 d-flex mt-2">
+                        <button class="btn btn-primary ms-auto" type="submit">@L["Action.Save"]</button>
+                        <button class="btn btn-secondary ms-2" @onclick="@(()=>{_grid.ResetOperationSettings();_editRole=new EditRoleModel(L);})">@L["Action.Cancel"]</button>
+                    </div>
+                </EditForm>
+            }
+            else if (_grid.EditRowClone != null)
+            {
+                var role = dialogContext as RoleModel;
+                if (role != null)
+                {
+                    if (_editRole.Id != role.Id)
+                    {
+                        _editRole.Id = role.Id;
+                        _editRole.RoleName = role.RoleName;                        
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No foound selected role.");
+                    _grid.ResetOperationSettings();
+                }
+                <EditForm Model="_editRole" OnValidSubmit="@(async()=>{await _loader.AwaitFor(UpdateNewName());})">
+                    <DataAnnotationsValidator />
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.RoleName"]" @bind-Value=@_editRole.RoleName FixedTitle Width="450" ValidationFieldName="RoleName" />
+                        <ValidationMessage For="()=>_editRole.RoleName" />
+                    </div>
+                    <div class="mx-4 d-flex mt-2">
+                        <button class="btn btn-primary ms-auto" type="submit">@L["Action.Save"]</button>
+                        <button class="btn btn-secondary ms-2" @onclick="@(()=>{_grid.ResetOperationSettings();_editRole=new EditRoleModel(L);})">@L["Action.Cancel"]</button>
+                    </div>
+                </EditForm>
+            }
+        </EditDialogTemplate>
+        <ChildContent>
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="Id" Visible=false PrimaryColumn>
+                <EditTemplate></EditTemplate>
+            </MagicPropsComponents.Components.DataGrid.MPGridColumn>
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="RoleName" HeaderText="@L["Model.RoleName"]" Sortable="true" />
+        </ChildContent>
+    </MagicPropsComponents.Components.DataGrid.MPDataGrid>
+</div>
+<MagicPropsComponents.Components.Loader.MPLoader @ref="_loader" />
+
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    private List<string> tools = new List<string>() { "Search" };
+    private List<ToolButton> _myToolBtn = new List<ToolButton>() { };
+    public PaginationSettings _paginationSettings = new PaginationSettings() { EnablePagination = true, PaginationMode = PaginationModes.ClientSide, PageSize = 10 };
+    private EditRoleModel _editRole { get; set; }
+    private List<RoleModel> AllRoles { get; set; } = new List<RoleModel>();
+    private List<RoleModel> datasource { get; set; } = new List<RoleModel>();
+    private MagicPropsComponents.Components.DataGrid.MPDataGrid _grid;
+    private MagicPropsComponents.Components.Loader.MPLoader _loader = new MagicPropsComponents.Components.Loader.MPLoader();
+
+    private void HandleChangeSelectedRole(object obj)
+    {
+        var role = obj as RoleModel;
+        if (role != null)
+        {
+            _editRole.RoleName = role.RoleName;
+            _editRole.Id = role.Id;
+        }
+        else
+        {
+            _editRole = new EditRoleModel(L);
+        }
+    }
+
+    private async Task CreateRole()
+    {
+        if (_editRole.RoleName != null)
+        {
+            var result = await _roleManager.CreateAsync(new ApplicationRole { Name = _editRole.RoleName });
+            if (result.Succeeded)
+            {
+                var newRole = await _roleManager.FindByNameAsync(_editRole.RoleName);
+                if (newRole != null)
+                {
+                    AllRoles.Add(new RoleModel { RoleName = newRole.Name ?? string.Empty, Id = newRole.Id, Claims = newRole.Claims });
+                    RenderTable();
+                    await global.NewAuditlog("Create Role :" + newRole.Name);
+                    await MainLayout!.AddNotice(L["RolePage.CreateRoleTitle"] + " " + L["Result.Success"]);
+                    _grid.ResetOperationSettings();
+                }
+            }
+            else
+            {
+                await MainLayout!.AddNotice(L["RolePage.CreateRoleTitle"] + "-" + L["Result.Failed"]);
+            }
+        }
+        else
+        {
+            await MainLayout!.AddNotice(L["RolePage.CreateRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Warning);
+        }
+        _editRole = new EditRoleModel(L);
+    }
+
+    private async Task DeleteRole(object obj)
+    {
+        var deleteRole = obj as RoleModel;
+        if (deleteRole != null)
+        {
+            var role = await _roleManager.FindByNameAsync(deleteRole.RoleName);
+            if (role != null)
+            {
+                var result = await _roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                {
+                    AllRoles = AllRoles.Where(x => x.RoleName != deleteRole.RoleName).ToList();
+                    RenderTable();
+                    await global.NewAuditlog("Delete Role :" + role.Name);
+                    await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + " " + L["Result.Success"]);
+                }
+                else
+                {
+                    Console.WriteLine(string.Join("; ", result.Errors));
+                    await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Could not found this role from db.");
+                await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+            }
+        }
+        else
+        {
+            Console.WriteLine("The item returned by the grid cannot be converted to the specified ones.");
+            await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Warning);
+        }
+        _editRole = new EditRoleModel(L);
+    }
+
+    private async Task UpdateNewName()
+    {
+        if (_editRole.Id != null)
+        {
+            try
+            {
+                var role = await _roleManager.FindByIdAsync(_editRole.Id);
+                var roleClaims = AllRoles.First(x => x.Id == _editRole.Id).Claims;
+                if (role != null)
+                {
+                    role.Name = _editRole.RoleName;
+                    role.Claims = roleClaims;
+                    var result = await _roleManager.UpdateAsync(role);
+                    if (result.Succeeded)
+                    {
+                        var newRole = AllRoles.First(x => x.Id == _editRole.Id);
+                        if (newRole != null)
+                            newRole.RoleName = _editRole.RoleName;
+                        RenderTable();
+                        await global.NewAuditlog("Update Role :" + role.Name);
+                        await MainLayout!.AddNotice(L["RolePage.UpdateRoleTitle"] + " " + L["Result.Success"]);
+                        _grid.ResetOperationSettings();
+                    }
+                    else
+                    {
+                        List<string> errorCodes = result.Errors.Select(x => x.Code).ToList();
+                        string errorMsg = string.Empty;
+                        if (errorCodes.Any(x => x == "DuplicateRoleName"))
+                        {
+                            errorMsg += L["Model.RoleName"] + L["Error.AlreadyExists"] + "; ";
+                        }
+                        //other error..
+                        if (string.IsNullOrEmpty(errorMsg))
+                        {
+                            errorMsg = L["Error.Default"] + L["RolePage.UpdateRoleTitle"] + "-" + L["Result.Failed"];
+                        }
+                        else
+                        {
+                            errorMsg = errorMsg.Substring(0, errorMsg.Length - 2);
+                        }
+                        await MainLayout!.AddNotice(errorMsg, NoticeStatus.Falied);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Could not found this role from db.");
+                    await MainLayout!.AddNotice(L["Error.NotFound"], NoticeStatus.Falied);
+                }
+            }
+            catch
+            {
+                await MainLayout!.AddNotice(L["Error.Default"] + L["RolePage.UpdateRoleTitle"], NoticeStatus.Falied);
+            }
+        }
+        else
+        {
+            Console.WriteLine("The item returned by the grid cannot be converted to the specified ones.");
+            await MainLayout!.AddNotice(L["Error.NotFound"], NoticeStatus.Falied);
+        }
+        _editRole = new EditRoleModel(L);
+    }
+
+    private async Task ViewClaims()
+    {
+        if (_editRole == null)
+        {
+            await MainLayout!.AddNotice(L["Result.DataNoFound"], NoticeStatus.Warning);
+        }
+        else
+        {
+            await MainLayout!.NavigationTo("roles/claims/" + _editRole.RoleName, _editRole.RoleName + "-" + L["Action.Claims"], null, new { RoleName = _editRole.RoleName });
+        }
+    }
+
+    private bool IsDisableEdit()
+    {
+        return string.IsNullOrEmpty(_editRole.Id);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _editRole = new EditRoleModel(L);
+        if (!global.GetUserClaims().Any(x => x == "View Roles"))
+        {
+            NavigationManager.NavigateTo(GlobalSettings.NotAuthorizedRoute);
+        }
+        else
+        {
+            await LoadRoleData();
+            if (global.GetUserClaims().Any(x => x == "Manage Role Claims"))
+                _myToolBtn.Add(new ToolButton()
+                    {
+                        Text = L["Action.Claims"],
+                        ActionAsync = ViewClaims,
+                        DisabledFun = IsDisableEdit,
+                        IconTemplate = builder =>
+                            {
+                                builder.OpenElement(0, "i");
+                                builder.AddAttribute(1, "class", "fa fa-address-card-o");
+                                builder.CloseElement();
+                            }
+                    });
+        }
+    }
+    private void RenderTable()
+    {
+        datasource = AllRoles.ToList();
+    }
+    private async Task LoadRoleData()
+    {
+        var roles = _roleManager.Roles.ToList();
+        if (roles.Count == 0)
+        {
+            await MainLayout!.AddNotice(L["Result.NoData"], NoticeStatus.Warning);
+        }
+
+        foreach (var role in roles)
+        {
+            var claims = await _roleManager.GetClaimsAsync(role);
+            AllRoles.Add(new RoleModel { RoleName = role.Name ?? string.Empty, Claims = claims.ToList(), Id = role.Id });
+        }
+
+        RenderTable();
+    }
+
+    private OperationSettings GetOperationSettings()
+    {
+        return new OperationSettings()
+            {
+                AllowAdding = global.GetUserClaims().Any(x => x == "Create Roles"),
+                AllowEditing = global.GetUserClaims().Any(x => x == "Update Roles"),
+                AllowDeleting = global.GetUserClaims().Any(x => x == "Delete Roles"),
+                AllowGlobalSearch = true,
+                EditingTrigger = EditingTrigger.RowDblClick
+            };
+    }
+}

@@ -1,0 +1,24 @@
+﻿@page "/dashboard"
+@using Microsoft.Extensions.Localization
+@using System.Globalization
+@using Blazor.Admin.Web.Locales
+@inject IStringLocalizer<Resource> L
+<div class="m-5">
+    <h3 class="mb-3">
+        Hi @global.UserName,welcom to our site!
+    </h3>
+    <h5>
+        This system is a framework that utilizes Microsoft Identity to establish a comprehensive user management system. Within this system, you can effortlessly manage users and roles, and have the flexibility to add numerous menus tailored to your specific business needs.
+    </h5>
+    <br />
+    <h5>
+        The Dashboard Page serves as the homepage, providing a centralized location for pertinent information related to the user. This includes, but is not limited to, reporting, managing lists, milestones, and other customizable content.
+    </h5>
+    <br />
+    <h5 class="mb-2">This is a management interface implemented using Magic Props components.</h5>
+    <h5>Please refer to <a href="https://github.com/FreedomOnes82/MagicPropsBlazorComponents" target="_blank">Magic Props Components</a> to view details.</h5>
+</div>
+
+@code {
+
+}

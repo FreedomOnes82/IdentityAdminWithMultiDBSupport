@@ -1,0 +1,248 @@
+﻿@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using Blazor.Admin.Web.Components.Pages
+@using Blazor.Admin.Web.Components.Layout
+@using MagicPropsComponents.ViewModels.Toast
+@implements IMainLayout
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IAuditLogService AuditLogService;
+@inject ILogger<NewLayout> Logger;
+@inject IAuditLogService _auditLogService;
+<MagicPropsComponents.Components.Toast.MPToast Delay="2500" Position="ToastPosition.TopRight" Closable @ref=@_toast />
+<CascadingValue Value="this" Name="NewLayout">
+    <div class="page">
+        <NavMenu NavbarWidth="@width" />
+        <div class="@(width==280?"navbar-expand-btn-shrink":"navbar-expand-btn-expand")" @onclick="()=>width=width==280?89:280"><i class="fa @(width==280?"fa-chevron-left":"fa-chevron-right")" style="color:white" /></div>
+        <main style="@(width==280?"max-width: calc(100% - 280px);":"max-width: calc(100% - 80px);")">
+            <div class="top-row px-4">
+                <CascadingAuthenticationState>
+                    <AuthorizeView>
+                        <Authorized>
+                            <CultureSelector />
+                            <img class="hover-pointer ms-3" title="@global.UserName" height="40" src="/img/avatar/9.svg" id="@_profileBtnId" />
+                            <MagicPropsComponents.Components.Popup.MPPopup @ref=@_profilePopup TriggerEleID="@_profileBtnId" BorderRadius="5" Padding="0"
+                                                                           AnchorPointType="MagicPropsComponents.ViewModels.Popup.AnchorPointType.TriggerRightBottom"
+                                                                           Toward="MagicPropsComponents.ViewModels.Popup.PopupToward.BottomLeft" PopupShadowSettings="0 16px 48px rgba(0,0,0,.175)">
+                                <div style="text-align: center;">
+                                    <div class="profile-item" @onclick="ShowProfileModel">
+                                        <a>
+                                            <i class="fa fa-user-circle-o" style="color:#1B2559" />
+                                            <span class="ps-1" style="color:#1B2559">@L["Profile.Profile"]</span>
+                                        </a>
+                                    </div>
+                                    <div class="profile-item" @onclick="ShowChangePwdModel">
+                                        <a>
+                                            <i class="fa fa-key" style="color:#1B2559" />
+                                            <span class="ps-1" style="color:#1B2559">@L["Action.ChangePassword"]</span>
+                                        </a>
+                                    </div>
+                                    <div class="profile-item" @onclick="HandelLogout">
+                                        <a>
+                                            <i class="fa fa-sign-out" style="color:#1B2559" />
+                                            <span class="ps-1" style="color:#1B2559">@L["Profile.Logout"]</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </MagicPropsComponents.Components.Popup.MPPopup>
+
+                            <Profile @ref="profile" />
+                            <ChangePassword @ref="changePwdModal" />
+                        </Authorized>
+                        <NotAuthorized>
+                            <a href="/Account/Login">Login</a>
+                        </NotAuthorized>
+                    </AuthorizeView>
+                </CascadingAuthenticationState>
+            </div>
+            @if (isLogout)
+            {
+                NavigationManager.NavigateTo("/Account/Logout");
+            }
+            else
+            {
+                <MagicPropsComponents.Components.TabGroup.MPTabGroup @ref=tabCtrl SelectedTabHeadText="@GetSelectedTabHeader()" SelectedTabHeadTextChanged="OnSelectedHeaderChanged">
+                    @foreach (var tab in global.GetTabs())
+                    {
+                        <MagicPropsComponents.Components.TabGroup.MPTabOption Header="@tab.HeaderFun()" ItemID="@tab.Uri" OnAfterActivateTab="()=>RefreshNavbar(tab.Uri)"
+                                                                              Closable="@(tab.Uri!="dashboard")" OnCloseTab="()=>CloseTabHandler(tab.Uri)">
+                            <Icon>
+                                @if (!string.IsNullOrEmpty(tab.IconClass))
+                                {
+                                    <i class="@tab.IconClass me-2" aria-hidden="true"></i>
+                                }
+                            </Icon>
+                            <ChildContent>
+                                @tab.Content
+                            </ChildContent>
+                        </MagicPropsComponents.Components.TabGroup.MPTabOption>
+                    }
+                </MagicPropsComponents.Components.TabGroup.MPTabGroup>
+            }
+        </main>
+    </div>
+</CascadingValue>
+@code {
+    private MagicPropsComponents.Components.TabGroup.MPTabGroup tabCtrl = new MagicPropsComponents.Components.TabGroup.MPTabGroup();
+    private int width { get; set; } = 280;
+    private bool isLogout = false;
+    //private List<TabModel> menus = new List<TabModel>();
+    //private string global.SelectedTabHeadText = "Dashboard";
+    private string _profileBtnId = "profile_" + Guid.NewGuid().ToString().Replace("-", "");
+    private MagicPropsComponents.Components.Popup.MPPopup _profilePopup = new MagicPropsComponents.Components.Popup.MPPopup();
+    private Profile profile = new Profile();
+    private ChangePassword changePwdModal = new ChangePassword();
+    protected override async Task OnInitializedAsync()
+    {
+        await global.InitGlobalSessionData();
+        try
+        {
+            NavigationManager.NavigateTo(NavigationManager.Uri);
+            var route = NavigationManager.Uri.Split(NavigationManager.BaseUri)[1];
+            if (route.EndsWith("?")) route = route.Substring(0, route.Length - 1);
+            var tab = global.GetTabs().FirstOrDefault(x => x.Uri == route);
+            if (tab != null)
+            {
+                CurrentRoute = route;
+                global.SelectedTabUri = tab.Uri;
+            }
+            else
+            {
+                NavigationManager.NavigateTo(GlobalSettings.NoFoundRoute);
+            }
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            if (authState != null && authState.User != null && authState.User.Identity != null)
+            {
+                global.UserName = authState.User.Identity.Name ?? string.Empty;
+                var userIdentityID = authState.User.Claims.ToList().First().Value.ToString();
+                global.UserIndentity = userIdentityID;
+                global.ResetUserClaims();
+                authState.User.Claims.ToList().ForEach(x => global.AddUserClaim(x.Value));
+                if (userIdentityID != global.GetUserClaims().FirstOrDefault())
+                {
+                    global.ResetTabs();//on change user
+                }
+            }
+            else
+            {
+                NavigationManager.NavigateTo(GlobalSettings.ErrorRoute);
+            }
+        }
+        catch (Exception e)
+        {
+            NavigationManager.NavigateTo(GlobalSettings.ErrorRoute);
+        }
+
+    }
+    public string CurrentRoute { get; set; } = "dashboard";
+    public bool ChangedRoleInfo { get; set; } = false;
+    public bool ChangedRoleClaims { get; set; } = false;
+    public bool AddNewAudit { get; set; } = false;
+
+    public async Task NavigationTo(string url, string name, string iconClass = null, object parameters = null)
+    {
+        if (!string.IsNullOrEmpty(url))
+        {
+            var tab = global.GetTabs().FirstOrDefault(x => x.Uri == url);
+            if (tab != null)
+            {
+                RefreshNavbar(url);
+                return;
+            }
+            try
+            {
+                NavigationManager.NavigateTo(url);
+                CurrentRoute = url;
+                global.AddTab(url, name, iconClass, parameters);
+                if (tabCtrl != null) await tabCtrl.LoadBtn();
+                StateHasChanged();
+            }
+            catch (Exception e)
+            {
+                NavigationManager.NavigateTo(GlobalSettings.ErrorRoute);
+            }
+        }
+    }
+
+    public async Task NewAuditlog(string message, bool isSuccess = true)
+    {
+        try
+        {
+            await _auditLogService.InsertAsync(new Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog
+                {
+                    UserName = global.UserName,
+                    CreatedBy = global.UserIndentity,
+                    LastModifiedBy = global.UserIndentity,
+                    Message = message,
+                    Status = isSuccess ? 1 : 0,
+                    TimeStamp = DateTime.UtcNow
+                });
+            AddNewAudit = true;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("New Audio error: '" + message + "' with " + isSuccess + " status;" + ex.Message);
+        }
+    }
+
+    private async Task ShowProfileModel()
+    {
+        await _profilePopup.Hide();
+        await profile!.ShowProfileModal();
+    }
+
+    private async Task ShowChangePwdModel()
+    {
+        await _profilePopup.Hide();
+        await changePwdModal!.ShowChangePasswordModal();
+    }
+
+    private async Task HandelLogout()
+    {
+        global.UserName = string.Empty; 
+        global.UserIndentity = string.Empty;
+        await Task.Run(() => { NavigationManager.NavigateTo("/Account/Logout"); });
+    }
+
+    private void RefreshNavbar(string currentUri)
+    {
+        CurrentRoute = currentUri;
+        NavigationManager.NavigateTo(CurrentRoute);
+        global.ActivateTabContent(currentUri);
+        StateHasChanged();
+    }
+
+    private void CloseTabHandler(string deleteTabUri)
+    {
+        var currentRoute = global.DeleteTab(deleteTabUri);
+        CurrentRoute = string.IsNullOrEmpty(currentRoute) ? CurrentRoute : currentRoute;
+        global.ActivateTabContent(CurrentRoute);
+        NavigationManager.NavigateTo(CurrentRoute);
+        //StateHasChanged();
+    }
+
+    private string GetSelectedTabHeader()
+    {
+        var tab = global.GetTabs().FirstOrDefault(x => x.Uri == CurrentRoute);
+        if (tab != null)
+        {
+            return tab.HeaderFun();
+        }
+        return "dashboard";
+    }
+
+    private void OnSelectedHeaderChanged(string newHeader)
+    {
+        var tab = global.GetTabs().FirstOrDefault(x => x.HeaderFun() == newHeader);
+        if (tab != null)
+        {
+            global.ActivateTabContent(tab.Uri);
+            //StateHasChanged();
+        }
+    }
+
+    private MagicPropsComponents.Components.Toast.MPToast _toast = new MagicPropsComponents.Components.Toast.MPToast();
+    public async Task AddNotice(string message, NoticeStatus status = NoticeStatus.Success)
+    {
+        await _toast.ShowToast(message, status == NoticeStatus.Success ? ToastTheme.Success : status == NoticeStatus.Falied ? ToastTheme.Danger : ToastTheme.Warning);
+    }
+
+}

@@ -1,0 +1,457 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MagicPropsComponents.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MagicPropsComponents.bundle.scp.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\background.png",
+      "PackagePath": "staticwebassets\\background.png"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\components\\datagrid\\mpdatagrid.js",
+      "PackagePath": "staticwebassets\\components\\datagrid\\mpdatagrid.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\components\\draggabledroppable.js",
+      "PackagePath": "staticwebassets\\components\\draggabledroppable.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\components\\input\\input.js",
+      "PackagePath": "staticwebassets\\components\\input\\input.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\components\\mpgrid\\mpgrid.js",
+      "PackagePath": "staticwebassets\\components\\mpgrid\\mpgrid.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\components\\popup\\popup.js",
+      "PackagePath": "staticwebassets\\components\\popup\\popup.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\components\\tabctrl\\tabctrl.js",
+      "PackagePath": "staticwebassets\\components\\tabctrl\\tabctrl.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\css\\themes\\default.css",
+      "PackagePath": "staticwebassets\\css\\themes\\default.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\exampleJsInterop.js",
+      "PackagePath": "staticwebassets\\exampleJsInterop.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\datagrid\\datagrid.js",
+      "PackagePath": "staticwebassets\\js\\components\\datagrid\\datagrid.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\datepicker\\datepicker.js",
+      "PackagePath": "staticwebassets\\js\\components\\datepicker\\datepicker.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\dropdownlist\\dropdownlist.js",
+      "PackagePath": "staticwebassets\\js\\components\\dropdownlist\\dropdownlist.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\modal\\modal.js",
+      "PackagePath": "staticwebassets\\js\\components\\modal\\modal.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\numberinput\\numberinput.js",
+      "PackagePath": "staticwebassets\\js\\components\\numberinput\\numberinput.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\pivottable\\pivottable.js",
+      "PackagePath": "staticwebassets\\js\\components\\pivottable\\pivottable.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\popup\\popup.js",
+      "PackagePath": "staticwebassets\\js\\components\\popup\\popup.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\richeditor\\richeditor.js",
+      "PackagePath": "staticwebassets\\js\\components\\richeditor\\richeditor.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\tabgroup\\tabgroup.js",
+      "PackagePath": "staticwebassets\\js\\components\\tabgroup\\tabgroup.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\components\\toast\\toast.js",
+      "PackagePath": "staticwebassets\\js\\components\\toast\\toast.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\draggabledroppable.js",
+      "PackagePath": "staticwebassets\\js\\draggabledroppable.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\jszip.js",
+      "PackagePath": "staticwebassets\\js\\jszip.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\shared.js",
+      "PackagePath": "staticwebassets\\js\\shared.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\js\\xlsx.js",
+      "PackagePath": "staticwebassets\\js\\xlsx.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\libs\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\colorpicker\\css\\bg0.png",
+      "PackagePath": "staticwebassets\\libs\\colorpicker\\css\\bg0.png"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\colorpicker\\css\\demo.css",
+      "PackagePath": "staticwebassets\\libs\\colorpicker\\css\\demo.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\colorpicker\\css\\evol-colorpicker.css",
+      "PackagePath": "staticwebassets\\libs\\colorpicker\\css\\evol-colorpicker.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\colorpicker\\css\\evol-colorpicker.min.css",
+      "PackagePath": "staticwebassets\\libs\\colorpicker\\css\\evol-colorpicker.min.css"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\colorpicker\\evol-colorpicker.js",
+      "PackagePath": "staticwebassets\\libs\\colorpicker\\evol-colorpicker.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\colorpicker\\evol-colorpicker.min.js",
+      "PackagePath": "staticwebassets\\libs\\colorpicker\\evol-colorpicker.min.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\jquery\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery-ui.min.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\libs\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\libs\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\background-color-svgrepo-com.svg",
+      "PackagePath": "staticwebassets\\svgs\\background-color-svgrepo-com.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\close.svg",
+      "PackagePath": "staticwebassets\\svgs\\close.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\color-picker-svgrepo-com.svg",
+      "PackagePath": "staticwebassets\\svgs\\color-picker-svgrepo-com.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\column.svg",
+      "PackagePath": "staticwebassets\\svgs\\column.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\column.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\column.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\filter.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\filter.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-firstpage-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-firstpage-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-firstpage.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-firstpage.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-lastpage-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-lastpage-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-lastpage.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-lastpage.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-next-page-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-next-page-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-next-page.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-next-page.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-pre-page-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-pre-page-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\pager-pre-page.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\pager-pre-page.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\row.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\row.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\sort-asc.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\sort-asc.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\sort-desc.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\sort-desc.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\default\\sort-unsorted.svg",
+      "PackagePath": "staticwebassets\\svgs\\default\\sort-unsorted.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\filter.svg",
+      "PackagePath": "staticwebassets\\svgs\\filter.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\filtered.svg",
+      "PackagePath": "staticwebassets\\svgs\\filtered.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-firstpage-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-firstpage-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-firstpage.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-firstpage.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-lastpage-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-lastpage-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-lastpage.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-lastpage.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-next-page-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-next-page-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-next-page.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-next-page.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-pre-page-disabled.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-pre-page-disabled.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\pager-pre-page.svg",
+      "PackagePath": "staticwebassets\\svgs\\pager-pre-page.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\row.svg",
+      "PackagePath": "staticwebassets\\svgs\\row.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\sort-asc.svg",
+      "PackagePath": "staticwebassets\\svgs\\sort-asc.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\sort-desc.svg",
+      "PackagePath": "staticwebassets\\svgs\\sort-desc.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\sort-unsorted.svg",
+      "PackagePath": "staticwebassets\\svgs\\sort-unsorted.svg"
+    },
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\MagicPropsComponents\\wwwroot\\svgs\\svgcss.css",
+      "PackagePath": "staticwebassets\\svgs\\svgcss.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MagicPropsComponents.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MagicPropsComponents.props",
+      "PackagePath": "build\\MagicPropsComponents.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MagicPropsComponents.props",
+      "PackagePath": "buildMultiTargeting\\MagicPropsComponents.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MagicPropsComponents.props",
+      "PackagePath": "buildTransitive\\MagicPropsComponents.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

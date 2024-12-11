@@ -1,0 +1,39 @@
+﻿@namespace Framework.Core.Blazor.Admin.MySql.Auth
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@if (IsPassAuthorization)
+{
+    @CustomAuthorized
+}
+else
+{
+    @CustomNotAuthorized
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? CustomAuthorized { get; set; }
+    [Parameter]
+    public RenderFragment? CustomNotAuthorized { get; set; }
+    [Parameter]
+    public string ClaimValue { get; set; } = string.Empty;
+
+    private bool IsPassAuthorization { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (!string.IsNullOrEmpty(ClaimValue))
+        {
+            var user = authState.User;
+            if (user?.Identity?.IsAuthenticated == true && user.Claims.Any(x => x.Value == ClaimValue))
+            {
+                IsPassAuthorization = true;
+            }
+        }
+        else
+        {
+            if (authState.User != null && authState.User?.Identity?.IsAuthenticated == true)
+                IsPassAuthorization = true;
+        }
+    }
+}

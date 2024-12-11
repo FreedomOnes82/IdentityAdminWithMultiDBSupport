@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Framework.WebCore.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Framework.WebCore.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Framework.WebCore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Framework.WebCore.props",
+      "PackagePath": "build\\Framework.WebCore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Framework.WebCore.props",
+      "PackagePath": "buildMultiTargeting\\Framework.WebCore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Framework.WebCore.props",
+      "PackagePath": "buildTransitive\\Framework.WebCore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

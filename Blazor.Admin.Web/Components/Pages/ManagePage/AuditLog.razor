@@ -1,0 +1,221 @@
+﻿@page "/auditLogs"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using MagicPropsComponents.ViewModels.DataGrid
+@using MagicPropsComponents.ViewModels.Shared
+@inject IAuditLogService service
+@inject IJSRuntime JSRuntime
+
+<div class="card-container">
+    <div class="d-flex align-content-start flex-wrap">
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DatePicker.MPDatePicker Title="@L["Model.DateForm"]" FixedTitle @bind-Value=@searchby.DateFrom />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DatePicker.MPDatePicker Title="@L["Model.DateEnd"]" FixedTitle @bind-Value="@searchby.DateEnd" />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DropDownList.MPDropDownList TValue="OperatorModel" FixedTitle Title="@L["Model.Operator"]" Placeholder="@L["Model.Operator"]" Clearable="true" Multiple="true" Datasource="AllOperators" TextBy="Email" ValueBy="UserId" @bind-Values="selectedOperators" MaxHeight="152" Searchable="true" />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DropDownList.MPDropDownList TValue="LogStatus" FixedTitle Title="@L["Model.Status"]" Placeholder="@L["Model.Status"]" Clearable="true" Multiple="true" Datasource="Status" TextBy="Text" @bind-Values="selectedStatus" MaxHeight="76" />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.Keywords"]" FixedTitle @bind-Value="@searchby.Keywords" Clearable="true" Placeholder="@L["Model.Message"]" />
+        </div>
+        <div class="filter-item-btn">
+            <div class="btn btn-theme" @onclick="Search">@L["Action.Search"]</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <div class="btn position-absolute btn-theme" style="z-index:2" @onclick="Export" title="@L["Action.Export"]">
+            @L["Action.Export"]
+        </div>
+    </div>
+    <MagicPropsComponents.Components.DataGrid.MPDataGrid Datasource="@filteredLogData" PaginationSettings="new PaginationSettings() { EnablePagination = true, PaginationMode = PaginationModes.ClientSide, PageSize = 30 }"
+                                                         Height="467" @bind-CurrentPageIndex="currentPageIndex" NoDataText="@nodadaString">
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="TimeStamp" HeaderText="@L["Model.TimeSpan"]" Width="220" Sortable="true" ColumnType="ColumnType.Date" />
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="Status" HeaderText="@L["Model.Status"]" Width="150" Sortable="true">
+            <Template>
+                @{
+                    var log = context as Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog;
+                    if (log != null)
+                    {
+                        switch (log.Status)
+                        {
+                            case 1:
+                                {
+                                    <div class="chip-btn chip-btn-success"> Success</div>
+                                }
+                                break;
+                            case 0:
+                                {
+                                    <div class="chip-btn chip-btn-danger"> Failed </div>
+                                }
+                                break;
+                            default:
+                                {
+                                    <div class="chip-btn chip-btn-secondary"> Undefined </div>
+                                }
+                                break;
+                        }
+                    }
+                }
+            </Template>
+        </MagicPropsComponents.Components.DataGrid.GridColumn>
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="UserName" HeaderText="@L["Model.Operator"]" Width="200" />
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="Message" HeaderText="@L["Model.Message"]">
+            <Template>
+                @{
+                    var log = context as Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog;
+                    if (log != null)
+                    {
+                        <div style="width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" title="@log.Message">
+                            @log.Message
+                        </div>
+                    }
+                }
+            </Template>
+        </MagicPropsComponents.Components.DataGrid.GridColumn>
+    </MagicPropsComponents.Components.DataGrid.MPDataGrid>
+</div>
+<MagicPropsComponents.Components.Loader.MPLoader @ref="_loader" />
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    private bool isGeneralSuccess = false;
+    private SearchOptions searchby = new SearchOptions();
+    private List<Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog> filteredLogData { get; set; } = new List<Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog>();
+    private List<Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog> AllLogData = new List<Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog>();
+    private List<LogStatus> selectedStatus = new List<LogStatus>();
+    private List<OperatorModel> AllOperators = new List<OperatorModel>();
+    private List<OperatorModel> selectedOperators = new List<OperatorModel>();
+    private int currentPageIndex = 1;
+    private CancellationTokenSource _cts = new CancellationTokenSource();
+    private MagicPropsComponents.Components.Loader.MPLoader _loader;
+    private string nodadaString = string.Empty;
+    public async Task RenderData()
+    {
+        filteredLogData = await GetFilteredLogData();
+    }
+
+    private async Task Search()
+    {
+        await _loader.AwaitFor(PerformSearchQuery());
+    }
+
+    private async Task PerformSearchQuery()
+    {
+        searchby.DateFrom = new DateTime(searchby.DateFrom.Year, searchby.DateFrom.Month, searchby.DateFrom.Day, 0, 0, 0, 000);
+        searchby.DateEnd = new DateTime(searchby.DateEnd.Year, searchby.DateEnd.Month, searchby.DateEnd.Day, 23, 59, 59, 999);
+        searchby.Status.Clear();
+        foreach (var s in selectedStatus)
+        {
+            searchby.Status.Add(s.Value);
+        }
+        searchby.Operator.Clear();
+        foreach (var o in selectedOperators)
+        {
+            searchby.Operator.Add(o.UserId);
+        }
+        currentPageIndex = 1;
+        await RenderData();
+    }
+
+    private async Task Export()
+    {
+        byte[] excelFile = GenerateExcel();
+
+        // Trigger file download
+        await JSRuntime.InvokeAsync<object>("saveAsFile", new
+        {
+            content = Convert.ToBase64String(excelFile),
+            fileName = "AuditLogs-" + DateTime.Today.ToString("yyyy/MM/dd") + ".xlsx",
+            contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        });
+    }
+
+    private byte[] GenerateExcel()
+    {
+        using (var package = new OfficeOpenXml.ExcelPackage())
+        {
+            var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+            // Add header
+            worksheet.Cells["A1"].Value = "Operator";
+            worksheet.Cells["B1"].Value = "Status";
+            worksheet.Cells["C1"].Value = "Message";
+            worksheet.Cells["D1"].Value = "Date";
+
+            // Add data
+            for (int i = 0; i < filteredLogData.Count; i++)
+            {
+                worksheet.Cells[i + 2, 1].Value = filteredLogData[i].UserName;
+                worksheet.Cells[i + 2, 2].Value = filteredLogData[i].Message;
+                worksheet.Cells[i + 2, 3].Value = filteredLogData[i].Status == 1 ? "Success" : "Failed";
+                worksheet.Cells[i + 2, 4].Value = filteredLogData[i].TimeStamp.ToString("yyyy/MM/dd HH:mm:ss");
+            }
+
+            return package.GetAsByteArray();
+        }
+    }
+
+    public async Task RefreshAllLogs()
+    {
+        AllLogData = (await service.GetAll()).ToList();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            nodadaString = L["LogPage.NodataString"];
+            searchby.DateFrom = DateTime.Today.AddMonths(-1);
+            await RefreshAllLogs();
+            var data = AllLogData.DistinctBy(x => x.CreatedBy).ToList();
+            data.ForEach(x => AllOperators.Add(new OperatorModel { Email = x.UserName, UserId = x.CreatedBy }));
+            await RenderData();
+            StateHasChanged();
+        }
+        catch (Exception e)
+        {
+            NavigationManager.NavigateTo(GlobalSettings.ErrorRoute);
+        }
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (MainLayout!.AddNewAudit)
+        {
+            await Search();
+            MainLayout!.AddNewAudit = false;
+        }
+    }
+
+    private async Task<List<Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog>> GetFilteredLogData()
+    {
+        var result = new List<Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels.AuditLog>();
+        DateTime endOfDateEnd = new DateTime(searchby.DateEnd.Year, searchby.DateEnd.Month, searchby.DateEnd.Day, 23, 59, 59, 999);
+        await RefreshAllLogs();
+        result = AllLogData.Where(x => x.TimeStamp <= endOfDateEnd && x.TimeStamp >= searchby.DateFrom).ToList();
+        if (searchby.Status.Count > 0)
+        {
+            var list = new List<int>();
+            searchby.Status.ForEach(s => list.Add(Convert.ToInt32(s)));
+            result = result.Where(x => list.Contains(x.Status)).ToList();
+        }
+        if (searchby.Operator.Count > 0)
+        {
+            result = result.Where(x => searchby.Operator.Contains(x.CreatedBy)).ToList();
+        }
+        //result = AllLogData.Where(x => x.TimeStamp <= searchby.DateEnd && x.TimeStamp >= searchby.DateFrom && x.Status == Convert.ToInt32(searchby.Status)).ToList();
+        if (!string.IsNullOrEmpty(searchby.Keywords))
+            result = result.Where(x => x.Message.ToLower().Contains(searchby.Keywords.ToLower())).ToList();
+        return result;
+    }
+
+    public static List<LogStatus> Status = new List<LogStatus>()
+        {
+        new LogStatus{ Text="Success", Value= AuditStatus.Success},
+        new LogStatus{ Text="Failed", Value= AuditStatus.Failed},
+        };
+}

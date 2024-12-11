@@ -1,0 +1,62 @@
+﻿@using System.Globalization
+@using MagicPropsComponents.Components;
+<img class="hover-pointer mx-1" height="25" src="/img/mainLayout/language.svg" id="@_clientId" />
+
+<MagicPropsComponents.Components.Popup.MPPopup @ref=@_popup TriggerEleID="@_clientId" Padding="0" BorderRadius="5"
+                                               AnchorPointType="MagicPropsComponents.ViewModels.Popup.AnchorPointType.TriggerRightBottom"
+                                               Toward="MagicPropsComponents.ViewModels.Popup.PopupToward.BottomLeft" PopupShadowSettings="0 16px 48px rgba(0,0,0,.175)">
+    <div style="text-align: center;">
+        @foreach (var cul in cultureModals)
+        {
+            <div class="profile-item@((cul.CultureName==_currentCulture.Name)?" selected":"")">
+                <a @onclick="async()=>await ActiveCulture(cul.CultureName)">
+                    <img height="25" src="@cul.IconPath" />
+                    <span class="ps-1 me-auto">@cul.Culture()</span>
+                </a>
+            </div>
+        }
+    </div>
+</MagicPropsComponents.Components.Popup.MPPopup>
+@code
+{
+    private MagicPropsComponents.Components.Popup.MPPopup _popup;
+    private List<CultureModal> cultureModals = new List<CultureModal>();
+    private string _clientId = Guid.NewGuid().ToString().Replace("-", "");
+    private CultureInfo _currentCulture = new CultureInfo("en-US");
+    protected override void OnInitialized()
+    {
+        _currentCulture = CultureInfo.CurrentCulture;
+        cultureModals.Add(new CultureModal { CultureName = "en-US", IconPath = "/img/mainLayout/english.png", Culture = () => L["Language.English"] });
+        cultureModals.Add(new CultureModal { CultureName = "zh-CN", IconPath = "/img/mainLayout/china.png", Culture = () => L["Language.Chinese"] });
+    }
+
+    private async Task ActiveCulture(string cultureName)
+    {
+        if (_currentCulture.Name == cultureName)
+        {
+            await _popup.Hide();
+            return;
+        }
+        else
+        {
+            var uri = new Uri(NavigationManager.Uri).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+            var cultureEscaped = Uri.EscapeDataString(cultureName);
+            var uriEscaped = Uri.EscapeDataString(uri);
+            global.CurrentCultureName = cultureName;
+            NavigationManager.NavigateTo($"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}", forceLoad: true);
+        }        
+    }
+
+    private bool CheckedIsCurrent(string cultureName)
+    {
+        return cultureName == _currentCulture.Name;
+    }
+
+    private class CultureModal
+    {
+        public string CultureName { get; set; } = string.Empty;
+        public string IconPath { get; set; } = string.Empty;
+        public Func<string> Culture { get; set; }
+    }
+
+}

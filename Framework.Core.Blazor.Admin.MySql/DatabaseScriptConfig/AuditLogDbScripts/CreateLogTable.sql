@@ -1,0 +1,13 @@
+﻿CREATE TABLE IF NOT EXISTS `AuditLogs`(
+	`ID` INT IDENTITY(1,1) NOT NULL,
+	`UserName` VARCHAR(256) NOT NULL,
+	`Status` INT NOT NULL,
+	`Message` VARCHAR(MAX) NOT NULL,
+	`TimeStamp` DATETIME NOT NULL,
+	`CreatedBy` NVARCHAR(450) NOT NULL,
+	`LastModifiedBy` NVARCHAR(450) NOT NULL,
+	`CreatedDate` DATETIME NULL,
+	`LastModifiedDate` DATETIME NULL,
+	CONSTRAINT `PK_AuditLogs` PRIMARY KEY (`ID`),
+	CONSTRAINT `FK_AuditLogs_AspNetUsers_CreatedBy` FOREIGN KEY (`CreatedBy`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+)  CHARACTER SET=utf8mb4;

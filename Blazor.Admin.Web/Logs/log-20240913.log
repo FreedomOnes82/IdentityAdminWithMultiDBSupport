@@ -1,0 +1,1074 @@
+2024-09-13 15:18:31.415 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-13 15:18:31.869 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-13 15:18:31.871 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-13 15:18:31.875 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-13 15:18:31.876 +08:00 [INF] Hosting environment: Development
+2024-09-13 15:18:31.877 +08:00 [INF] Content root path: C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web
+2024-09-13 15:18:33.478 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 15:18:34.138 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 15:18:34.344 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 15:18:34.350 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css - null null
+2024-09-13 15:18:34.350 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/app.css - null null
+2024-09-13 15:18:34.350 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css - null null
+2024-09-13 15:18:34.350 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 15:18:34.361 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/font-awesome.css - null null
+2024-09-13 15:18:34.377 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 903.1509ms
+2024-09-13 15:18:34.366 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/shared.js - null null
+2024-09-13 15:18:34.366 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/svgcss.css - null null
+2024-09-13 15:18:34.374 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery.min.js - null null
+2024-09-13 15:18:34.423 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/popup/popup.js - null null
+2024-09-13 15:18:34.423 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js - null null
+2024-09-13 15:18:34.427 +08:00 [INF] Sending file. Request path: '/app.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\app.css'
+2024-09-13 15:18:34.423 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js - null null
+2024-09-13 15:18:34.423 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/input/input.js - null null
+2024-09-13 15:18:34.441 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/app.css - 200 2591 text/css 91.6334ms
+2024-09-13 15:18:34.452 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - null null
+2024-09-13 15:18:34.438 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/svgcss.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\svgcss.css'
+2024-09-13 15:18:34.463 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/modal/modal.js - null null
+2024-09-13 15:18:34.483 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/toast/toast.js - null null
+2024-09-13 15:18:34.481 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/tabctrl/tabctrl.js - null null
+2024-09-13 15:18:34.469 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/svgcss.css - 200 305 text/css 102.8977ms
+2024-09-13 15:18:34.438 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/js/shared.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\js\shared.js'
+2024-09-13 15:18:34.478 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/input/input.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\input\input.js'
+2024-09-13 15:18:34.462 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/css/theme.css - null null
+2024-09-13 15:18:34.503 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/modal/modal.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\modal\modal.js'
+2024-09-13 15:18:34.511 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/toast/toast.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\toast\toast.js'
+2024-09-13 15:18:34.520 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/modal/modal.js - 200 1276 text/javascript 56.7791ms
+2024-09-13 15:18:34.522 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/toast/toast.js - 200 3397 text/javascript 38.6423ms
+2024-09-13 15:18:34.521 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/mppivottable/pivottable.js - null null
+2024-09-13 15:18:34.531 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/js/shared.js - null null
+2024-09-13 15:18:34.531 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 15:18:34.514 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/draggabledroppable.js - null null
+2024-09-13 15:18:34.544 +08:00 [INF] Sending file. Request path: '/Blazor.Admin.Web.styles.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\obj\Debug\net8.0\scopedcss\bundle\Blazor.Admin.Web.styles.css'
+2024-09-13 15:18:34.496 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js - null null
+2024-09-13 15:18:34.499 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/shared.js - 200 583 text/javascript 133.3257ms
+2024-09-13 15:18:34.557 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 200 5270 text/css 206.3731ms
+2024-09-13 15:18:34.569 +08:00 [INF] Sending file. Request path: '/js/shared.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\js\shared.js'
+2024-09-13 15:18:34.551 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 15:18:34.591 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/js/shared.js - 200 682 text/javascript 59.5249ms
+2024-09-13 15:18:34.596 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/draggabledroppable.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\draggabledroppable.js'
+2024-09-13 15:18:34.604 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/css/themes/default.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\css\themes\default.css'
+2024-09-13 15:18:34.590 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/tabctrl/tabctrl.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\tabctrl\tabctrl.js'
+2024-09-13 15:18:34.585 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\datagrid\mpdatagrid.js'
+2024-09-13 15:18:34.590 +08:00 [INF] Sending file. Request path: '/css/theme.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\css\theme.css'
+2024-09-13 15:18:34.571 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/popup/popup.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\popup\popup.js'
+2024-09-13 15:18:34.503 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/input/input.js - 200 1172 text/javascript 80.2566ms
+2024-09-13 15:18:34.608 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/css/font-awesome.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\css\font-awesome.css'
+2024-09-13 15:18:34.608 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/draggabledroppable.js - 200 7052 text/javascript 93.9604ms
+2024-09-13 15:18:34.611 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - 200 23202 text/css 159.3035ms
+2024-09-13 15:18:34.630 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/font-awesome.css - 200 39751 text/css 269.5584ms
+2024-09-13 15:18:34.614 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/tabctrl/tabctrl.js - 200 4306 text/javascript 132.8547ms
+2024-09-13 15:18:34.650 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js'
+2024-09-13 15:18:34.657 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/jquery/jquery.min.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\libs\jquery\jquery.min.js'
+2024-09-13 15:18:34.668 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js - 200 78749 text/javascript 245.1191ms
+2024-09-13 15:18:34.650 +08:00 [INF] Sending file. Request path: '/_framework/blazor.web.js'. Physical path: 'N/A'
+2024-09-13 15:18:34.616 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js - 200 469 text/javascript 119.5163ms
+2024-09-13 15:18:34.618 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/css/theme.css - 200 9138 text/css 155.9187ms
+2024-09-13 15:18:34.672 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery.min.js - 200 89478 text/javascript 298.0788ms
+2024-09-13 15:18:34.678 +08:00 [INF] Sending file. Request path: '/bootstrap/bootstrap.min.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\bootstrap\bootstrap.min.css'
+2024-09-13 15:18:34.681 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 15:18:34.671 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\libs\bootstrap\css\bootstrap.min.css'
+2024-09-13 15:18:34.621 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/popup/popup.js - 200 6315 text/javascript 197.8138ms
+2024-09-13 15:18:34.628 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/mppivottable/pivottable.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\components\mppivottable\pivottable.js'
+2024-09-13 15:18:34.690 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\libs\jquery\jquery-ui.min.js'
+2024-09-13 15:18:34.700 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css - 200 162726 text/css 350.656ms
+2024-09-13 15:18:34.703 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 200 187402 text/javascript 171.9362ms
+2024-09-13 15:18:34.705 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css - 200 155851 text/css 355.4928ms
+2024-09-13 15:18:34.714 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/mppivottable/pivottable.js - 200 33959 text/javascript 193.6545ms
+2024-09-13 15:18:34.717 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js - 200 261129 text/javascript 294.1547ms
+2024-09-13 15:18:35.088 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 15:18:35.089 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 15:18:35.088 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 15:18:35.092 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 15:18:35.105 +08:00 [INF] Sending file. Request path: '/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\Framework.Core.Blazor.Identity.SqlServer\obj\Debug\net8.0\scopedcss\projectbundle\Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css'
+2024-09-13 15:18:35.112 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\obj\Debug\net8.0\scopedcss\projectbundle\MagicPropsComponents.bundle.scp.css'
+2024-09-13 15:18:35.119 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 200 230 text/css 31.2819ms
+2024-09-13 15:18:35.123 +08:00 [INF] Sending file. Request path: '/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\Framework.WebCore\obj\Debug\net8.0\scopedcss\projectbundle\Framework.WebCore.bundle.scp.css'
+2024-09-13 15:18:35.123 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 200 10045 text/css 34.1491ms
+2024-09-13 15:18:35.120 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 27.4255ms
+2024-09-13 15:18:35.125 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-13 15:18:35.131 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 200 1134 text/css 42.5653ms
+2024-09-13 15:18:35.201 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.8578ms
+2024-09-13 15:18:35.229 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 15:18:35.240 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 15:18:35.245 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 15:18:35.247 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 17.756ms
+2024-09-13 15:18:35.252 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 15:18:35.260 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 15:18:35.264 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 15:18:35.270 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 15:18:35.273 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 21.1994ms
+2024-09-13 15:18:35.276 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=7FmabNmEhiOKmUzHCWJOcA - null null
+2024-09-13 15:18:35.286 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 15:18:35.296 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 15:18:35.300 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 39.2849ms
+2024-09-13 15:18:35.477 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/login/left.svg - null null
+2024-09-13 15:18:35.477 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/auth/register-v2.0a9e487c.svg - null null
+2024-09-13 15:18:35.502 +08:00 [INF] Sending file. Request path: '/img/login/left.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\img\login\left.svg'
+2024-09-13 15:18:35.505 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/login/left.svg - 200 9857 image/svg+xml 28.3582ms
+2024-09-13 15:18:35.512 +08:00 [INF] Sending file. Request path: '/img/auth/register-v2.0a9e487c.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\img\auth\register-v2.0a9e487c.svg'
+2024-09-13 15:18:35.519 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/auth/register-v2.0a9e487c.svg - 200 71780 image/svg+xml 42.6093ms
+2024-09-13 15:20:27.388 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-13 15:20:27.437 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-13 15:20:27.452 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-13 15:20:27.455 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 67.9655ms
+2024-09-13 15:20:27.519 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/avatar/9.svg - null null
+2024-09-13 15:20:27.521 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/english.png - null null
+2024-09-13 15:20:27.521 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/china.png - null null
+2024-09-13 15:20:27.523 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/language.png - null null
+2024-09-13 15:20:27.556 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2?v=4.7.0 - null null
+2024-09-13 15:20:27.576 +08:00 [INF] Sending file. Request path: '/img/mainLayout/english.png'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\img\mainLayout\english.png'
+2024-09-13 15:20:27.590 +08:00 [INF] Sending file. Request path: '/img/mainLayout/china.png'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\img\mainLayout\china.png'
+2024-09-13 15:20:27.600 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/english.png - 200 1414 image/png 78.6753ms
+2024-09-13 15:20:27.607 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-13 15:20:27.605 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/china.png - 200 836 image/png 84.1149ms
+2024-09-13 15:20:27.576 +08:00 [INF] Sending file. Request path: '/img/avatar/9.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\img\avatar\9.svg'
+2024-09-13 15:20:27.614 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\fonts\fontawesome-webfont.woff2'
+2024-09-13 15:20:27.659 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/avatar/9.svg - 200 6280 image/svg+xml 139.9126ms
+2024-09-13 15:20:27.664 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2?v=4.7.0 - 200 77160 font/woff2 109.2631ms
+2024-09-13 15:20:27.677 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-13 15:20:27.576 +08:00 [INF] Sending file. Request path: '/img/mainLayout/language.png'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\wwwroot\img\mainLayout\language.png'
+2024-09-13 15:20:27.706 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/language.png - 200 1933 image/png 183.9873ms
+2024-09-13 15:20:27.732 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-13 15:20:27.735 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 128.736ms
+2024-09-13 15:20:28.352 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-13 15:20:28.391 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-13 15:20:28.400 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-13 15:20:28.406 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 53.8682ms
+2024-09-13 15:20:29.490 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 15:20:29.525 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 15:20:29.589 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 15:20:29.595 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 105.1856ms
+2024-09-13 15:20:29.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg - null null
+2024-09-13 15:20:29.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg - null null
+2024-09-13 15:20:29.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg - null null
+2024-09-13 15:20:29.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg - null null
+2024-09-13 15:20:29.675 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\primary\pager-next-page-disabled.svg'
+2024-09-13 15:20:29.676 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\primary\pager-firstpage-disabled.svg'
+2024-09-13 15:20:29.683 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\primary\pager-pre-page-disabled.svg'
+2024-09-13 15:20:29.694 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg - null null
+2024-09-13 15:20:29.697 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg - 200 310 image/svg+xml 40.6046ms
+2024-09-13 15:20:29.684 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg - 200 311 image/svg+xml 28.2745ms
+2024-09-13 15:20:29.727 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\primary\sort-unsorted.svg'
+2024-09-13 15:20:29.694 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/filter.svg - null null
+2024-09-13 15:20:29.764 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg - 200 323 image/svg+xml 69.3557ms
+2024-09-13 15:20:29.783 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/filter.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\primary\filter.svg'
+2024-09-13 15:20:29.690 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\svgs\primary\pager-lastpage-disabled.svg'
+2024-09-13 15:20:29.689 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg - 200 398 image/svg+xml 32.5968ms
+2024-09-13 15:20:29.790 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/filter.svg - 200 271 image/svg+xml 96.3856ms
+2024-09-13 15:20:29.792 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg - 200 400 image/svg+xml 136.5179ms
+2024-09-13 15:20:37.945 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 15:20:38.014 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 15:20:38.047 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 15:20:38.050 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 106.0483ms
+2024-09-13 15:21:00.936 +08:00 [ERR] Unhandled exception in circuit 'rc86CXV7utATEsn3nADJLzYPnDRfAqpmta4GBi3peLg'.
+Microsoft.JSInterop.JSException: Could not find 'MPTOAST.show' ('MPTOAST' was undefined).
+Error: Could not find 'MPTOAST.show' ('MPTOAST' was undefined).
+    at https://localhost:7025/_framework/blazor.web.js:1:734
+    at Array.forEach (<anonymous>)
+    at l.findFunction (https://localhost:7025/_framework/blazor.web.js:1:702)
+    at b (https://localhost:7025/_framework/blazor.web.js:1:5445)
+    at https://localhost:7025/_framework/blazor.web.js:1:3238
+    at new Promise (<anonymous>)
+    at y.beginInvokeJSFromDotNet (https://localhost:7025/_framework/blazor.web.js:1:3201)
+    at gn._invokeClientMethod (https://localhost:7025/_framework/blazor.web.js:1:62841)
+    at gn._processIncomingData (https://localhost:7025/_framework/blazor.web.js:1:60316)
+    at connection.onreceive (https://localhost:7025/_framework/blazor.web.js:1:53957)
+   at Microsoft.JSInterop.JSRuntime.InvokeAsync[TValue](Int64 targetInstanceId, String identifier, Object[] args)
+   at Microsoft.JSInterop.JSRuntimeExtensions.InvokeVoidAsync(IJSRuntime jsRuntime, String identifier, Object[] args)
+   at MagicPropsComponents.Components.Toast.MPToast.ShowToast(String title, Nullable`1 theme) in C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\Components\Toast\MPToast.razor:line 120
+   at Blazor.Admin.Web.Components.Layout.NewLayout.AddNotice(String message, NoticeStatus status) in C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web\Components\Layout\NewLayout.razor:line 210
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at Microsoft.AspNetCore.Components.Rendering.RendererSynchronizationContext.PostAsync[TState](Task antecedent, Action`1 callback, TState state)
+2024-09-13 15:21:00.973 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 15:21:00.975 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=7FmabNmEhiOKmUzHCWJOcA - 200 null null 145699.2072ms
+2024-09-13 15:21:00.983 +08:00 [INF] Connection id "0HN6JOH2VHI3J", Request id "0HN6JOH2VHI3J:0000003D": the application completed without reading the entire request body.
+2024-09-13 16:05:24.754 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-13 16:05:25.211 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-13 16:05:25.214 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-13 16:05:25.218 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-13 16:05:25.221 +08:00 [INF] Hosting environment: Development
+2024-09-13 16:05:25.223 +08:00 [INF] Content root path: C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web
+2024-09-13 16:05:27.911 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:05:27.961 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:05:28.185 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:05:28.188 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:05:28.195 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/popup/popup.js - null null
+2024-09-13 16:05:28.189 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/font-awesome.css - null null
+2024-09-13 16:05:28.206 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 298.6216ms
+2024-09-13 16:05:28.225 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/modal/modal.js - null null
+2024-09-13 16:05:28.188 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/app.css - null null
+2024-09-13 16:05:28.227 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/toast/toast.js - null null
+2024-09-13 16:05:28.237 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/modal/modal.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\modal\modal.js'
+2024-09-13 16:05:28.234 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/shared.js - null null
+2024-09-13 16:05:28.225 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/tabctrl/tabctrl.js - null null
+2024-09-13 16:05:28.247 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/modal/modal.js - 200 1276 text/javascript 22.1689ms
+2024-09-13 16:05:28.247 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/toast/toast.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\toast\toast.js'
+2024-09-13 16:05:28.254 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/js/shared.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\js\shared.js'
+2024-09-13 16:05:28.241 +08:00 [INF] Sending file. Request path: '/app.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\app.css'
+2024-09-13 16:05:28.189 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/svgcss.css - null null
+2024-09-13 16:05:28.189 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css - null null
+2024-09-13 16:05:28.263 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - null null
+2024-09-13 16:05:28.266 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/toast/toast.js - 200 3397 text/javascript 38.7126ms
+2024-09-13 16:05:28.269 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/shared.js - 200 583 text/javascript 34.6861ms
+2024-09-13 16:05:28.260 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery.min.js - null null
+2024-09-13 16:05:28.271 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/app.css - 200 2591 text/css 82.8957ms
+2024-09-13 16:05:28.280 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/svgcss.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\svgcss.css'
+2024-09-13 16:05:28.294 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/css/theme.css - null null
+2024-09-13 16:05:28.188 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css - null null
+2024-09-13 16:05:28.198 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/input/input.js - null null
+2024-09-13 16:05:28.297 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js - null null
+2024-09-13 16:05:28.297 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js - null null
+2024-09-13 16:05:28.302 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - null null
+2024-09-13 16:05:28.313 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js - null null
+2024-09-13 16:05:28.317 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/svgcss.css - 200 305 text/css 128.4366ms
+2024-09-13 16:05:28.355 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:05:28.369 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:05:28.372 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/js/components/toast/toast.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\js\components\toast\toast.js'
+2024-09-13 16:05:28.374 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:05:28.361 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\datagrid\mpdatagrid.js'
+2024-09-13 16:05:28.384 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/popup/popup.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\popup\popup.js'
+2024-09-13 16:05:28.384 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - 200 2583 text/javascript 81.8946ms
+2024-09-13 16:05:28.390 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js - 200 469 text/javascript 76.1798ms
+2024-09-13 16:05:28.393 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/popup/popup.js - 200 6315 text/javascript 203.1187ms
+2024-09-13 16:05:28.400 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/tabctrl/tabctrl.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\tabctrl\tabctrl.js'
+2024-09-13 16:05:28.391 +08:00 [INF] Sending file. Request path: '/Blazor.Admin.Web.styles.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\obj\Debug\net8.0\scopedcss\bundle\Blazor.Admin.Web.styles.css'
+2024-09-13 16:05:28.417 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/tabctrl/tabctrl.js - 200 4306 text/javascript 191.0322ms
+2024-09-13 16:05:28.406 +08:00 [INF] Sending file. Request path: '/css/theme.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\css\theme.css'
+2024-09-13 16:05:28.420 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 51.1742ms
+2024-09-13 16:05:28.421 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 200 7461 text/css 232.8481ms
+2024-09-13 16:05:28.432 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/css/themes/default.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\css\themes\default.css'
+2024-09-13 16:05:28.442 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/css/font-awesome.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\css\font-awesome.css'
+2024-09-13 16:05:28.449 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - 200 23202 text/css 185.6008ms
+2024-09-13 16:05:28.431 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/css/theme.css - 200 9138 text/css 137.0266ms
+2024-09-13 16:05:28.364 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/js/shared.js - null null
+2024-09-13 16:05:28.340 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/input/input.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\input\input.js'
+2024-09-13 16:05:28.349 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/mppivottable/pivottable.js - null null
+2024-09-13 16:05:28.343 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/draggabledroppable.js - null null
+2024-09-13 16:05:28.451 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:05:28.452 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/font-awesome.css - 200 39751 text/css 263.3764ms
+2024-09-13 16:05:28.457 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:05:28.497 +08:00 [INF] Sending file. Request path: '/_framework/blazor.web.js'. Physical path: 'N/A'
+2024-09-13 16:05:28.497 +08:00 [INF] Sending file. Request path: '/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\obj\Debug\net8.0\scopedcss\projectbundle\Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css'
+2024-09-13 16:05:28.511 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:05:28.511 +08:00 [INF] Sending file. Request path: '/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.WebCore\obj\Debug\net8.0\scopedcss\projectbundle\Framework.WebCore.bundle.scp.css'
+2024-09-13 16:05:28.463 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:05:28.488 +08:00 [INF] Sending file. Request path: '/js/shared.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\js\shared.js'
+2024-09-13 16:05:28.470 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/input/input.js - 200 1172 text/javascript 271.7856ms
+2024-09-13 16:05:28.517 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 200 187402 text/javascript 162.1054ms
+2024-09-13 16:05:28.520 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 200 1134 text/css 62.8731ms
+2024-09-13 16:05:28.515 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 200 230 text/css 64.2526ms
+2024-09-13 16:05:28.544 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/jquery/jquery.min.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\jquery\jquery.min.js'
+2024-09-13 16:05:28.537 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/mppivottable/pivottable.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\mppivottable\pivottable.js'
+2024-09-13 16:05:28.529 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/js/shared.js - 200 682 text/javascript 164.4484ms
+2024-09-13 16:05:28.540 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\obj\Debug\net8.0\scopedcss\projectbundle\MagicPropsComponents.bundle.scp.css'
+2024-09-13 16:05:28.560 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery.min.js - 200 89478 text/javascript 299.1468ms
+2024-09-13 16:05:28.555 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\css\bootstrap.min.css'
+2024-09-13 16:05:28.557 +08:00 [INF] Sending file. Request path: '/bootstrap/bootstrap.min.css'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\bootstrap\bootstrap.min.css'
+2024-09-13 16:05:28.563 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/mppivottable/pivottable.js - 200 33959 text/javascript 214.0949ms
+2024-09-13 16:05:28.514 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js'
+2024-09-13 16:05:28.509 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/components/draggabledroppable.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\components\draggabledroppable.js'
+2024-09-13 16:05:28.574 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\jquery\jquery-ui.min.js'
+2024-09-13 16:05:28.575 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 200 10045 text/css 111.6833ms
+2024-09-13 16:05:28.584 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css - 200 155851 text/css 395.5904ms
+2024-09-13 16:05:28.586 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css - 200 162726 text/css 398.4294ms
+2024-09-13 16:05:28.605 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js - 200 78749 text/javascript 308.3903ms
+2024-09-13 16:05:28.607 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/draggabledroppable.js - 200 7052 text/javascript 263.8535ms
+2024-09-13 16:05:28.612 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js - 200 261129 text/javascript 314.6898ms
+2024-09-13 16:05:28.685 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:05:28.688 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/favicon.png - null null
+2024-09-13 16:05:28.693 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:05:28.701 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:05:28.703 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 17.782ms
+2024-09-13 16:05:28.705 +08:00 [INF] Sending file. Request path: '/favicon.png'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\favicon.png'
+2024-09-13 16:05:28.708 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:05:28.715 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/favicon.png - 200 1148 image/png 27.6531ms
+2024-09-13 16:05:28.724 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:05:28.726 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 16:05:28.730 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:05:28.734 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 25.6029ms
+2024-09-13 16:05:28.737 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=IQFnUqPxcGidNq1om4K29w - null null
+2024-09-13 16:05:28.747 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:05:28.750 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 16:05:28.754 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 28.0848ms
+2024-09-13 16:05:28.922 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:05:28.934 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/auth/register-v2.0a9e487c.svg - null null
+2024-09-13 16:05:28.934 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/login/left.svg - null null
+2024-09-13 16:05:28.934 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/logo-en.svg - null null
+2024-09-13 16:05:28.954 +08:00 [INF] Sending file. Request path: '/img/login/left.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\login\left.svg'
+2024-09-13 16:05:28.955 +08:00 [INF] Sending file. Request path: '/img/mainLayout/logo-en.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\mainLayout\logo-en.svg'
+2024-09-13 16:05:28.954 +08:00 [INF] Sending file. Request path: '/img/auth/register-v2.0a9e487c.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\auth\register-v2.0a9e487c.svg'
+2024-09-13 16:05:28.989 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/logo-en.svg - 200 827 image/svg+xml 55.7787ms
+2024-09-13 16:05:28.981 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/login/left.svg - 200 9857 image/svg+xml 47.218ms
+2024-09-13 16:05:28.996 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/auth/register-v2.0a9e487c.svg - 200 71780 image/svg+xml 61.8419ms
+2024-09-13 16:05:29.392 +08:00 [WRN] Unhandled exception rendering component: Invalid object name 'AspNetUsers'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:4b598252-ad0d-449c-be62-5ecba205dc6b
+Error Number:208,State:1,Class:16
+2024-09-13 16:05:29.452 +08:00 [ERR] Unhandled exception in circuit 'pqj4jMEvxOJhWJo0ZtGlIWsgZ8ndWF6xVdsrgce4WQI'.
+System.AggregateException: One or more errors occurred. (Invalid object name 'AspNetUsers'.)
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:4b598252-ad0d-449c-be62-5ecba205dc6b
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Stores.UserStore.get_Users() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Stores\UserStore.cs:line 35
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at Blazor.Admin.Web.Components.Pages.Home.OnInitializedAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\Components\Pages\Home.razor:line 79
+   at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync()
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+2024-09-13 16:05:29.488 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:05:29.491 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=IQFnUqPxcGidNq1om4K29w - 200 null null 754.1827ms
+2024-09-13 16:05:29.498 +08:00 [INF] Connection id "0HN6JPB9C4RVF", Request id "0HN6JPB9C4RVF:0000003F": the application completed without reading the entire request body.
+2024-09-13 16:06:09.908 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/login - null null
+2024-09-13 16:06:09.924 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/login - 404 0 null 16.5426ms
+2024-09-13 16:06:09.933 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/login, Response status code: 404
+2024-09-13 16:06:09.946 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundary1FaFiHslBLrtvY3h 359
+2024-09-13 16:06:09.954 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:09.966 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:09.968 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 22.3363ms
+2024-09-13 16:06:12.471 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:06:12.477 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:06:12.489 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:06:12.492 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 21.8514ms
+2024-09-13 16:06:12.498 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:06:12.506 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 8.6267ms
+2024-09-13 16:06:12.570 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:06:12.576 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:12.579 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:12.581 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 11.3647ms
+2024-09-13 16:06:12.586 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:06:12.598 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:12.600 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:12.603 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 17.2181ms
+2024-09-13 16:06:12.605 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=9CKLCcvnmgD3o6JwW3_IlA - null null
+2024-09-13 16:06:12.620 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:12.693 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:06:12.830 +08:00 [WRN] Unhandled exception rendering component: Invalid object name 'AspNetUsers'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:4b598252-ad0d-449c-be62-5ecba205dc6b
+Error Number:208,State:1,Class:16
+2024-09-13 16:06:12.843 +08:00 [ERR] Unhandled exception in circuit 'ehSRmhftOHF06iZCAV2aBaKi9QMeRAqXjpxY3olJ-VM'.
+System.AggregateException: One or more errors occurred. (Invalid object name 'AspNetUsers'.)
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:4b598252-ad0d-449c-be62-5ecba205dc6b
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Stores.UserStore.get_Users() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Stores\UserStore.cs:line 35
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at Blazor.Admin.Web.Components.Pages.Home.OnInitializedAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\Components\Pages\Home.razor:line 79
+   at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync()
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+2024-09-13 16:06:12.875 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:12.880 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=9CKLCcvnmgD3o6JwW3_IlA - 200 null null 274.484ms
+2024-09-13 16:06:12.885 +08:00 [INF] Connection id "0HN6JPB9C4RVF", Request id "0HN6JPB9C4RVF:00000053": the application completed without reading the entire request body.
+2024-09-13 16:06:19.598 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:06:19.605 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:06:19.614 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:06:19.616 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 18.4565ms
+2024-09-13 16:06:19.616 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryCp5ctT10vpcPRrKs 359
+2024-09-13 16:06:19.618 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:06:19.621 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:06:19.620 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:06:19.641 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.648 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:06:19.666 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 47.1482ms
+2024-09-13 16:06:19.681 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.687 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 68.9759ms
+2024-09-13 16:06:19.657 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:06:19.689 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:06:19.689 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:06:19.690 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:06:19.704 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 88.133ms
+2024-09-13 16:06:19.717 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:06:19.723 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:06:19.727 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:06:19.734 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:06:19.741 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:06:19.743 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 54.1703ms
+2024-09-13 16:06:19.748 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 58.7739ms
+2024-09-13 16:06:19.750 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 60.0687ms
+2024-09-13 16:06:19.753 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 131.6085ms
+2024-09-13 16:06:19.780 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:06:19.787 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.789 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.791 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 11.5305ms
+2024-09-13 16:06:19.796 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:06:19.805 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.809 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.821 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 25.123ms
+2024-09-13 16:06:19.824 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=WghaxUJTGr8DHtvckQRD0w - null null
+2024-09-13 16:06:19.836 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:19.865 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:06:19.982 +08:00 [WRN] Unhandled exception rendering component: Invalid object name 'AspNetUsers'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:4b598252-ad0d-449c-be62-5ecba205dc6b
+Error Number:208,State:1,Class:16
+2024-09-13 16:06:19.994 +08:00 [ERR] Unhandled exception in circuit 'Fo8mopPaVmWxVwZn5mPkFwOqRmfU-f4FNlloFgzireQ'.
+System.AggregateException: One or more errors occurred. (Invalid object name 'AspNetUsers'.)
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:4b598252-ad0d-449c-be62-5ecba205dc6b
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Stores.UserStore.get_Users() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Stores\UserStore.cs:line 35
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at Blazor.Admin.Web.Components.Pages.Home.OnInitializedAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\Components\Pages\Home.razor:line 79
+   at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync()
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+2024-09-13 16:06:20.023 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:06:20.026 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=WghaxUJTGr8DHtvckQRD0w - 200 null null 201.228ms
+2024-09-13 16:06:20.034 +08:00 [INF] Connection id "0HN6JPB9C4RVF", Request id "0HN6JPB9C4RVF:00000069": the application completed without reading the entire request body.
+2024-09-13 16:07:15.299 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-13 16:07:15.684 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-13 16:07:15.688 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-13 16:07:15.695 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-13 16:07:15.697 +08:00 [INF] Hosting environment: Development
+2024-09-13 16:07:15.699 +08:00 [INF] Content root path: C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web
+2024-09-13 16:07:16.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:07:16.706 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:07:16.848 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:07:16.853 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:07:16.855 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:07:16.869 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 215.6376ms
+2024-09-13 16:07:16.874 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:07:16.877 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:07:16.877 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:07:16.890 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:07:16.918 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:07:16.890 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:07:16.886 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 33.4098ms
+2024-09-13 16:07:16.891 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:07:16.912 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 34.6553ms
+2024-09-13 16:07:16.926 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:07:16.929 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:07:16.933 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:07:16.948 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:07:16.958 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 68.3829ms
+2024-09-13 16:07:16.961 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 106.7059ms
+2024-09-13 16:07:16.964 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 74.1713ms
+2024-09-13 16:07:16.969 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 78.5426ms
+2024-09-13 16:07:17.014 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:07:17.021 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:07:17.026 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:07:17.031 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 16.9437ms
+2024-09-13 16:07:17.038 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:07:17.053 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:07:17.059 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 16:07:17.060 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:07:17.070 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 31.9491ms
+2024-09-13 16:07:17.074 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=ipif7CFvhXV8SUl2pLI_YQ - null null
+2024-09-13 16:07:17.083 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:07:17.086 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 16:07:17.089 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 30.9447ms
+2024-09-13 16:07:17.238 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:07:17.544 +08:00 [WRN] Unhandled exception rendering component: Invalid object name 'AspNetUsers'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:e18fb074-41ee-40a6-b3c8-200de82ac26d
+Error Number:208,State:1,Class:16
+2024-09-13 16:07:17.582 +08:00 [ERR] Unhandled exception in circuit 'PuFuUkqduWar3A84aX2Tw_QWSPCPIhQnkicR3W-lRqI'.
+System.AggregateException: One or more errors occurred. (Invalid object name 'AspNetUsers'.)
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:e18fb074-41ee-40a6-b3c8-200de82ac26d
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Stores.UserStore.get_Users() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Stores\UserStore.cs:line 35
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at Blazor.Admin.Web.Components.Pages.Home.OnInitializedAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\Components\Pages\Home.razor:line 79
+   at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync()
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+2024-09-13 16:07:17.621 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:07:17.626 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=ipif7CFvhXV8SUl2pLI_YQ - 200 null null 551.7126ms
+2024-09-13 16:07:17.635 +08:00 [INF] Connection id "0HN6JPCA9H87V", Request id "0HN6JPCA9H87V:00000013": the application completed without reading the entire request body.
+2024-09-13 16:08:21.393 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:08:21.411 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:08:21.432 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:08:21.438 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:08:21.458 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 65.0557ms
+2024-09-13 16:08:21.438 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryH1bmgsRMnRb5PglX 359
+2024-09-13 16:08:21.438 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:08:21.452 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:08:21.465 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:08:21.485 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.495 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 57.2976ms
+2024-09-13 16:08:21.509 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:08:21.509 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:08:21.505 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 66.7257ms
+2024-09-13 16:08:21.502 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:08:21.509 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:08:21.525 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.527 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:08:21.537 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:08:21.545 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:08:21.554 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:08:21.556 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 121.5759ms
+2024-09-13 16:08:21.560 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 52.0101ms
+2024-09-13 16:08:21.565 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 55.7514ms
+2024-09-13 16:08:21.568 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:08:21.599 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 148.0615ms
+2024-09-13 16:08:21.571 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 61.8164ms
+2024-09-13 16:08:21.669 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:08:21.674 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.676 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.677 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 7.5145ms
+2024-09-13 16:08:21.690 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:08:21.695 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.696 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.698 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 8.5232ms
+2024-09-13 16:08:21.700 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=O63YH6quOpcZuLl5-Snzqw - null null
+2024-09-13 16:08:21.709 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.742 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:08:21.877 +08:00 [WRN] Unhandled exception rendering component: Invalid object name 'AspNetUsers'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:e18fb074-41ee-40a6-b3c8-200de82ac26d
+Error Number:208,State:1,Class:16
+2024-09-13 16:08:21.888 +08:00 [ERR] Unhandled exception in circuit 'Pat3XHyvjIQmaPyNKNzS6y591-Wt7pHw34Q5nCA9qCU'.
+System.AggregateException: One or more errors occurred. (Invalid object name 'AspNetUsers'.)
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Framework.Core.UOW.BaseRepository`1.QueryAsync[Model](String query, Model model) in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\BaseRepository.cs:line 92
+   at Framework.Core.UOW.Repository`1.GetAllAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core\UOW\Repository.cs:line 132
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Providers.UsersProvider.GetAllUsers() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Providers\UsersProvider.cs:line 182
+ClientConnectionId:e18fb074-41ee-40a6-b3c8-200de82ac26d
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Framework.Core.Blazor.Admin.SqlServer.Auth.Stores.UserStore.get_Users() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Framework.Core.Blazor.Admin.SqlServer\Auth\Stores\UserStore.cs:line 35
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at Blazor.Admin.Web.Components.Pages.Home.OnInitializedAsync() in C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\Components\Pages\Home.razor:line 79
+   at Microsoft.AspNetCore.Components.ComponentBase.RunInitAndSetParametersAsync()
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.GetErrorHandledTask(Task taskToHandle, ComponentState owningComponentState)
+2024-09-13 16:08:21.917 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:08:21.920 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=O63YH6quOpcZuLl5-Snzqw - 200 null null 220.3006ms
+2024-09-13 16:08:21.927 +08:00 [INF] Connection id "0HN6JPCA9H87V", Request id "0HN6JPCA9H87V:00000029": the application completed without reading the entire request body.
+2024-09-13 16:09:07.608 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-13 16:09:07.989 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-13 16:09:07.992 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-13 16:09:08.005 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-13 16:09:08.012 +08:00 [INF] Hosting environment: Development
+2024-09-13 16:09:08.019 +08:00 [INF] Content root path: C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web
+2024-09-13 16:09:09.310 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:09:09.363 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:09:09.508 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:09:09.513 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:09:09.514 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - null null
+2024-09-13 16:09:09.514 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:09:09.528 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 221.6771ms
+2024-09-13 16:09:09.533 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:09:09.535 +08:00 [INF] The file /_content/MagicPropsComponents/js/components/toast/toast.js was not modified
+2024-09-13 16:09:09.541 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:09:09.549 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 36.2519ms
+2024-09-13 16:09:09.551 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - 304 null text/javascript 36.2757ms
+2024-09-13 16:09:09.555 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:09:09.554 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:09:09.554 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:09:09.553 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:09:09.569 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:09:09.580 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:09:09.585 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:09:09.589 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:09:09.597 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 43.4862ms
+2024-09-13 16:09:09.599 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:09:09.601 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 86.9302ms
+2024-09-13 16:09:09.603 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 49.4657ms
+2024-09-13 16:09:09.605 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 51.2209ms
+2024-09-13 16:09:09.614 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 46.0708ms
+2024-09-13 16:09:09.684 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 16:09:09.713 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 16:09:09.719 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 35.0842ms
+2024-09-13 16:09:09.780 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:09:09.789 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:09.794 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:09.797 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 17.5885ms
+2024-09-13 16:09:09.803 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:09:09.819 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:09.826 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:09.829 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 26.9584ms
+2024-09-13 16:09:09.833 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=sOuOkdL7o-w6-T_KriThAg - null null
+2024-09-13 16:09:09.843 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:10.015 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:09:10.893 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:09:10.897 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:09:11.922 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:09:11.926 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-13 16:09:11.927 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:09:11.933 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:09:11.956 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-13 16:09:12.030 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:09:12.035 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 109.5865ms
+2024-09-13 16:09:12.038 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/icons/home.svg - null null
+2024-09-13 16:09:12.038 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/avatar/1.svg - null null
+2024-09-13 16:09:12.059 +08:00 [INF] Sending file. Request path: '/img/icons/home.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\icons\home.svg'
+2024-09-13 16:09:12.063 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/icons/home.svg - 200 418 image/svg+xml 24.9063ms
+2024-09-13 16:09:12.067 +08:00 [INF] Sending file. Request path: '/img/avatar/1.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\avatar\1.svg'
+2024-09-13 16:09:12.073 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/avatar/1.svg - 200 4444 image/svg+xml 35.2882ms
+2024-09-13 16:09:14.073 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryVkPlT6R8Bl4P9dsF 359
+2024-09-13 16:09:14.079 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:14.080 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:14.082 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=sOuOkdL7o-w6-T_KriThAg - 200 null null 4249.7049ms
+2024-09-13 16:09:14.089 +08:00 [INF] Connection id "0HN6JPDBSD0P4", Request id "0HN6JPDBSD0P4:00000015": the application completed without reading the entire request body.
+2024-09-13 16:09:14.092 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:14.094 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 21.7579ms
+2024-09-13 16:09:17.764 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 241
+2024-09-13 16:09:17.773 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:09:17.981 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-13 16:09:17.984 +08:00 [INF] User logged in.----admin
+2024-09-13 16:09:18.014 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:09:18.016 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-13 16:09:18.018 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 253.518ms
+2024-09-13 16:09:18.024 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-13 16:09:18.035 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-13 16:09:18.038 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 21.7331ms
+2024-09-13 16:09:18.040 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:09:18.040 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:09:18.054 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 13.4249ms
+2024-09-13 16:09:18.058 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:09:18.067 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:09:18.070 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:09:18.073 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 32.7956ms
+2024-09-13 16:09:18.104 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:09:18.113 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:18.116 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:18.121 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 17.2538ms
+2024-09-13 16:09:18.125 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:09:18.147 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:18.150 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:18.152 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 26.781ms
+2024-09-13 16:09:18.155 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=YNZXb-Y5xXtagwhv4tNDcw - null null
+2024-09-13 16:09:18.165 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:09:18.243 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/language.png - null null
+2024-09-13 16:09:18.243 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/avatar/9.svg - null null
+2024-09-13 16:09:18.243 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/english.png - null null
+2024-09-13 16:09:18.282 +08:00 [INF] Sending file. Request path: '/img/mainLayout/language.png'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\mainLayout\language.png'
+2024-09-13 16:09:18.296 +08:00 [INF] Sending file. Request path: '/img/avatar/9.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\avatar\9.svg'
+2024-09-13 16:09:18.299 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/language.png - 200 1933 image/png 55.3389ms
+2024-09-13 16:09:18.304 +08:00 [INF] Sending file. Request path: '/img/mainLayout/english.png'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\mainLayout\english.png'
+2024-09-13 16:09:18.303 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/avatar/9.svg - 200 6280 image/svg+xml 61.11ms
+2024-09-13 16:09:18.300 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2?v=4.7.0 - null null
+2024-09-13 16:09:18.321 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/english.png - 200 1414 image/png 77.8092ms
+2024-09-13 16:09:18.310 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-13 16:09:18.243 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/china.png - null null
+2024-09-13 16:09:18.364 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\fonts\fontawesome-webfont.woff2'
+2024-09-13 16:09:18.364 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-13 16:09:18.370 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2?v=4.7.0 - 200 77160 font/woff2 70.003ms
+2024-09-13 16:09:18.385 +08:00 [INF] Sending file. Request path: '/img/mainLayout/china.png'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\mainLayout\china.png'
+2024-09-13 16:09:18.403 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-13 16:09:18.418 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/china.png - 200 836 image/png 174.612ms
+2024-09-13 16:09:18.420 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 110.1713ms
+2024-09-13 16:09:21.275 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-13 16:09:21.285 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-13 16:09:21.297 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-13 16:09:21.302 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 27.7295ms
+2024-09-13 16:09:23.146 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 16:09:23.158 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 16:09:23.175 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 16:09:23.180 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 34.4715ms
+2024-09-13 16:09:23.284 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg - null null
+2024-09-13 16:09:23.285 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg - null null
+2024-09-13 16:09:23.284 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg - null null
+2024-09-13 16:09:23.301 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\pager-next-page-disabled.svg'
+2024-09-13 16:09:23.296 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\pager-firstpage-disabled.svg'
+2024-09-13 16:09:23.308 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg - 200 311 image/svg+xml 23.8723ms
+2024-09-13 16:09:23.308 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\pager-lastpage-disabled.svg'
+2024-09-13 16:09:23.311 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg - 200 398 image/svg+xml 28.0415ms
+2024-09-13 16:09:23.325 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg - null null
+2024-09-13 16:09:23.323 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg - 200 400 image/svg+xml 39.3919ms
+2024-09-13 16:09:23.324 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/filter.svg - null null
+2024-09-13 16:09:23.351 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\sort-unsorted.svg'
+2024-09-13 16:09:23.284 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg - null null
+2024-09-13 16:09:23.368 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg - 200 323 image/svg+xml 43.7943ms
+2024-09-13 16:09:23.372 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/filter.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\filter.svg'
+2024-09-13 16:09:23.386 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\pager-pre-page-disabled.svg'
+2024-09-13 16:09:23.399 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/filter.svg - 200 271 image/svg+xml 74.1618ms
+2024-09-13 16:09:23.404 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg - 200 310 image/svg+xml 120.7821ms
+2024-09-13 16:09:24.190 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 16:09:24.204 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 16:09:24.213 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 16:09:24.217 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 27.2059ms
+2024-09-13 16:09:25.518 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 16:09:25.558 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 16:09:25.581 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 16:09:25.588 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 72.4012ms
+2024-09-13 16:09:27.482 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users/claims/admin - null null
+2024-09-13 16:09:27.501 +08:00 [INF] Executing endpoint '/users/claims/{UserName} (/users/claims/{UserName})'
+2024-09-13 16:09:27.533 +08:00 [INF] Executed endpoint '/users/claims/{UserName} (/users/claims/{UserName})'
+2024-09-13 16:09:27.541 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users/claims/admin - 200 null text/html; charset=utf-8 59.1118ms
+2024-09-13 16:09:32.253 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 16:09:32.296 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 16:09:32.309 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 16:09:32.320 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 67.6455ms
+2024-09-13 16:09:32.976 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 16:09:32.998 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 16:09:33.023 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 16:09:33.037 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 61.6224ms
+2024-09-13 16:09:40.540 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-13 16:09:40.551 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-13 16:09:40.557 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-13 16:09:40.560 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 20.4197ms
+2024-09-13 16:09:41.978 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 16:09:42.015 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 16:09:42.021 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 16:09:42.027 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 50.5573ms
+2024-09-13 16:10:03.913 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 16:10:03.935 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 16:10:03.961 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 16:10:03.967 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 55.0711ms
+2024-09-13 16:10:04.716 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 16:10:04.739 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 16:10:04.759 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 16:10:04.765 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 49.7688ms
+2024-09-13 16:10:13.124 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:10:13.124 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:10:13.155 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:10:13.124 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:10:13.173 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:10:13.182 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 16:10:13.198 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 73.3622ms
+2024-09-13 16:10:13.173 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 49.0262ms
+2024-09-13 16:10:13.195 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:10:13.125 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:10:13.261 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 136.8108ms
+2024-09-13 16:10:13.280 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:10:13.297 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 172.6803ms
+2024-09-13 16:10:13.299 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 16:10:13.322 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 140.1134ms
+2024-09-13 16:10:13.334 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css.map - null null
+2024-09-13 16:10:13.337 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css.map - null null
+2024-09-13 16:10:13.495 +08:00 [INF] Sending file. Request path: '/bootstrap/bootstrap.min.css.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\bootstrap\bootstrap.min.css.map'
+2024-09-13 16:10:13.496 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\css\bootstrap.min.css.map'
+2024-09-13 16:10:13.497 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css.map - 200 449111 text/plain 164.28ms
+2024-09-13 16:10:13.500 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css.map - 200 431289 text/plain 164.8633ms
+2024-09-13 16:14:48.862 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-13 16:14:49.277 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-13 16:14:49.280 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-13 16:14:49.285 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-13 16:14:49.291 +08:00 [INF] Hosting environment: Development
+2024-09-13 16:14:49.294 +08:00 [INF] Content root path: C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web
+2024-09-13 16:14:50.344 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:14:50.404 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:14:50.558 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:14:50.563 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:14:50.572 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - null null
+2024-09-13 16:14:50.573 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:14:50.590 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 249.8721ms
+2024-09-13 16:14:50.596 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:14:50.597 +08:00 [INF] The file /_content/MagicPropsComponents/js/components/toast/toast.js was not modified
+2024-09-13 16:14:50.602 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:14:50.613 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 50.1623ms
+2024-09-13 16:14:50.618 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:14:50.616 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:14:50.616 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - 304 null text/javascript 50.897ms
+2024-09-13 16:14:50.618 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:14:50.603 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:14:50.627 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:14:50.639 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:14:50.643 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:14:50.667 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 49.9126ms
+2024-09-13 16:14:50.666 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:14:50.658 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:14:50.670 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 67.2234ms
+2024-09-13 16:14:50.672 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 55.405ms
+2024-09-13 16:14:50.685 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 112.3746ms
+2024-09-13 16:14:50.688 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 70.2786ms
+2024-09-13 16:14:50.764 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 16:14:50.791 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 16:14:50.796 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 32.3701ms
+2024-09-13 16:14:50.860 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:14:50.867 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:14:50.872 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:14:50.874 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 14.5878ms
+2024-09-13 16:14:50.882 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:14:50.897 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:14:50.903 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:14:50.906 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 23.8337ms
+2024-09-13 16:14:50.910 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=40Pr4AgZSa15ujQRzn7hGA - null null
+2024-09-13 16:14:50.925 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:14:51.110 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:14:51.353 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:14:51.357 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:59:29.659 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-13 16:59:30.038 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-13 16:59:30.041 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-13 16:59:30.047 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-13 16:59:30.049 +08:00 [INF] Hosting environment: Development
+2024-09-13 16:59:30.051 +08:00 [INF] Content root path: C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web
+2024-09-13 16:59:31.512 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-13 16:59:31.685 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-13 16:59:31.831 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-13 16:59:31.839 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-13 16:59:31.839 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - null null
+2024-09-13 16:59:31.843 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 335.4215ms
+2024-09-13 16:59:31.841 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:59:31.860 +08:00 [INF] The file /_content/MagicPropsComponents/js/components/toast/toast.js was not modified
+2024-09-13 16:59:31.860 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-13 16:59:31.872 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:59:31.874 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/components/toast/toast.js - 304 null text/javascript 35.2256ms
+2024-09-13 16:59:31.875 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 36.9057ms
+2024-09-13 16:59:31.878 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:59:31.892 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:59:31.895 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 54.725ms
+2024-09-13 16:59:32.433 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-13 16:59:32.433 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-13 16:59:32.433 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-13 16:59:32.435 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:59:32.440 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-13 16:59:32.447 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-13 16:59:32.458 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 25.2872ms
+2024-09-13 16:59:32.461 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 28.0866ms
+2024-09-13 16:59:32.452 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-13 16:59:32.470 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 34.5066ms
+2024-09-13 16:59:32.473 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-13 16:59:32.485 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 53.3082ms
+2024-09-13 16:59:32.548 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.7009ms
+2024-09-13 16:59:32.559 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-13 16:59:32.587 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-13 16:59:32.592 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 33.2091ms
+2024-09-13 16:59:32.672 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:59:32.679 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:32.683 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:32.686 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 14.6578ms
+2024-09-13 16:59:32.693 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:59:32.703 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:32.708 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:32.710 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 17.1552ms
+2024-09-13 16:59:32.714 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=6IzyVh5EIqjQ_ZE2bPSAwA - null null
+2024-09-13 16:59:32.723 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:32.914 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:59:33.117 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:59:33.120 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:59:34.541 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:59:34.545 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-13 16:59:34.546 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-13 16:59:34.586 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:59:34.603 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-13 16:59:34.645 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:59:34.649 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 103.8565ms
+2024-09-13 16:59:36.660 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 263
+2024-09-13 16:59:36.691 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryRJWxg13vjKrrozo1 359
+2024-09-13 16:59:36.699 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:36.699 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:59:36.700 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:36.705 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=6IzyVh5EIqjQ_ZE2bPSAwA - 200 null null 3990.4821ms
+2024-09-13 16:59:36.708 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:36.712 +08:00 [INF] Connection id "0HN6JQ9GF55CK", Request id "0HN6JQ9GF55CK:00000017": the application completed without reading the entire request body.
+2024-09-13 16:59:36.714 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 23.3183ms
+2024-09-13 16:59:36.945 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-13 16:59:36.948 +08:00 [INF] User logged in.----admin
+2024-09-13 16:59:36.986 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-13 16:59:36.986 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-13 16:59:36.989 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 330.2712ms
+2024-09-13 16:59:37.015 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-13 16:59:37.025 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-13 16:59:37.027 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 41.1741ms
+2024-09-13 16:59:37.031 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-13 16:59:37.031 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-13 16:59:37.032 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-13 16:59:37.052 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-13 16:59:37.054 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-13 16:59:37.054 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 22.0202ms
+2024-09-13 16:59:37.056 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-13 16:59:37.057 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.8206ms
+2024-09-13 16:59:37.068 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 37.3025ms
+2024-09-13 16:59:37.114 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-13 16:59:37.124 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:37.127 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:37.129 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 15.1801ms
+2024-09-13 16:59:37.134 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-13 16:59:37.142 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:37.144 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:37.146 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 12.8668ms
+2024-09-13 16:59:37.155 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=VMLEVXInm3LyhRBEadHl4A - null null
+2024-09-13 16:59:37.160 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-13 16:59:37.275 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-13 16:59:37.322 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-13 16:59:37.330 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-13 16:59:37.335 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 60.216ms
+2024-09-13 16:59:38.503 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-13 16:59:38.540 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-13 16:59:38.552 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-13 16:59:38.555 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 52.9043ms
+2024-09-13 16:59:40.119 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 16:59:40.159 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 16:59:40.222 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 16:59:40.228 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 111.2787ms
+2024-09-13 16:59:41.113 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 16:59:41.157 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 16:59:41.174 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 16:59:41.177 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 64.1842ms
+2024-09-13 16:59:46.065 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/systemLogs - null null
+2024-09-13 16:59:46.100 +08:00 [INF] Executing endpoint '/systemLogs (/systemLogs)'
+2024-09-13 16:59:46.106 +08:00 [INF] Executed endpoint '/systemLogs (/systemLogs)'
+2024-09-13 16:59:46.107 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/systemLogs - 200 null text/html; charset=utf-8 42.4ms
+2024-09-13 16:59:46.161 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage.svg - null null
+2024-09-13 16:59:46.162 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page.svg - null null
+2024-09-13 16:59:46.182 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-lastpage.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\pager-lastpage.svg'
+2024-09-13 16:59:46.191 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/svgs/primary/pager-next-page.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\MagicPropsComponents\wwwroot\svgs\primary\pager-next-page.svg'
+2024-09-13 16:59:46.192 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage.svg - 200 341 image/svg+xml 30.3614ms
+2024-09-13 16:59:46.193 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page.svg - 200 261 image/svg+xml 32.2674ms
+2024-09-13 16:59:47.565 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/auditLogs - null null
+2024-09-13 16:59:47.614 +08:00 [INF] Executing endpoint '/auditLogs (/auditLogs)'
+2024-09-13 16:59:47.641 +08:00 [INF] Executed endpoint '/auditLogs (/auditLogs)'
+2024-09-13 16:59:47.647 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/auditLogs - 200 null text/html; charset=utf-8 82.5396ms
+2024-09-13 16:59:48.454 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/systemLogs - null null
+2024-09-13 16:59:48.510 +08:00 [INF] Executing endpoint '/systemLogs (/systemLogs)'
+2024-09-13 16:59:48.520 +08:00 [INF] Executed endpoint '/systemLogs (/systemLogs)'
+2024-09-13 16:59:48.523 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/systemLogs - 200 null text/html; charset=utf-8 69.4298ms
+2024-09-13 16:59:49.650 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/logo.svg - null null
+2024-09-13 16:59:49.692 +08:00 [INF] Sending file. Request path: '/img/mainLayout/logo.svg'. Physical path: 'C:\Workspaces\IdentityAdminWithMultipleDBsSupport\Blazor.Admin.Web\wwwroot\img\mainLayout\logo.svg'
+2024-09-13 16:59:49.702 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/logo.svg - 200 713 image/svg+xml 52.3583ms
+2024-09-13 16:59:56.985 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 16:59:57.039 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 16:59:57.069 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 16:59:57.073 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 88.1736ms
+2024-09-13 17:00:15.227 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles/claims/AdminGroup - null null
+2024-09-13 17:00:15.291 +08:00 [INF] Executing endpoint '/roles/claims/{RoleName} (/roles/claims/{RoleName})'
+2024-09-13 17:00:15.342 +08:00 [INF] Executed endpoint '/roles/claims/{RoleName} (/roles/claims/{RoleName})'
+2024-09-13 17:00:15.347 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles/claims/AdminGroup - 200 null text/html; charset=utf-8 121.0116ms
+2024-09-13 17:00:29.212 +08:00 [INF] Update AdminGroup cliams success
+2024-09-13 17:00:29.222 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 17:00:29.282 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 17:00:29.318 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 17:00:29.328 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 107.4633ms
+2024-09-13 17:00:33.623 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 17:00:33.702 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 17:00:33.727 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 17:00:33.731 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 108.0173ms
+2024-09-13 17:00:34.238 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/roles - null null
+2024-09-13 17:00:34.279 +08:00 [INF] Executing endpoint '/roles (/roles)'
+2024-09-13 17:00:34.306 +08:00 [INF] Executed endpoint '/roles (/roles)'
+2024-09-13 17:00:34.311 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/roles - 200 null text/html; charset=utf-8 72.2537ms
+2024-09-13 17:00:35.408 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-13 17:00:35.454 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-13 17:00:35.488 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-13 17:00:35.496 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 87.8778ms

@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "7vLvkD0So/4l0WRKgXtmGJXHqBnAn+YUF4Vi4/AeRJk=",
+  "Source": "Framework.WebCore",
+  "BasePath": "_content/Framework.WebCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Framework.WebCore\\wwwroot",
+      "Source": "Framework.WebCore",
+      "ContentRoot": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\wwwroot\\",
+      "BasePath": "_content/Framework.WebCore",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Framework.WebCore.styles.css",
+      "SourceId": "Framework.WebCore",
+      "SourceType": "Computed",
+      "ContentRoot": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Framework.WebCore",
+      "RelativePath": "Framework.WebCore.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Framework.WebCore.styles.css"
+    },
+    {
+      "Identity": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Framework.WebCore.bundle.scp.css",
+      "SourceId": "Framework.WebCore",
+      "SourceType": "Computed",
+      "ContentRoot": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/Framework.WebCore",
+      "RelativePath": "Framework.WebCore.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "F:\\ShinetechFZProjects\\OpenSource\\IdentityAdminWithMultiDBSupport\\Framework.WebCore\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Framework.WebCore.bundle.scp.css"
+    }
+  ]
+}

@@ -1,0 +1,612 @@
+﻿@page "/users"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using System.ComponentModel.DataAnnotations
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using Microsoft.AspNetCore.Identity
+@using MagicPropsComponents.ViewModels.DataGrid
+@using MagicPropsComponents.ViewModels.Modal
+@using MagicPropsComponents.ViewModels.Input
+@using MagicPropsComponents.ViewModels.Shared
+@inject UserManager<ApplicationUser> _userManager;
+@inject RoleManager<ApplicationRole> _roleManager;
+@inject ILogger<Users> _logger;
+<div class="card-container">
+    <MagicPropsComponents.Components.DataGrid.MPDataGrid OnDataRetrieving="RenderUsers" @ref=@_dataGrid Datasource="@datasource" RecordsTotal="@_totleRecord" EditMode=EditMode.Dialog SelectedRowChanged="HandleChangeSelectedUser"
+                                                         PaginationSettings="_paginationSettings" Height="612" OperationSettings="GetOperationSettings()" CustomToolBtns="@_myToolBtn" NoDataText="@L["Result.NoData"]" OnDeleteRowData="DeleteUser"
+                                                         SaveText="@(L["Action.Save"])" AddText="@(L["Action.Add"])" EditText="@(L["Action.Edit"])" DeleteText="@(L["Action.Delete"])" CancelText="@(L["Action.Cancel"])" ConfirmText="@(L["Action.Confirm"])"
+                                                         AddDialogTitle="@(L["UserPage.CreateUserTitle"])" EditDialogTitle="@(L["UserPage.UpdateUserTitle"])" DeleteDialogTitle="@(L["UserPage.DeleteUserTitle"])">
+        <DeleteDialogTemplate>
+            <div class="mt-3">
+                @L["Result.DeleteConfirm"]<span style="color:red">@_selectedUser.UserName</span> ?
+            </div>
+        </DeleteDialogTemplate>
+        <EditDialogTemplate Context="dialogContext">
+            @if (_dataGrid.NewData != null)
+            {
+                <EditForm Model="_newUser" OnValidSubmit="@(async()=>{await _loader.AwaitFor(CreateUser());})">
+                    <DataAnnotationsValidator />
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.Email"]" @bind-Value="@_newUser.Email" FixedTitle Width="430" ValidationFieldName="Email" />
+                        <ValidationMessage For="()=>_newUser.Email" />
+                    </div>
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.Input.MPInput InputType=InputType.Password Title="@L["Model.Password"]" @bind-Value="@_newUser.Password" FixedTitle Width="430" ValidationFieldName="Password" />
+                        <ValidationMessage For="()=>_newUser.Password" />
+                    </div>
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.Input.MPInput InputType=InputType.Password Title="@L["Model.PasswordConfirm"]" @bind-Value="@_newUser.ConfirmPassword" FixedTitle Width="430" ValidationFieldName="ConfirmPassword" />
+                        <ValidationMessage For="()=>_newUser.ConfirmPassword" />
+                    </div>
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.DropDownList.MPDropDownList Title="@L["Model.Roles"]" FixedTitle Width="430" Searchable Datasource="@(AllRoles.Select(x=>x.Name).ToList())" Multiple @bind-Values="@selectedRoles" ValidationFieldName="Roles">
+
+                        </MagicPropsComponents.Components.DropDownList.MPDropDownList>
+                    </div>
+                    <div class="mx-4 d-flex mt-2">
+                        <button class="btn btn-primary ms-auto" type="submit">@L["Action.Save"]</button>
+                        <button class="btn btn-secondary ms-2" @onclick="@(()=>{_dataGrid.ResetOperationSettings();selectedRoles = new List<string>();})">@L["Action.Cancel"]</button>
+                    </div>
+                </EditForm>
+            }
+            else if (_dataGrid.EditRowClone != null)//means on editing
+            {
+                var user = dialogContext as UserModel;
+                if (user != null)
+                {
+                    //_selectedUser = user;
+                    if (_editUser.Id != user.Id)
+                    {
+                        _editUser.Id = user.Id;
+                        _editUser.Email = user.Email;
+                        _editUser.UserName = user.UserName;
+                        _editUser.Roles = user.Roles;
+                        selectedRoles = user.Roles;
+                    }
+                    <EditForm Model="_editUser" OnValidSubmit="@(async()=>{await _loader.AwaitFor(UpdateUser());})">
+                        <DataAnnotationsValidator />
+                        <div class="m-3">
+                            <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.Email"]" Disabled="@(user.Email == GlobalSettings.DefaultAdminUserEmail||user.UserName == GlobalSettings.DefaultAdminUserName)" @bind-Value="@_editUser.Email" FixedTitle Width="430" ValidationFieldName="Email" />
+                            <ValidationMessage For="()=>_editUser.Email" />
+                        </div>
+                        <div class="m-3">
+                            <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.UserName"]" Disabled="@(user.Email == GlobalSettings.DefaultAdminUserEmail||user.UserName == GlobalSettings.DefaultAdminUserName)" @bind-Value="@_editUser.UserName" FixedTitle Width="430" ValidationFieldName="UserName" />
+                            <ValidationMessage For="()=>_editUser.UserName" />
+                        </div>
+                        <div class="m-3">
+                            <MagicPropsComponents.Components.DropDownList.MPDropDownList Title="@L["Model.Roles"]" FixedTitle Width="430" Searchable Datasource="@(AllRoles.Select(x=>x.Name).ToList())" Multiple @bind-Values="@selectedRoles" ValidationFieldName="Roles">
+
+                            </MagicPropsComponents.Components.DropDownList.MPDropDownList>
+                        </div>
+                        <div class="mx-4 d-flex mt-2">
+                            <button class="btn btn-primary ms-auto" type="submit">@L["Action.Save"]</button>
+                            <button class="btn btn-secondary ms-2" @onclick="@(()=>{_dataGrid.ResetOperationSettings();selectedRoles = new List<string>();_editUser=new EditUserModel(L);_dataGrid.SelectedRow=user;_selectedUser=user;})">@L["Action.Cancel"]</button>
+                        </div>
+                    </EditForm>
+                }
+                else
+                {
+                    <span style="color:red">Failed to obtain user information.</span>
+                }
+            }
+        </EditDialogTemplate>
+        <ChildContent>
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="Id" Visible=false PrimaryColumn>
+                <EditTemplate></EditTemplate>
+            </MagicPropsComponents.Components.DataGrid.MPGridColumn>
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="UserName" HeaderText="@L["Model.UserName"]" Sortable Filterable />
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="Email" HeaderText="@L["Model.Email"]" Sortable Filterable />
+            <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="Roles" HeaderText="@L["Model.Roles"]" EditorType=EditorType.Dropdown Filterable FilterType=FilterType.MenuListFilter CustomMenuListFilterDatasource="@GetRoleFilterDatasource()">
+                <Template>
+                    @{
+                        var user = context as UserModel;
+                        if (user == null)
+                        {
+                            <div style="color:red">Failed to obtain user information.</div>
+                        }
+                        else
+                        {
+                            <div style="color:blue"> @(string.Join(", ", user.Roles))</div>
+                        }
+                    }
+                </Template>
+            </MagicPropsComponents.Components.DataGrid.GridColumn>
+        </ChildContent>
+    </MagicPropsComponents.Components.DataGrid.MPDataGrid>
+</div>
+
+<MagicPropsComponents.Components.Modal.MPModal @bind-Visible="_showResetPwdModel" Title="@L["Action.ResetPassword"]" CloseBtnVisible="true" ClickOutsideToClose="false" FooterBottons="@resetPwdModalBtns" OnModalButtonClicked="ResetPassword">
+    <BodyTemplate>
+        <div class="pt-3">
+            <span style="color:red">@_selectedUser.UserName</span> @L["Result.ResetPwdConfirm"] '<span style="color:red">@GlobalSettings.DefaultUserPassword</span>' ?
+        </div>
+    </BodyTemplate>
+</MagicPropsComponents.Components.Modal.MPModal>
+
+<MagicPropsComponents.Components.Loader.MPLoader @ref="_loader" />
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    private MagicPropsComponents.Components.DataGrid.MPDataGrid _dataGrid = new MagicPropsComponents.Components.DataGrid.MPDataGrid();
+    private List<UserModel> datasource { get; set; } = new List<UserModel>();
+    private List<UserModel> AllUsers { get; set; } = new List<UserModel>();
+    private List<ApplicationRole> AllRoles { get; set; } = new List<ApplicationRole>();
+    private CreateUserModel _newUser { get; set; }
+    private UserModel _selectedUser { get; set; } = new UserModel();
+    private EditUserModel _editUser { get; set; }
+    private int _totleRecord { get; set; }
+    private bool _canCreateUser = false;
+    private bool _canDeleteUser = false;
+    private bool _canUpdateUser = false;
+    private bool _canManageClaims = false;
+
+    public PaginationSettings _paginationSettings = new PaginationSettings() { EnablePagination = true, PaginationMode = PaginationModes.ServerSide, PageSize = 10 };
+
+    private bool _showResetPwdModel = false;
+    private List<ModalButton> resetPwdModalBtns = new List<ModalButton>();
+    //private string selectedRoles = "Authenticated";
+    private List<string> selectedRoles { get; set; } = new List<string>();
+    private MagicPropsComponents.Components.Loader.MPLoader _loader = new MagicPropsComponents.Components.Loader.MPLoader();
+
+    private OperationSettings GetOperationSettings()
+    {
+        return new OperationSettings()
+            {
+                AllowAdding = _canCreateUser,
+                AllowEditing = _canUpdateUser,
+                AllowDeleting = _canDeleteUser,
+                AllowGlobalSearch = true,
+                EditingTrigger = EditingTrigger.RowDblClick
+            };
+    }
+
+    private void HandleChangeSelectedUser(object obj)
+    {
+        var user = obj as UserModel;
+        if (user != null)
+        {
+            _selectedUser = user;
+        }
+        else
+        {
+            _selectedUser = new UserModel();
+        }
+
+        selectedRoles = _selectedUser.Roles;
+    }
+
+    private List<ToolButton> _myToolBtn = new List<ToolButton>() { };
+
+    private void RenderTable()
+    {
+        _totleRecord = AllUsers.Count();
+        datasource = AllUsers.ToList();
+    }
+
+    private List<object> GetRoleFilterDatasource()
+    {
+        var res = new List<object>();
+        AllRoles.ForEach(x => res.Add(x.Name ?? string.Empty));
+        return res.Distinct().ToList();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (MainLayout!.ChangedRoleInfo)
+        {
+            await LoadUserData();
+            StateHasChanged();
+            MainLayout!.ChangedRoleInfo = false;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!global.GetUserClaims().Any(x => x == "View Users"))
+        {
+            NavigationManager.NavigateTo(GlobalSettings.NotAuthorizedRoute);
+        }
+        else
+        {
+            await LoadUserData();
+            StateHasChanged();
+        }
+    }
+
+    private async Task BeginResetPwd()
+    {
+        if (!_canUpdateUser) return;
+        var item = _selectedUser as UserModel;
+        if (item != null)
+        {
+            _showResetPwdModel = true;
+            StateHasChanged();
+        }
+        else
+        {
+            await MainLayout!.AddNotice(L["Result.DataNoFound"], NoticeStatus.Warning);
+        }
+    }
+
+    private async Task ResetPassword(ModalButton btn)
+    {
+        if (!_canUpdateUser) return;
+        if (btn.Text == L["Action.Confirm"])
+        {
+            var resetPwdUser = await _userManager.FindByIdAsync(_selectedUser.Id);
+            if (resetPwdUser != null)
+            {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(resetPwdUser);
+                var roles = await _userManager.GetRolesAsync(resetPwdUser);
+                var res = await _userManager.ResetPasswordAsync(resetPwdUser, token, GlobalSettings.DefaultUserPassword);
+                _showResetPwdModel = false;
+                RenderTable();
+                _logger.LogInformation("Reset Password for :" + resetPwdUser.Email);
+                await MainLayout!.NewAuditlog("Reset Password for :" + resetPwdUser.Email);
+                await MainLayout!.AddNotice(L["Action.ResetPassword"] + " " + L["Result.Success"], NoticeStatus.Success);
+            }
+            else
+            {
+                _logger.LogDebug("Reset Password failed : Counld not found the user called " + _selectedUser.UserName);
+                await MainLayout!.NewAuditlog("Reset Password failed : Counld not found the user called " + _selectedUser.UserName, false);
+                await MainLayout!.AddNotice(L["Action.ResetPassword"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+            }
+        }
+    }
+
+    private bool IsDisableEdit()
+    {
+        return string.IsNullOrEmpty(_selectedUser.Id);
+    }
+
+    private async Task LoadUserData()
+    {
+        AllRoles = _roleManager.Roles.ToList();
+        IQueryable<ApplicationUser> users = _userManager.Users;
+        //var users = (await _userManager.GetUsersInRoleAsync(role.Name)).ToList();
+        AllUsers.Clear();
+        foreach (var user in users)
+        {
+            var roles = await _userManager.GetRolesAsync(user);
+            AllUsers.Add(new UserModel { Id = user.Id, UserName = user.UserName ?? string.Empty, Email = user.Email ?? string.Empty, Roles = roles.ToList() });
+        }
+        AllUsers.DistinctBy(x => x.UserName);
+        RenderTable();
+    }
+
+    private async Task CreateUser()
+    {
+        if (!_canCreateUser) return;
+        var context = new ValidationContext(_newUser);
+        var results = new List<ValidationResult>();
+        bool isValid = Validator.TryValidateObject(_newUser, context, results, true);
+        if (isValid)//modal format verify
+        {
+            if (AllUsers.Any(x => x.Email == _newUser.Email))
+            {
+                await MainLayout!.AddNotice(L["Model.Email"] + L["Error.AlreadyExists"], NoticeStatus.Falied);
+            }
+            else
+            {
+                try
+                {
+                    var createRes = await _userManager.CreateAsync(new ApplicationUser { UserName = _newUser.Email.Replace("@", "_").Replace(".", "_"), Email = _newUser.Email }, _newUser.Password);
+                    if (!createRes.Succeeded)
+                    {
+                        await MainLayout!.AddNotice(L["UserPage.CreateUserTitle"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+                        List<string> errorCodes = createRes.Errors.Select(x => x.Code).ToList();
+                        string errorMsg = string.Empty;
+                        if (errorCodes.Any(x => x == "PasswordRequiresLower"))
+                        {
+                            errorMsg += L["Model.Password"] + L["Error.RequiresLower"] + "; ";
+                        }
+                        if (errorCodes.Any(x => x == "PasswordRequiresUpper"))
+                        {
+                            errorMsg += L["Model.Password"] + L["Error.RequiresUpper"] + "; ";
+                        }
+                        if (errorCodes.Any(x => x == "PasswordRequiresDigit"))
+                        {
+                            errorMsg += L["Model.Password"] + L["Error.RequiresDigit"] + "; ";
+                        }
+                        //other error code...
+                        if (string.IsNullOrEmpty(errorMsg))
+                        {
+                            errorMsg = L["Error.Default"] + L["Action.Update"] + " " + L["Model.Password"];
+                        }
+                        else
+                        {
+                            errorMsg = errorMsg.Substring(0, errorMsg.Length - 2);
+                        }
+                        await MainLayout!.AddNotice(errorMsg, NoticeStatus.Falied);
+                        return;
+                    }
+                    var newUser = await _userManager.FindByEmailAsync(_newUser.Email);
+                    if (newUser != null)
+                    {
+                        if (selectedRoles.Count() > 0)
+                        {
+                            await _userManager.AddToRolesAsync(newUser, selectedRoles);
+                        }
+                        AllUsers.Add(new UserModel { Id = newUser.Id, UserName = newUser.UserName ?? string.Empty, Email = newUser.Email ?? string.Empty, Roles = selectedRoles.ToList() });
+                        RenderTable();
+                        _logger.LogInformation("Create User :" + newUser.Email);
+                        await MainLayout!.NewAuditlog("Create User :" + newUser.Email);
+                        await MainLayout!.AddNotice(L["UserPage.CreateUserTitle"] + " " + L["Result.Success"], NoticeStatus.Success);
+                        _dataGrid.ResetOperationSettings();
+                        selectedRoles = new List<string>();
+                    }
+                }
+                catch (Exception e)
+                {//create error
+                    _logger.LogError("Create User failed:" + e.Message);
+                    await MainLayout!.NewAuditlog("Create User failed:" + e.Message, false);
+                    await MainLayout!.AddNotice(L["Error.Default"] + L["UserPage.CreateUserTitle"], NoticeStatus.Falied);
+                }
+            }
+        }
+        else
+        {//validate error
+            _logger.LogDebug("Create User failed:" + string.Join("; ", results.Select(x => x.ErrorMessage)));
+            await MainLayout!.NewAuditlog("Create User failed:" + string.Join("; ", results.Select(x => x.ErrorMessage)), false);
+            await MainLayout!.AddNotice(L["Error.Default"] + L["UserPage.CreateUserTitle"], NoticeStatus.Falied);
+        }
+    }
+
+    private async Task UpdateUser()
+    {
+        if (!_canUpdateUser) return;
+        var user = AllUsers.FirstOrDefault(x => x.Id == _editUser.Id);
+        if (user == null) return;
+        if ((user.Email == GlobalSettings.DefaultAdminUserEmail && user.Email != _editUser.Email) || (user.UserName == GlobalSettings.DefaultAdminUserName && user.UserName != _editUser.UserName))
+        {
+            await MainLayout!.AddNotice(L["UserPage.SuperAdminLimitation"], NoticeStatus.Falied);
+            return;
+        }
+        var editUser = await _userManager.FindByIdAsync(user.Id);
+        if (editUser != null)
+        {
+            try
+            {
+                editUser.Email = _editUser.Email;
+                editUser.UserName = _editUser.UserName;
+                var res = await _userManager.UpdateAsync(editUser);
+                //update basic data success
+                if (res.Succeeded)
+                {
+                    user.Email = editUser.Email;
+                    user.UserName = editUser.UserName;
+                    var originalRoles = await _userManager.GetRolesAsync(editUser);
+                    var originalClaims = await _userManager.GetClaimsAsync(editUser);
+                    await _userManager.RemoveFromRolesAsync(editUser, originalRoles);
+                    await _userManager.AddToRolesAsync(editUser, selectedRoles);
+                    await _userManager.AddClaimsAsync(editUser, originalClaims);
+                    user.Roles = selectedRoles;
+                    RenderTable();
+                    _logger.LogInformation("Update User :" + _editUser.Email);
+                    await MainLayout!.NewAuditlog("Update User :" + _editUser.Email);
+                    await MainLayout!.AddNotice(L["UserPage.UpdateUserTitle"] + " " + L["Result.Success"], NoticeStatus.Success);
+                    _editUser = new EditUserModel(L);
+                    _dataGrid.ResetOperationSettings();
+                    _selectedUser = new UserModel();
+                    selectedRoles = new List<string>();
+                }
+                else
+                {// name/email duplicate
+                    List<string> errorCodes = res.Errors.Select(x => x.Code).ToList();
+                    string errorMsg = string.Empty;
+                    if (errorCodes.Any(x => x == "DuplicateEmail"))
+                    {
+                        errorMsg += L["Model.Email"] + L["Error.AlreadyExists"] + "; ";
+                    }
+                    if (errorCodes.Any(x => x == "DuplicateUserName"))
+                    {
+                        errorMsg += L["Model.UserName"] + L["Error.AlreadyExists"] + "; ";
+                    }
+                    //other error code...
+                    if (string.IsNullOrEmpty(errorMsg))
+                    {
+                        errorMsg = L["Error.Default"] + L["UserPage.UpdateUserTitle"] + "-" + L["Result.Failed"];
+                    }
+                    else
+                    {
+                        errorMsg = errorMsg.Substring(0, errorMsg.Length - 2);
+                    }
+                    _logger.LogDebug("Update user '" + user.Email + "' failed: " + errorMsg);
+                    await MainLayout!.NewAuditlog("Update user '" + user.Email + "' failed: " + errorMsg, false);
+                    await MainLayout!.AddNotice(errorMsg, NoticeStatus.Falied);
+                    //Console.WriteLine("Update User failed: " + string.Join("; ", res.Errors.Select(x=>x.Description)));
+                }
+            }
+            catch (Exception e)
+            {//this is update error: claims or rolenames assign failed
+                _logger.LogError("Update user '" + user.Email + "' failed: " + e.Message);
+                await MainLayout!.NewAuditlog("Update user '" + user.Email + "' failed: " + e.Message, false);
+                await MainLayout!.AddNotice(L["Error.Default"] + L["UserPage.UpdateUserTitle"], NoticeStatus.Falied);
+            }
+        }
+        else
+        {//this is query error
+            _logger.LogDebug("Update user '" + user.Email + "' failed: Counld not found user on list.");
+            await MainLayout!.NewAuditlog("Update user '" + user.Email + "' failed: Counld not found user on list.", false);
+            await MainLayout!.AddNotice(L["Error.NotFound"], NoticeStatus.Falied);
+        }
+    }
+
+    private async Task DeleteUser(object obj)
+    {
+        if (!_canDeleteUser) return;
+        var deleteUser = obj as UserModel;
+        if (deleteUser != null)
+        {
+            var user = await _userManager.FindByIdAsync(deleteUser.Id);
+            if (user != null)
+            {
+                if (user.UserName == GlobalSettings.DefaultAdminUserName && user.Email == GlobalSettings.DefaultAdminUserEmail)
+                {
+                    await MainLayout!.AddNotice(L["UserPage.SuperAdminLimitation"], NoticeStatus.Warning);
+                    _selectedUser = new UserModel();
+                    return;
+                }
+                try
+                {
+                    await _userManager.DeleteAsync(user);
+                    AllUsers = AllUsers.Where(x => x.Id != deleteUser.Id).ToList();
+                    RenderTable();
+                    _logger.LogInformation("Delete User :" + user.Email);
+                    await MainLayout!.NewAuditlog("Delete User :" + user.Email);
+                    await MainLayout!.AddNotice(L["UserPage.DeleteUserTitle"] + " " + L["Result.Success"], NoticeStatus.Success);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError("Delete user '" + user.Email + "' failed: " + e.Message);
+                    await MainLayout!.NewAuditlog("Update user '" + user.Email + "' failed:" + e.Message, false);
+                    await MainLayout!.AddNotice(L["Error.Default"] + L["UserPage.DeleteUserTitle"], NoticeStatus.Falied);
+                }
+            }
+            else
+            {
+                _logger.LogDebug("Delete user failed: Unable to find data for user Id='" + deleteUser.Id + "'.");
+                await MainLayout!.NewAuditlog("Delete user failed: Unable to find data for user Id='" + deleteUser.Id + "'.", false);
+                await MainLayout!.AddNotice(L["Error.NotFound"], NoticeStatus.Falied);
+            }
+        }
+        else
+        {
+            _logger.LogDebug(System.Reflection.MethodInfo.GetCurrentMethod()?.Name + ": The item returned by the grid cannot be converted to the specified ones.");
+            await MainLayout!.NewAuditlog("Delete user failed.", false);
+            await MainLayout!.AddNotice(L["Error.Default"] + L["UserPage.DeleteUserTitle"], NoticeStatus.Warning);
+        }
+        _selectedUser = new UserModel();
+    }
+
+    private void RenderUsers(SearchOption option)
+    {
+        var users = AllUsers;
+        if (!string.IsNullOrEmpty(option.Keyword))
+        {
+            users = users.Where(x => x.UserName.ToLower().IndexOf(option.Keyword.ToLower()) > -1
+            || x.Email.ToLower().IndexOf(option.Keyword.ToLower()) > -1
+            || x.Roles.Any(rolename => rolename.ToLower().IndexOf(option.Keyword.ToLower()) > -1)).ToList();
+        }
+        if (option.SortFields?.Count > 0)
+        {
+            var props = _selectedUser.GetType().GetProperties();
+            var sortFieldsList = option.SortFields.ToList();
+            IOrderedEnumerable<UserModel> orderedData = null;
+            for (var i = 0; i < option.SortFields.Count; i++)
+            {
+                var sortOpt = sortFieldsList[i];
+                var prop = props.First(x => x.Name == sortOpt.Key);
+                if (prop != null)
+                {
+                    if (i == 0)
+                    {
+                        if (sortOpt.Value == SortType.Ascending)
+                        {
+                            orderedData = users.OrderBy(x => prop.GetValue(x));
+                        }
+                        else if (sortOpt.Value == SortType.Descending)
+                        {
+                            orderedData = users.OrderByDescending(x => prop.GetValue(x));
+                        }
+                    }
+                    else
+                    {
+                        if (sortOpt.Value == SortType.Ascending)
+                        {
+                            orderedData = orderedData!.ThenBy(x => prop.GetValue(x));
+                        }
+                        else if (sortOpt.Value == SortType.Descending)
+                        {
+                            orderedData = orderedData!.ThenByDescending(x => prop.GetValue(x));
+                        }
+                    }
+
+                }
+            }
+            users = orderedData == null ? users : orderedData.ToList();
+        }
+        if (option.FilterFields?.Count > 0)
+        {
+            var props = _selectedUser.GetType().GetProperties();
+            var filterFieldsList = option.FilterFields.ToList();
+            for (var i = 0; i < filterFieldsList.Count; i++)
+            {
+                var filterOpt = filterFieldsList[i];
+                var prop = props.First(x => x.Name == filterOpt.Key);
+                if (prop != null)
+                {
+                    if (prop.Name == "UserName" && !string.IsNullOrEmpty(filterOpt.Value.Keywords))
+                    {
+                        users = users.Where(x => x.UserName.ToLower().IndexOf(filterOpt.Value.Keywords.ToLower()) > -1).ToList();
+                    }
+                    else if (prop.Name == "Email" && !string.IsNullOrEmpty(filterOpt.Value.Keywords))
+                    {
+                        users = users.Where(x => x.Email.ToLower().IndexOf(filterOpt.Value.Keywords.ToLower()) > -1).ToList();
+                    }
+                    else if (prop.Name == "Roles" && filterOpt.Value.MenuList != null && filterOpt.Value.MenuList.Count > 0)
+                    {
+                        List<string> targetRoles = new List<string>();
+                        filterOpt.Value.MenuList.ForEach(x => targetRoles.Add(x.ToString() ?? string.Empty));
+                        users = users.Where(x => targetRoles.Any(rolename => x.Roles.Contains(rolename)))
+                                      .ToList();
+                    }
+                }
+            }
+        }
+        _totleRecord = users.Count;
+        datasource = users.Skip((option.PageIndex - 1) * option.PageSize).Take(option.PageSize).ToList();
+    }
+
+    private async Task ViewClaims()
+    {
+        if (!_canManageClaims) return;
+        if (!string.IsNullOrEmpty(_selectedUser.Id))
+        {
+            await MainLayout!.NavigationTo("users/claims/" + _selectedUser.UserName, _selectedUser.UserName + "-" + L["Action.Claims"], null, new { UserName = _selectedUser.UserName });
+        }
+        else
+        {
+            await MainLayout!.AddNotice(L["Result.DataNoFound"] + _selectedUser.UserName, NoticeStatus.Falied);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        _canCreateUser = global.GetUserClaims().Any(x => x == "Create Users");
+        _canDeleteUser = global.GetUserClaims().Any(x => x == "Delete Users");
+        _canUpdateUser = global.GetUserClaims().Any(x => x == "Update Users");
+        _canManageClaims = global.GetUserClaims().Any(x => x == "Manage User Claims");
+
+        _newUser = new CreateUserModel(L);
+        _editUser = new EditUserModel(L);
+        resetPwdModalBtns.Add(new ModalButton() { CssClass = "btn btn-primary", DismissModal = false, Text = L["Action.Confirm"] });
+        resetPwdModalBtns.Add(new ModalButton() { CssClass = "btn btn-secondary", DismissModal = true, Text = L["Action.Cancel"] });
+
+        if (_canManageClaims)
+            _myToolBtn.Add(new ToolButton()
+                {
+                    Text = L["Action.Claims"],
+                    ActionAsync = ViewClaims,
+                    DisabledFun = IsDisableEdit,
+                    IconTemplate = builder =>
+                    {
+                        builder.OpenElement(0, "i");
+                        builder.AddAttribute(1, "class", "fa fa-address-card-o");
+                        builder.CloseElement();
+                    }
+                });
+        if (_canUpdateUser)
+            _myToolBtn.Add(new ToolButton()
+                {
+                    Text = L["Action.ResetPassword"],
+                    ActionAsync = BeginResetPwd,
+                    DisabledFun = IsDisableEdit,
+                    IconTemplate = builder =>
+                    {
+                        builder.OpenElement(0, "i");
+                        builder.AddAttribute(1, "class", "fa fa-refresh");
+                        builder.CloseElement();
+                    }
+                });
+    }
+}

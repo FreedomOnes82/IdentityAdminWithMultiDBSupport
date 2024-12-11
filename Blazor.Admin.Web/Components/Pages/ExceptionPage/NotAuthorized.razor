@@ -1,0 +1,25 @@
+﻿@page "/Exception/NotAuthorized"
+@layout EmptyLayout
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+
+<div class="mt-5 m-auto text-center" style="width:840px;">
+    <div class="d-flex flex-column justify-center">
+        <div class="d-flex flex-column justify-space-between align-center">
+            <img src="/img/status/401.png" Width="840" Height="480" />
+        </div>
+    </div>
+</div>
+<div class="mt-5 m-auto text-center" style="width:840px;">
+    <div class="btn btn-primary w-50" @onclick="BackToHome">@L["Error.BackHome"]</div>
+</div>
+
+
+@code {
+    [Inject]
+    public NavigationManager Navigation { get; set; } = default!;
+    private void BackToHome()
+    {
+        global.ResetTabHeaders();
+        Navigation.NavigateTo(GlobalSettings.DefaultRoute);
+    }
+}

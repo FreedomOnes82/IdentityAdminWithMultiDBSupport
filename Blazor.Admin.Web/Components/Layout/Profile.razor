@@ -1,0 +1,97 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using MagicPropsComponents.ViewModels.Modal
+@using MagicPropsComponents.Components.Input
+@using System.ComponentModel.DataAnnotations
+@inject UserManager<ApplicationUser> UserManager
+<MagicPropsComponents.Components.Modal.MPModal Title="@L["Profile.Profile"]" @bind-Visible="_modalVisible" CloseBtnVisible FooterVisible="false" ClickOutsideToClose="false">
+    <BodyTemplate>
+        <div class="mt-2">
+            <EditForm @ref="@_profileForm" Model="_editUser" OnValidSubmit="OnValidSubmit">
+                <DataAnnotationsValidator />
+                <div class="mx-3 my-2">
+                    <MPInput Title="@L["Model.UserName"]" @bind-Value=@_editUser.UserName ValidationFieldName="UserName" Width="450" />
+                    <ValidationMessage For="()=>_editUser.UserName" />
+                </div>
+                <div class="mx-3 my-2">
+                    <MPInput Title="@L["Model.Email"]" @bind-Value=@_editUser.Email ValidationFieldName="Email" Width="450" />
+                    <ValidationMessage For="()=>_editUser.Email" />
+                </div>
+                <div class="mx-3 mt-3 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">@L["Action.Update"]</button>
+                    <div class="ms-2 btn btn-secondary" @onclick="()=>{_modalVisible=false;}">@L["Action.Cancel"]</div>
+                </div>
+            </EditForm>
+        </div>
+    </BodyTemplate>
+</MagicPropsComponents.Components.Modal.MPModal>
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+
+    private bool _modalVisible = false;
+    private ApplicationUser _user = new ApplicationUser();
+    private EditUserModel _editUser;
+    private EditForm _profileForm = new EditForm();
+
+    private async Task OnValidSubmit()
+    {
+        _user.UserName = _editUser.UserName;
+        _user.Email = _editUser.Email;
+        var roles = await UserManager.GetRolesAsync(_user);
+        var claims = await UserManager.GetClaimsAsync(_user);
+        var res = await UserManager.UpdateAsync(_user);
+        if (!res.Succeeded)
+        {
+            await MainLayout!.AddNotice(L["Profile.UpdateProfile"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+            List<string> errorCodes = res.Errors.Select(x => x.Code).ToList();
+            string errorMsg = string.Empty;
+            if (errorCodes.Any(x => x == "DuplicateEmail"))
+            {
+                errorMsg += L["Model.Email"] + L["Error.AlreadyExists"] + "; ";
+            }
+            if (errorCodes.Any(x => x == "DuplicateUserName"))
+            {
+                errorMsg += L["Model.UserName"] + L["Error.AlreadyExists"] + "; ";
+            }
+            //other error code...
+            if (string.IsNullOrEmpty(errorMsg))
+            {
+                errorMsg = L["Error.Default"] + L["Profile.UpdateProfile"] + "-" + L["Result.Failed"];
+            }
+            else
+            {
+                errorMsg = errorMsg.Substring(0, errorMsg.Length - 2);
+            }
+            await MainLayout!.AddNotice(errorMsg, NoticeStatus.Falied);
+            return;
+        }
+        global.UserName = _user.UserName;
+        await UserManager.AddToRolesAsync(_user, roles ?? new List<string>());
+        await UserManager.AddClaimsAsync(_user, claims ?? new List<System.Security.Claims.Claim>());
+        _modalVisible = false;
+        await MainLayout!.AddNotice(L["Profile.UpdateProfile"] + " " + L["Result.Success"]);
+    }
+
+    private async Task ResetEditModel()
+    {
+        if (!string.IsNullOrEmpty(global.UserName) && string.IsNullOrEmpty(_user.UserName))
+        {
+            _user = await UserManager.FindByNameAsync(global.UserName) ?? new ApplicationUser();
+        }
+        _editUser = new EditUserModel(L);
+        _editUser.UserName = _user.UserName ?? string.Empty;
+        _editUser.Email = _user.Email ?? string.Empty;
+    }
+
+    protected override void OnInitialized()
+    {
+        _editUser = new EditUserModel(L);
+    }
+
+    public async Task ShowProfileModal()
+    {
+        await ResetEditModel();
+        _modalVisible = true;
+    }
+}

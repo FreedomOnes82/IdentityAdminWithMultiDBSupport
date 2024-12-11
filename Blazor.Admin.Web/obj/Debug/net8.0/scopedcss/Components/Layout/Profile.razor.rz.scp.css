@@ -1,0 +1,14 @@
+.modal-body[b-qk6h8ljs35]  .tabContainer {
+    background-color: white;
+}
+
+.tab-header[b-qk6h8ljs35] {
+    border: none;
+    border-end-start-radius: 15px;
+    border-end-end-radius: 15px;
+    background-color: white;
+}
+
+.tab-list-container[b-qk6h8ljs35] {
+    width: calc(100% - 80px);
+}

@@ -1,0 +1,31 @@
+﻿@page "/Account/Logout"
+@layout EmptyLayout
+@using Microsoft.AspNetCore.Identity
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using System.Security.Claims;
+@inject ILogger<Logout> Logger
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject SignInManager<ApplicationUser> SignInManager
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await LogoutUser();
+        global.ResetTabs();
+        Logger.LogInformation(global.UserName + " logout.");
+        NavigationManager.NavigateTo("/Account/Login", true);
+    }
+
+    private async Task LogoutUser()
+    {
+        try
+        {
+            await SignInManager.SignOutAsync();
+        }
+        catch(Exception e)
+        {
+            NavigationManager.NavigateTo("/Exception/Error", true);
+            Logger.LogError(global.UserName + " logout error..." + e.Message);
+        }
+    }
+}

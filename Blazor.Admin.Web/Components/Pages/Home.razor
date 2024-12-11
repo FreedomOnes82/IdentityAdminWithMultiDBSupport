@@ -1,0 +1,72 @@
+﻿@page "/"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@layout EmptyLayout
+@using Microsoft.AspNetCore.Identity
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<ApplicationRole> RoleManager
+
+<PageTitle>Home</PageTitle>
+<CascadingAuthenticationState>
+    <AuthorizeView>
+        <Authorized>
+            @{
+                NavigationToDashboard();
+            }
+        </Authorized>
+        <NotAuthorized>
+            @{
+                NavigationToLogin();
+            }
+        </NotAuthorized>
+    </AuthorizeView>
+</CascadingAuthenticationState>
+@code {
+    private void NavigationToDashboard()
+    {
+        NavigationManager.NavigateTo("dashboard");
+    }
+    private void NavigationToLogin()
+    {
+        NavigationManager.NavigateTo("Account/Login");
+    }
+    private void NavigationToRegister()
+    {
+        NavigationManager.NavigateTo("Account/Register");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await global.InitCulture();
+        var currentCultureName = CultureInfo.CurrentCulture.Name;
+        if (currentCultureName != global.CurrentCultureName)
+        {
+            var uri = new Uri(NavigationManager.Uri).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+            var cultureEscaped = Uri.EscapeDataString(global.CurrentCultureName);
+            var uriEscaped = Uri.EscapeDataString(uri);
+            NavigationManager.NavigateTo($"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}", forceLoad: true);
+        }
+        //In the absence of users, a default user will be created(refer to GlobalSettings to view the login info)
+        if (UserManager.Users.Count() == 0 && RoleManager.Roles.Count() == 0)
+        {
+            await InsertDefaultAdmin();
+        }
+    }
+
+    private async Task<bool> InsertDefaultAdmin()
+    {
+        var createRes = await UserManager.CreateAsync(new ApplicationUser { UserName = GlobalSettings.DefaultAdminUserName, Email = GlobalSettings.DefaultAdminUserEmail }, GlobalSettings.DefaultAdminPassword);
+        if (createRes.Succeeded)
+        {
+            var user = await UserManager.FindByEmailAsync(GlobalSettings.DefaultAdminUserEmail);
+            if (user != null)
+            {
+                var res = await UserManager.AddClaimsAsync(user, GlobalSettings.DefaultClaims);
+                //load default role
+                await RoleManager.CreateAsync(new ApplicationRole { Name = "Authenticated" });
+                return res.Succeeded;
+            }
+        }
+        throw new Exception("Error creating default user.");
+    }
+}

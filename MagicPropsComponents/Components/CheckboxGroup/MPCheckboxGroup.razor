@@ -1,0 +1,126 @@
+﻿@using MagicPropsComponents.Abstractions;
+@using MagicPropsComponents.ViewModels.SelectionGroup
+@using Microsoft.AspNetCore.Components.Forms;
+@implements IDisposable;
+@implements IMPCheckboxGroup;
+    <CascadingValue Value="this" Name="CheckboxGroup">
+        @if (ChildContent != null)
+            @ChildContent
+        else
+        if (Datasource != null)
+            foreach (var opt in Datasource)
+            {
+                <MPCheckboxOption Description="@opt.Value" Value="@opt.Key"></MPCheckboxOption>
+
+            }
+
+    </CascadingValue>
+
+@code {
+    [CascadingParameter]
+    private EditContext? CurrentEditContext { get; set; }
+    [Parameter]
+    public string ValidationFieldName { get; set; } = string.Empty;//only used under EditForm
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string Name { get; set; } = string.Empty;
+    private string _value = string.Empty;
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+    [Parameter]
+    public bool DisplayInline { get; set; } = false;
+    [Parameter]
+    public DisplayModes DisplayMode { get; set; } = DisplayModes.DefaultButton;
+    [Parameter]
+    public Dictionary<string, string>? Datasource { get; set; }
+    [Parameter]
+    public string Value
+    {
+        get
+        {
+            return _value;
+        }
+        set
+        {
+            if (_value == value) return;
+            _value = value;
+            ValueChanged.InvokeAsync(_value);
+        }
+    }
+
+    private List<string> _selectedValues = new List<string>();
+    public void HandleValueChange(string value, bool isSelected)
+    {
+        if (isSelected)
+        {
+            if (!_selectedValues.Any(x => x == value))
+                _selectedValues.Add(value);
+        }
+        else
+        {
+            if (_selectedValues.Any(x => x == value))
+                _selectedValues.Remove(value);
+        }
+        Value = string.Join(',', _selectedValues);
+    }
+
+    public void SetValue(string value)
+    {
+        this.Value = value;
+    }
+
+    protected override void OnInitialized()
+    {
+        if (string.IsNullOrEmpty(Name))
+            Name = "RG_" + Guid.NewGuid().ToString().Replace("-", "");
+        if (Datasource != null && ChildContent != null)
+            throw new Exception("We can only either specify Datasource or Content!");
+        if (Value.IndexOf(',') > 0)
+            _selectedValues = Value.Split(",").ToList();
+        else if (!string.IsNullOrEmpty(Value))
+            _selectedValues.Add(Value);
+        if (CurrentEditContext != null)
+        {
+            CurrentEditContext.OnValidationStateChanged += HandleValidationStateChanged;
+        }
+    }
+
+    void IDisposable.Dispose()
+    {
+        if (CurrentEditContext != null)
+        {
+            CurrentEditContext.OnValidationStateChanged -= HandleValidationStateChanged;
+        }
+    }
+
+    private void HandleValidationStateChanged(object? sender, ValidationStateChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    private bool IsValidAfterFormValidation()//through class to verify
+    {
+        if (CurrentEditContext == null) return false;
+        var property = CurrentEditContext.Model?.GetType().GetProperty(ValidationFieldName);
+        if (property == null)
+        {
+            Console.WriteLine($"Property '{ValidationFieldName}' does not exist in the model.");
+            return true;
+        }
+        var fieldIdentifier = CurrentEditContext.Field(ValidationFieldName);
+        _validationMsg = CurrentEditContext.GetValidationMessages(fieldIdentifier).ToList();
+        return !_validationMsg.Any();
+    }
+
+    private List<string> _validationMsg = new List<string>();
+    public List<string> ValidationMessage { get => _validationMsg; }
+    public bool CheckIsValid()
+    {
+        if (CurrentEditContext != null) return IsValidAfterFormValidation();
+        return true;
+    }
+
+}

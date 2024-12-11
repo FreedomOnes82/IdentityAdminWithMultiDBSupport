@@ -1,0 +1,50 @@
+.navbar-container[b-z2dtd8awte] {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 20px);
+    margin: 10px;
+}
+
+.navbar-header-logo[b-z2dtd8awte] {
+    padding: 20px;
+}
+
+.navbar-list-container[b-z2dtd8awte] {
+    flex-grow: 1;
+}
+
+.navitem-container[b-z2dtd8awte] {
+    padding-left: 15px;
+    border-start-start-radius: 15px;
+    border-end-start-radius: 15px;
+    cursor: pointer;
+}
+
+    .navitem-container.selected[b-z2dtd8awte] {
+        background-color: #F0F3FA;
+        border-right: 5px solid rgb(67,24,255);
+        font-weight: bold;
+    }
+
+.navbar-list-container[b-z2dtd8awte]  .accordion-trigger-item {
+    height: 60px;
+    line-height: 60px;
+    color: #1B2559;
+    text-decoration: none;
+    font-size: large;
+    font-weight: normal;
+    padding-bottom: 5px;
+    margin-left: 0px;
+    background-color: inherit;
+    border-radius: 0px;
+    border-start-start-radius: 15px;
+    border-end-start-radius: 15px;
+}
+        .navbar-list-container[b-z2dtd8awte]  .accordion-trigger-item:hover {
+            background-color: rgba(240,243,250,.5) !important;
+            cursor: pointer;
+        }
+
+        .navbar-list-container[b-z2dtd8awte]  .accordion-trigger-item i.fa {
+            padding-right: .5rem;
+        }

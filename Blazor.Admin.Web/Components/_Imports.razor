@@ -1,0 +1,28 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.JSInterop
+@using Blazor.Admin.Web
+@using Blazor.Admin.Web.Components
+@using Blazor.Admin.Web.Abstraction
+@using Framework.Core.Blazor.Admin.SqlServer.Auth
+@using Blazor.Admin.Web.Components.Shared
+@using Blazor.Admin.Web.Components.Global
+@using MagicPropsComponents.Components
+@using MagicPropsComponents.ViewModels
+@using Framework.Core.Blazor.Admin.SqlServer.Logs.DataModels
+@using Framework.Core.Blazor.Admin.SqlServer.Logs.Abstractions
+@using System.Text.RegularExpressions
+
+@using Blazor.Admin.Web.Models
+@using Microsoft.Extensions.Localization
+@using System.Globalization
+@using Blazor.Admin.Web.Locales
+@inject IStringLocalizer<Resource> L
+@inject GlobalConfigs global
+@inject NavigationManager NavigationManager

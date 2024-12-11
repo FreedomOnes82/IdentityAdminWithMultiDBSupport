@@ -1,0 +1,155 @@
+﻿@using MagicPropsComponents.Utilities.Extensions
+@using MagicPropsComponents.ViewModels.Popup
+@using Microsoft.JSInterop
+@using MagicPropsComponents.Abstractions
+@implements IDisposable
+@inject IJSRuntime JSRuntime
+<CascadingValue Value="this" Name="MPPopup">
+
+
+    <div class="popup" @ref="_popupModelEle" style="@GetStyle()" id="@ClientID">
+        @if (ShowCloseButton)
+        {
+            <div style="height:20px;width:100%;display:flex;justify-content: right;padding-right: 10px;margin-bottom: 10px;">
+                <i class="fa fa-close" @onclick="async() => { await OnVisiableChanged(false); }"></i>
+            </div>
+        }
+        @if (ChildContent != null)
+        {
+            @ChildContent
+        }
+        else
+        {
+            <h3>This is Popup Content, please add ChildContent to fill.</h3>
+        }
+    </div>
+</CascadingValue>
+@code {
+    private ElementReference? _triggerRootEle;
+    private ElementReference? _popupModelEle;
+    [Parameter]
+    public int? Width { get; set; }
+    [Parameter]
+    public int? Height { get; set; }
+    [Parameter]
+    public string TriggerEleID { get; set; } = string.Empty;
+    [Parameter]
+    public string ClientID { get; set; } = string.Empty;
+
+    [Parameter]
+    public bool ShowCloseButton { get; set; } = false;
+
+    [Parameter]
+    public string PopupShadowSettings { get; set; } = "0 0 5px rgba(0,0,0,.5)";
+    [Parameter]
+    public int? Spacing { get; set; } = 5;
+    [Parameter]
+    public int Padding { get; set; } = 10;
+    [Parameter]
+    public int BorderRadius { get; set; } = 10;
+    [Parameter]
+    public string BorderSettings { get; set; } = "1px solid #dee2e6";
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public AnchorPointType AnchorPointType { get; set; } = AnchorPointType.TriggerRightTop;
+    [Parameter]
+    public decimal AnchorPointX { get; set; } = -1;
+    [Parameter]
+    public decimal AnchorPointY { get; set; } = -1;
+    [Parameter]
+    public PopupToward Toward { get; set; } = PopupToward.BottomRight;
+
+    private bool _visiable = false;
+    [Parameter]
+    public bool Visible { get; set; }
+    [Parameter]
+    public EventCallback OnAfterPopupRender { get; set; }
+    [Parameter]
+    public EventCallback OnAfterHidePopup { get; set; }
+
+    void IDisposable.Dispose()
+    {
+        JSRuntime.InvokeAsync<object>("MPPOPUP.dispose", TriggerEleID, ClientID);
+    }
+
+    [JSInvokable]
+    public async Task Show()
+    {
+        await OnVisiableChanged(true);
+    }
+    [JSInvokable]
+    public async Task Hide()
+    {
+        await OnVisiableChanged(false);
+    }
+
+    private async Task OnVisiableChanged(bool visible)
+    {
+        _visiable = visible;
+        if (visible)
+        {
+            await JSRuntime.InvokeAsync<object>("MPPOPUP.showById", _popupModelEle, TriggerEleID, Toward.GetDescription(), AnchorPointX, AnchorPointY, AnchorPointType.GetDescription(), ClientID, PopupShadowSettings, Spacing);
+        }
+        else
+        {
+            await JSRuntime.InvokeAsync<object>("MPPOPUP.hide", ClientID, _popupModelEle);
+            if (OnAfterHidePopup.HasDelegate)
+            {
+                await OnAfterHidePopup.InvokeAsync();
+            }
+        }
+    }
+
+    private string GetStyle()
+    {
+        var style = "border:" + BorderSettings + ";";
+        if (Width != null && Width > 0)
+        {
+            style += "width:" + Width + "px;";
+        }
+        if (Height != null && Height > 0)
+        {
+            style += "height:" + Height + "px;";
+        }
+        if (BorderRadius >= 0)
+        {
+            style += "border-radius:" + BorderRadius + "px;";
+        }
+        if (Padding >= 0)
+        {
+            style += "padding:" + Padding + "px;";
+        }
+        return style;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _visiable = Visible;
+        if (string.IsNullOrEmpty(ClientID)) ClientID = "popup_" + Guid.NewGuid().ToString().Replace("-", "");
+        await JSRuntime.InvokeVoidAsync("registerDotNetMethod", ClientID, DotNetObjectReference.Create(this));
+        if (!string.IsNullOrEmpty(TriggerEleID))
+        {
+            await JSRuntime.InvokeAsync<object>("MPPOPUP.initialTriggerEventById", this.TriggerEleID, ClientID);
+        }
+        else
+        {
+            throw new Exception("TriggerEleID is required.");
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && Visible)
+        {
+            await Show();
+        }
+        if (_visiable && OnAfterPopupRender.HasDelegate)//only refresh/execute when popup is visible
+        {
+            await OnAfterPopupRender.InvokeAsync();
+            StateHasChanged();
+        }
+    }
+}

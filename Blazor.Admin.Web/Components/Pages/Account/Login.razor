@@ -1,0 +1,163 @@
+﻿@page "/Account/Login"
+@layout EmptyLayout
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using System.Text.RegularExpressions
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Forms;
+@using Microsoft.AspNetCore.Components.Rendering;
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject ILogger<Login> Logger
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="row">
+    <div class="col-12">
+        <div class="m-auto" style="width:510px;height:680px;">
+
+            <div class="mt-5 mx-auto text-center" style="width:420px;">
+                <img class="hover-pointer mb-5" height="80" src="/img/avatar/1.svg" />
+                <h4 class="mt-2 mb-4">@L["Model.LoginTitle"] 👋</h4>
+                <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
+                    <DataAnnotationsValidator />
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div style="width:100%;display:flex;color:red">@errorMessage</div>
+                    }                    
+                    <hr />
+                    <ValidationSummary class="text-danger" role="alert" />
+                    <div class="form-floating mb-3" @onclick="()=>{ if(!string.IsNullOrEmpty(errorMessage)) { errorMessage = string.Empty; StateHasChanged(); } }">
+                        <InputText @bind-Value="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                        <label for="email" class="form-label">@L["Model.Email"]</label>
+                    </div>
+                    <div class="form-floating mb-3" @onclick="()=>{ if(!string.IsNullOrEmpty(errorMessage)) { errorMessage = string.Empty; StateHasChanged(); } }">
+                        <InputText type="password" @bind-Value="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                        <label for="password" class="form-label">@L["Model.Password"]</label>
+                    </div>
+@*                     <div class="checkbox mb-3  d-flex">
+                        <label class="form-label">
+                            <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
+                            @L["Model.RememberMe"]
+                        </label>
+                    </div> *@
+                    <div class="mt-4">
+                        <button type="submit" class="w-100 btn btn-lg btn-primary" style="border-radius: 30px;">@L["Home.Login"]</button>
+                    </div>
+                </EditForm>
+                <div class="mt-4 mx-auto d-flex justify-content-center">
+                    <span class="py-3">@L["Model.CreateNew"]</span>
+                    <a href="/Account/Register" class="py-3 px-1">
+                        @L["Model.Goto"] @L["Home.Register"]
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string errorMessage = string.Empty;
+
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    private InputModel Input { get; set; }
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Input = new InputModel(L);
+        if (HttpMethods.IsGet(HttpContext.Request.Method))
+        {
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+        }
+
+        if (HttpMethods.IsPost(HttpContext.Request.Method))
+        {
+            var form = HttpContext.Request.Form;
+            Input.UserName = form["Input.UserName"];
+            Input.Password = form["Input.Password"];
+            //Input.RememberMe = form["Input.RememberMe"] == "true";
+        }
+    }
+
+    public async Task LoginUser()
+    {
+        string emailPattern = GlobalSettings.EmailRegularExpression;
+        var user = new ApplicationUser();
+        if (Regex.IsMatch(Input.UserName, emailPattern))
+        {
+            user = await UserManager.FindByEmailAsync(Input.UserName);
+        }
+        else
+        {
+            user = await UserManager.FindByNameAsync(Input.UserName);            
+        }
+        if (user!=null&&!string.IsNullOrEmpty(user.Id))
+        {
+            var validPwd = false;
+            try
+            {
+                var res = await UserManager.CheckPasswordAsync(user, Input.Password);
+                if (res)
+                {
+                    await SignInManager.SignInAsync(user, false);
+                    validPwd = true;
+                }
+            }
+            catch (Exception e)
+            {
+                errorMessage = L["Error.Default"] + System.Reflection.MethodInfo.GetCurrentMethod()?.Name;
+                Logger.LogError(e.Message);
+            }
+            if (validPwd)
+            {
+                Logger.LogInformation("User logged in.----" + Input.UserName);
+                NavigationManager.NavigateTo("dashboard");
+            }
+            else
+            {
+                errorMessage = L["Error.PwdError"];
+                Logger.LogDebug(System.Reflection.MethodInfo.GetCurrentMethod()?.Name + ": Password error for " + Input.UserName + "'.");
+            }
+        }
+        else
+        {
+            errorMessage = L["Error.NotFound"] + "---" + Input.UserName;
+            Logger.LogDebug(System.Reflection.MethodInfo.GetCurrentMethod()?.Name + ": Counld not found '" + Input.UserName + "'.");
+         }
+    }
+
+    private sealed class InputModel : IValidatableObject
+    {
+        private readonly IStringLocalizer<Resource> _localizer;
+
+        public InputModel(IStringLocalizer<Resource> localizer)
+        {
+            _localizer = localizer;
+        }
+
+        public string UserName { get; set; } = "";
+
+        public string Password { get; set; } = "";
+
+        public bool RememberMe { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (string.IsNullOrEmpty(UserName))
+            {
+                yield return new ValidationResult(_localizer["Model.Email"] + _localizer["Error.Required"], new[] { nameof(UserName) });
+            }
+
+            if (Password.Length < 8 || Password.Length > 100)
+            {
+                yield return new ValidationResult(_localizer["Model.Password"] + _localizer["Error.LengthLimitation"] + "8-100", new[] { nameof(Password) });
+            }
+        }
+    }
+}

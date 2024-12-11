@@ -1,0 +1,251 @@
+﻿@using System.Text.RegularExpressions
+@using Microsoft.JSInterop
+@using System.Globalization
+@using Microsoft.AspNetCore.Components.Forms
+@implements IDisposable
+@inject IJSRuntime JSRuntime
+@if (Visible)
+{
+    <div class="@(!string.IsNullOrEmpty(Title)?"mp-input-container":"")" id="@ClientID">
+        <div class="mp-input-outline @(Disabled?"disabled":"") @(!Disabled&&!CheckIsValid()?"mp-input-err":"")" tabindex="0" style="width:@(Width==null?"auto":Width<100?"100px":Width.ToString()+"px");margin-top: 15px;">
+            @if (ReadOnly && Disabled)
+            {
+                <input class="mp-within-input" value="@(GetFormatValue(Value))" readonly disabled id="@InputID" />
+            }
+            else if (ReadOnly)
+            {
+                <input class="mp-within-input" value="@(GetFormatValue(Value))" readonly id="@InputID" />
+            }
+            else if (Disabled)
+            {
+                <input class="mp-within-input" value="@(GetFormatValue(Value))" disabled id="@InputID" />
+            }
+            else
+            {
+                if (_isFocused)
+                {
+                    Task.Run(async () => { await JSRuntime.InvokeVoidAsync("MPNumberInput.addListener", InputID, Increment); });
+                    <input class="mp-within-input" @bind-value="_value" @oninput="HandleInput" id="@InputID" @onblur="HandleBlur" />
+                }
+                else
+                {
+                    <input class="mp-within-input" @bind-value="_inputValue" id="@InputID" @onfocus="HandleFocus" />
+                }
+            }
+
+            <div class="mp-input-btn">
+                <i class="fa fa-angle-up" @onclick="()=>DataOperate(true)" aria-hidden="true"></i>
+                <i class="fa fa-angle-down ms-3" @onclick="()=>DataOperate(false)" aria-hidden="true"></i>
+            </div>
+        </div>
+        @if (!string.IsNullOrEmpty(Title))
+        {
+            <div class="mp-input-text @(CheckIsValid()?"":"mp-input-errmsg-hide") @(Disabled?"disabled":"")" style="display:@(!string.IsNullOrEmpty(Title)?"flex":"none")">
+                <label for="@InputID">
+                    @Title
+                </label>
+            </div>
+        }
+    </div>
+}
+
+
+@code {
+    [CascadingParameter]
+    private EditContext? CurrentEditContext { get; set; }
+    [Parameter]
+    public decimal Value
+    {
+        get => _value;
+        set
+        {
+            if (_value != value)
+            {
+                _value = value;
+                ValueChanged.InvokeAsync(value);
+                _inputValue = GetFormatValue(value);
+            }
+        }
+    }
+    [Parameter]
+    public bool Visible { get; set; } = true;
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+    [Parameter]
+    public EventCallback<decimal> ValueChanged { get; set; }
+    private string _inputValue = "0";
+    private decimal _value = 0m;
+    [Parameter]
+    public decimal Increment { get; set; } = decimal.One;
+    [Parameter]
+    public decimal Maximum { get; set; } = decimal.MaxValue;
+    [Parameter]
+    public decimal Minimum { get; set; } = decimal.MinValue;
+    [Parameter]
+    public bool ReadOnly { get; set; } = false;
+    [Parameter]
+    public bool Disabled { get; set; } = false;
+    [Parameter]
+    public int? Width { get; set; }
+    [Parameter]
+    public EventCallback OnFocus { get; set; }
+    [Parameter]
+    public EventCallback OnBlur { get; set; }
+    [Parameter]
+    public string ClientID { get; set; } = string.Empty;
+    [Parameter]
+    public string InputID { get; set; } = string.Empty;
+    [Parameter]
+    public string ValidationFieldName { get; set; } = string.Empty;//only used under EditForm
+    [Parameter]
+    public string Format { get; set; } = string.Empty;
+    [Parameter]
+    public string CultureString { get; set; } = "en-US";
+
+    protected override void OnInitialized()
+    {
+        if (string.IsNullOrEmpty(ClientID))
+            ClientID = "mpnumberinput_" + Guid.NewGuid().ToString().Replace("-", "");
+        if (string.IsNullOrEmpty(InputID))
+        {
+            InputID = "input_" + Guid.NewGuid().ToString().Replace("-", "");
+        }
+        _inputValue = GetFormatValue(Value);
+        if (ReadOnly || Disabled) StateHasChanged();
+
+        if (CurrentEditContext != null)
+        {
+            CurrentEditContext.OnValidationStateChanged += HandleValidationStateChanged;
+        }
+    }
+
+    void IDisposable.Dispose()
+    {
+        if (CurrentEditContext != null)
+        {
+            CurrentEditContext.OnValidationStateChanged -= HandleValidationStateChanged;
+        }
+    }
+
+    private void HandleValidationStateChanged(object? sender, ValidationStateChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+    private bool IsValidAfterFormValidation()//through class to verify
+    {
+        if (CurrentEditContext == null) return false;
+        var propertyName = string.IsNullOrEmpty(ValidationFieldName) ? Title : ValidationFieldName;
+        var property = CurrentEditContext.Model?.GetType().GetProperty(propertyName);
+        if (property == null)
+        {
+            Console.WriteLine($"Property '{propertyName}' does not exist in the model.");
+            return true;
+        }
+        var fieldIdentifier = CurrentEditContext.Field(propertyName);
+        _validationMsg = CurrentEditContext.GetValidationMessages(fieldIdentifier).ToList();
+        return !_validationMsg.Any();
+    }
+
+    private List<string> _validationMsg = new List<string>();
+    public List<string> ValidationMessage { get => _validationMsg; }
+
+    private void DataOperate(bool isIncrese)
+    {
+        if (ReadOnly || Disabled) return;
+        if (isIncrese)
+        {
+            if (Value + Increment > Maximum)
+            {
+                Value = Maximum;
+            }
+            else
+            {
+                Value += Increment;
+            }
+        }
+        else
+        {
+            if (Value - Increment < Minimum)
+            {
+                Value = Minimum;
+            }
+            else
+            {
+                Value -= Increment;
+            }
+        }
+        _inputValue = GetFormatValue(Value);
+    }
+    private string _errmsg = string.Empty;
+    private bool CheckIsValid()
+    {
+        if (CurrentEditContext != null) return IsValidAfterFormValidation();
+        return true;
+    }
+
+    private bool _isFocused = false;
+
+    private async Task HandleFocus(FocusEventArgs e)
+    {
+        _isFocused = true;
+        if (OnFocus.HasDelegate)
+        {
+            await OnFocus.InvokeAsync();
+        }
+
+        StateHasChanged();
+    }
+
+    private async Task HandleBlur(FocusEventArgs e)
+    {
+        if (Value > Maximum)
+        {
+            Value = Maximum;
+            _inputValue = GetFormatValue(Value);
+        }
+        if (Value < Minimum)
+        {
+            Value = Minimum;
+            _inputValue = GetFormatValue(Value);
+        }
+
+        _isFocused = false;
+        if (OnBlur.HasDelegate)
+        {
+            await OnBlur.InvokeAsync();
+        }
+        await JSRuntime.InvokeVoidAsync("MPNumberInput.removeListener", InputID);
+        StateHasChanged();
+    }
+
+    private void HandleInput(ChangeEventArgs e)
+    {
+        var input = e.Value?.ToString() ?? string.Empty;
+
+        if (decimal.TryParse(input, NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out decimal result))
+        {
+            _inputValue = GetFormatValue(result);
+            Value = result;
+        }
+        else
+        {
+            _inputValue = GetFormatValue(Value);
+        }
+        StateHasChanged();
+    }
+
+    private string GetFormatValue(decimal value)
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(Format))
+                return value.ToString(Format, new CultureInfo(CultureString));
+            else
+                return value.ToString();
+        }
+        catch
+        {
+            return value.ToString();
+        }
+    }
+}

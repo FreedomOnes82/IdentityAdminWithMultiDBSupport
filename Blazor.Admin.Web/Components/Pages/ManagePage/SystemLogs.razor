@@ -1,0 +1,291 @@
+﻿@page "/systemLogs"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using MagicPropsComponents.ViewModels.DataGrid
+@using MagicPropsComponents.ViewModels.Shared
+@using System.Text;
+@inject IJSRuntime JSRuntime
+@inject ILogger<SystemLogs> Logger;
+<div class="card-container">
+    <div class="d-flex align-content-start flex-wrap">
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DatePicker.MPDatePicker Title="@L["Model.DateForm"]" FixedTitle @bind-Value="@searchby.DateFrom" />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DatePicker.MPDatePicker Title="@L["Model.DateEnd"]" FixedTitle @bind-Value="@searchby.DateEnd" />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.DropDownList.MPDropDownList Title="@L["Model.Level"]" FixedTitle Placeholder="@L["Model.Level"]" Clearable="true" Multiple="true" Datasource="Levels" TextBy="Text" @bind-Values="selectedLevel" MaxHeight="226" />
+        </div>
+        <div class="filter-item-container">
+            <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.Keywords"]" FixedTitle @bind-Value="@searchby.Keywords" Clearable="true" Placeholder="@L["Model.Message"]" />
+        </div>
+        <div class="filter-item-btn">
+            <div class="btn btn-theme" @onclick="Search">@L["Action.Search"]</div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <div class="btn position-absolute btn-theme" style="z-index:2" @onclick="Export" title="@L["Action.Export"]">
+            @L["Action.Export"]
+        </div>
+    </div>
+    <MagicPropsComponents.Components.DataGrid.MPDataGrid Datasource="@filteredLogData" PaginationSettings="_paginationSettings" Height="467"
+                                                         @bind-CurrentPageIndex="currentPageIndex" NoDataText="@nodadaString">
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="Timestamp" HeaderText="@L["Model.TimeSpan"]" Width="220" Sortable="true" ColumnType="ColumnType.Date" />
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="Level" HeaderText="@L["Model.Level"]" Width="150" Sortable="true">
+            <Template>
+                @{
+                    var log = context as SystemLogModel;
+                    if (log != null)
+                    {
+                        switch (log.Level)
+                        {
+                            case LogLevel.Info:
+                                {
+                                    <div class="chip-btn chip-btn-info"> @log.Level</div>
+                                }
+                                break;
+                            case LogLevel.Error:
+                                {
+                                    <div class="chip-btn chip-btn-danger"> @log.Level</div>
+                                }
+                                break;
+                            case LogLevel.Warn:
+                                {
+                                    <div class="chip-btn chip-btn-warning"> @log.Level</div>
+                                }
+                                break;
+                            default:
+                                {
+                                    <div class="chip-btn chip-btn-secondary"> @log.Level</div>
+                                }
+                                break;
+                        }
+                    }
+                }
+            </Template>
+        </MagicPropsComponents.Components.DataGrid.GridColumn>
+        <MagicPropsComponents.Components.DataGrid.GridColumn ColumnName="Message" HeaderText="@L["Model.Message"]">
+            <Template>
+                @{
+                    var log = context as SystemLogModel;
+                    if (log != null)
+                    {
+                        <div style="width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" title="@log.Message">
+                            @log.Message
+                        </div>
+                    }
+                }
+            </Template>
+        </MagicPropsComponents.Components.DataGrid.GridColumn>
+    </MagicPropsComponents.Components.DataGrid.MPDataGrid>
+</div>
+@*<MagicPropsComponents.Components.Loading.MPLoading @bind-Visible="_showLoading">
+
+</MagicPropsComponents.Components.Loading.MPLoading>*@
+<MagicPropsComponents.Components.Loader.MPLoader @ref="_loader" DelayMs="200" />
+
+
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    public PaginationSettings _paginationSettings = new PaginationSettings() { EnablePagination = true, PaginationMode = PaginationModes.ClientSide, PageSize = 30 };
+    private List<SystemLogModel> logData { get; set; } = new List<SystemLogModel>();
+    private List<SystemLogModel> filteredLogData { get; set; } = new List<SystemLogModel>();
+    private SystemLogSearchOptions searchby = new SystemLogSearchOptions();
+    private List<LevelModal> selectedLevel = new List<LevelModal>();
+    private int currentPageIndex = 1;
+    //private CancellationTokenSource _cts = new CancellationTokenSource();
+    //private bool _showLoading = false;
+    private MagicPropsComponents.Components.Loader.MPLoader _loader;
+    private string nodadaString = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        nodadaString = L["LogPage.NodataString"];
+        var st = DateTime.Today.AddDays(-2);
+        var et = DateTime.Today.AddDays(-1);
+        searchby.DateFrom = new DateTime(st.Year, st.Month, st.Day, 0, 0, 0, 0);
+        searchby.DateEnd = new DateTime(et.Year, et.Month, et.Day, 23, 59, 59, 999);
+        RenderData();
+    }
+
+    private void RenderData()
+    {
+        filteredLogData = GetFilteredLogData();
+    }
+
+    private async Task Search()
+    {
+        if (searchby.DateEnd < searchby.DateFrom) await MainLayout!.AddNotice(L["Model.DateEnd"] + " " + L["LogPage.EarlierThan"] + " " + L["Model.DateForm"], NoticeStatus.Warning);
+        await _loader.AwaitFor(Task.Run(() => { PerformSearchQuery(); }));
+    }
+
+    private void PerformSearchQuery()
+    {
+        //var st = DateTime.Now;
+        //await Task.Delay(1000);
+        searchby.DateFrom = new DateTime(searchby.DateFrom.Year, searchby.DateFrom.Month, searchby.DateFrom.Day, 0, 0, 0, 000);
+        searchby.DateEnd = new DateTime(searchby.DateEnd.Year, searchby.DateEnd.Month, searchby.DateEnd.Day, 23, 59, 59, 999);
+        searchby.Levels.Clear();
+        foreach (var l in selectedLevel)
+        {
+            searchby.Levels.Add(l.Value);
+        }
+        currentPageIndex = 1;
+        RenderData();
+        //var et = DateTime.Now;
+        //Logger.LogInformation("Spent Time: " + (et - st));
+    }
+
+    private async Task Export()
+    {
+        byte[] excelFile = GenerateExcel();
+
+        // Trigger file download
+        await JSRuntime.InvokeAsync<object>("saveAsFile", new
+        {
+            content = Convert.ToBase64String(excelFile),
+            fileName = "SystemLogs-" + DateTime.Today.ToString("yyyy/MM/dd") + ".xlsx",
+            contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        });
+    }
+
+    private byte[] GenerateExcel()
+    {
+        using (var package = new OfficeOpenXml.ExcelPackage())
+        {
+            var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+            // Add header
+            worksheet.Cells["A1"].Value = "Level";
+            worksheet.Cells["B1"].Value = "Message";
+            worksheet.Cells["C1"].Value = "Date";
+
+            // Add data
+            for (int i = 0; i < filteredLogData.Count; i++)
+            {
+                worksheet.Cells[i + 2, 1].Value = GetLevelText(filteredLogData[i].Level);
+                worksheet.Cells[i + 2, 2].Value = filteredLogData[i].Message;
+                worksheet.Cells[i + 2, 3].Value = filteredLogData[i].Timestamp.ToString("yyyy/MM/dd HH:mm:ss");
+            }
+
+            return package.GetAsByteArray();
+        }
+    }
+
+    private List<SystemLogModel> GetFilteredLogData()
+    {
+        var dataStr = GetAllDatesBetween(searchby.DateFrom, searchby.DateEnd);
+        var dataLogs = GetLogData(dataStr);
+        if (searchby.Levels.Count > 0)
+            dataLogs = dataLogs.Where(x => searchby.Levels.Contains(x.Level)).ToList();
+        if (!string.IsNullOrEmpty(searchby.Keywords))
+            return dataLogs.Where(log => log.Message.ToLower().Contains(searchby.Keywords.ToLower())).ToList();
+        else return dataLogs.ToList();
+    }
+
+    private List<SystemLogModel> GetLogData(List<string> fileNames)
+    {
+        string documentPath = Environment.CurrentDirectory + @"\Logs\";
+        string[] filePaths = Directory.GetFiles(documentPath);
+        var results = new List<SystemLogModel>();
+        foreach (var filePath in filePaths)
+        {
+            if (!System.IO.File.Exists(filePath))
+            {
+                Logger.LogError("Your logs path error: " + filePath);
+                throw new Exception("Error logs path.");
+            }
+            var fileName = Path.GetFileName(filePath);
+            //if exist log-file in specific date.
+            if (fileNames.Contains(fileName))
+            {
+                try
+                {
+                    using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        using (var reader = new StreamReader(stream))
+                        {
+                            string fileContent = reader.ReadToEnd();
+                            string[] records = fileContent.Split("\r\n20");
+                            foreach (string item in records)
+                            {
+                                if (item == "") break;
+                                if (item.StartsWith("20")) { results.Add(ToLoggerInfo(item)); continue; }
+                                results.Add(ToLoggerInfo("20" + item));
+                            }
+                        }
+                    }
+                }
+                catch (IOException ex)
+                {
+                    Logger.LogWarning($"Failed to read the file because it is in use by another process: {ex.Message}");
+                }
+            }
+        }
+        return results;
+    }
+
+    private SystemLogModel ToLoggerInfo(string detail)
+    {
+        var parts = detail.Split(new[] { ' ', '[', ']', '-' }, StringSplitOptions.RemoveEmptyEntries);
+
+        if (parts.Length >= 6)
+        {
+            var timestampStr = parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3] + " " + parts[4];
+            var levelStr = parts[5];
+            var level = GetLevelValue(levelStr);
+            if (DateTime.TryParse(timestampStr, out DateTime timestamp))
+            {
+                var messageStart = parts[6];
+                var message = string.Join(" ", parts.Skip(6));
+                return new SystemLogModel
+                    {
+                        Timestamp = timestamp,
+                        Level = level,
+                        Message = message.Trim()
+                    };
+            }
+            else
+            {
+                throw new Exception("Error in obtaining log date or level.");
+            }
+        }
+        else
+        {
+            throw new Exception("Error parsing SystemLog string.");
+        }
+    }
+
+    public static List<string> GetAllDatesBetween(DateTime startDate, DateTime endDate)
+    {
+        List<string> dates = new List<string>();
+        for (DateTime currentDate = startDate.Date; currentDate <= endDate.Date; currentDate = currentDate.AddDays(1))
+        {
+            string formattedDate = currentDate.ToString("yyyyMMdd");
+            dates.Add("log-" + formattedDate + ".log");
+        }
+        return dates;
+    }
+
+    private string GetLevelText(LogLevel level)
+    {
+        return Levels.First(x => x.Value == level).Text;
+    }
+
+    private LogLevel GetLevelValue(string level)
+    {
+        return Levels.First(x => x.Text == level).Value;
+    }
+
+    private static List<LevelModal> Levels = new List<LevelModal>()
+    {
+        new LevelModal{ Text="INF", Value= LogLevel.Info},
+        new LevelModal{ Text="WRN", Value= LogLevel.Warn},
+        new LevelModal{ Text="ERR", Value= LogLevel.Error},
+        new LevelModal{ Text="DBG", Value= LogLevel.Debug},
+        new LevelModal{ Text="VRB", Value= LogLevel.Verbose},
+        new LevelModal{ Text="FTL", Value= LogLevel.Fatal}
+    };
+}

@@ -1,0 +1,148 @@
+﻿@page "/roles/claims/{RoleName}"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using Microsoft.AspNetCore.Identity
+@inject IJSRuntime JSRuntime
+@inject RoleManager<ApplicationRole> _roleManager;
+@inject ILogger<RoleClaims_Obsoleted> Logger;
+<div class="card-container">
+    <div class="d-flex">
+        <h2>
+            @L["Action.Claims"]  : @RoleName
+        </h2>
+        <div class="ms-auto">
+            <div class="btn btn-theme" style="width:70px" @onclick=Save>@L["Action.Save"]</div>
+        </div>
+    </div>
+    @foreach (var claimGroup in ClaimsByCategory())
+    {
+        if (!_accordions.ContainsKey(claimGroup.Key))
+            _accordions.Add(claimGroup.Key, new MagicPropsComponents.Components.Accordion.MPAccordion());
+        <MagicPropsComponents.Components.Accordion.MPAccordion Expanded HideIcon @ref=@_accordions[claimGroup.Key]>
+            <HeaderTemplate>
+                <div style="height:50px;line-height:50px;background-color:#f0f3fa;border-radius: 10px;">
+                    <i class="@(_accordions[claimGroup.Key].Expanded?"fa fa-angle-up" : "fa fa-angle-down") mx-3" />
+                    @claimGroup.Key
+                </div>
+            </HeaderTemplate>
+            <BodyTemplate>
+                @foreach (var claim in claimGroup.Value)
+                {
+                    <div class="my-2 d-flex hover-pointer" @onclick="()=>{HandleValueChanged(claim);}">
+                        @if (claim.IsChecked)
+                        {
+                            <input type="checkbox" class="me-2 checkbox-theme" checked />
+                            @claim.ClaimValue
+                        }
+                        else
+                        {
+                            <input type="checkbox" class="me-2" />
+
+                            @claim.ClaimValue
+                        }
+                    </div>
+                }
+            </BodyTemplate>
+        </MagicPropsComponents.Components.Accordion.MPAccordion>
+    }
+</div>
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    [Parameter]
+    public string RoleName { get; set; }
+    private List<CustomClaims> _claims = new List<CustomClaims>();
+    private List<System.Security.Claims.Claim> _roleClaims = new List<System.Security.Claims.Claim>();
+    private ApplicationRole currentRole { get; set; } = new ApplicationRole();
+    private Dictionary<string, MagicPropsComponents.Components.Accordion.MPAccordion> _accordions = new Dictionary<string, MagicPropsComponents.Components.Accordion.MPAccordion>();
+    // protected override void OnParametersSet()
+    // {
+    //     base.OnParametersSet();
+    // }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(RoleName))
+            currentRole = await _roleManager.FindByNameAsync(RoleName)??new ApplicationRole();
+        if (!string.IsNullOrEmpty(currentRole.Id))
+        {
+            _roleClaims = (await _roleManager.GetClaimsAsync(currentRole)).ToList();
+        }
+        //default these are all permission
+        _claims.Add(new CustomClaims("Permission", "View Users", "User Management"));
+        _claims.Add(new CustomClaims("Permission", "Create Users", "User Management"));
+        _claims.Add(new CustomClaims("Permission", "Update Users", "User Management"));
+        _claims.Add(new CustomClaims("Permission", "Delete Users", "User Management"));
+        _claims.Add(new CustomClaims("Permission", "Manage User Claims", "User Management"));
+        _claims.Add(new CustomClaims("Permission", "View Roles", "Role Management"));
+        _claims.Add(new CustomClaims("Permission", "Create Roles", "Role Management"));
+        _claims.Add(new CustomClaims("Permission", "Update Roles", "Role Management"));
+        _claims.Add(new CustomClaims("Permission", "Delete Roles", "Role Management"));
+        _claims.Add(new CustomClaims("Permission", "Manage Role Claims", "Role Management"));
+        _claims.Add(new CustomClaims("Permission", "View System Logs", "Log Management"));
+        _claims.Add(new CustomClaims("Permission", "View Audit Logs", "Log Management"));
+        foreach (var c in _claims)
+        {
+            if (_roleClaims.Any(x => x.Value == c.ClaimValue && x.Type == c.ClaimType))
+            {
+                c.IsChecked = true;
+            }
+        }
+    }
+    private Dictionary<string, List<CustomClaims>> ClaimsByCategory()
+    {
+        var claimsByCategory = _claims
+            .GroupBy(claim => claim.Category)
+            .ToDictionary(group => group.Key, group => group.ToList());
+        return claimsByCategory;
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Console.WriteLine($"First render completed for role: {RoleName}");
+        }
+    }
+
+    private void HandleValueChanged(CustomClaims claim)
+    {
+        claim.IsChecked = !claim.IsChecked;
+    }
+
+    // private void HandleValueChanged(CustomClaims claim, string val)
+    // {
+    //     if (!string.IsNullOrEmpty(val))
+    //     {
+    //         bool isCheck = Convert.ToBoolean(val);
+    //         claim.IsChecked = isCheck;
+    //     }
+    //     else
+    //     {
+    //         claim.IsChecked = false;
+    //     }
+    // }
+
+    private async Task Save()
+    {
+        var newClaims = _claims.Where(x => x.IsChecked == true).ToList();
+        currentRole.Claims.Clear();
+        foreach (var c in newClaims)
+        {
+            currentRole.Claims.Add(new System.Security.Claims.Claim(c.ClaimType, c.ClaimValue));
+        }
+        var res = await _roleManager.UpdateAsync(currentRole);
+        if (res.Succeeded)
+        {
+            Logger.LogInformation("Update " + RoleName + " cliams success");
+            global.DeleteTab("roles/claims/" + currentRole.Name);
+            await MainLayout!.AddNotice(L["Action.Update"] + " " + RoleName + L["Action.Claims"] + " " + L["Result.Success"]);
+            await MainLayout!.NavigationTo("roles", L["Menu.Roles"], "fa fa-users");
+        }
+        else
+        {
+            Logger.LogError("Update" + RoleName + " cliams error: " + string.Join(",", res.Errors));
+            await MainLayout!.AddNotice(L["Action.Update"] + " " + RoleName + L["Action.Claims"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+        }
+    }
+}

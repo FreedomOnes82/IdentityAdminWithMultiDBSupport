@@ -1,0 +1,97 @@
+2024-06-25 13:41:35.473 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-25 13:41:35.779 +08:00 [INF] Now listening on: https://localhost:7025
+2024-06-25 13:41:35.784 +08:00 [INF] Now listening on: http://localhost:5003
+2024-06-25 13:41:35.791 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-25 13:41:35.794 +08:00 [INF] Hosting environment: Development
+2024-06-25 13:41:35.799 +08:00 [INF] Content root path: C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web
+2024-06-25 13:41:36.642 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-06-25 13:41:36.859 +08:00 [INF] Executing endpoint '/ (/)'
+2024-06-25 13:41:37.033 +08:00 [INF] Executed endpoint '/ (/)'
+2024-06-25 13:41:37.044 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-25 13:41:37.045 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/css/theme.css - null null
+2024-06-25 13:41:37.044 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - null null
+2024-06-25 13:41:37.045 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-06-25 13:41:37.044 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-06-25 13:41:37.055 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 417.2457ms
+2024-06-25 13:41:37.108 +08:00 [INF] The file /css/theme.css was not modified
+2024-06-25 13:41:37.084 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-06-25 13:41:37.126 +08:00 [INF] The file /_content/MagicPropsComponents/css/themes/default.css was not modified
+2024-06-25 13:41:37.128 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-06-25 13:41:37.112 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 68.1453ms
+2024-06-25 13:41:37.134 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-06-25 13:41:37.140 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/css/theme.css - 304 null text/css 95.6359ms
+2024-06-25 13:41:37.165 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - 304 null text/css 120.8661ms
+2024-06-25 13:41:37.167 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 122.5731ms
+2024-06-25 13:41:37.170 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-06-25 13:41:37.198 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.6827ms
+2024-06-25 13:41:37.227 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-06-25 13:41:37.238 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 193.2775ms
+2024-06-25 13:41:37.262 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-06-25 13:41:37.274 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:37.282 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:37.288 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 25.6121ms
+2024-06-25 13:41:37.297 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-06-25 13:41:37.309 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:37.317 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:37.322 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 25.2513ms
+2024-06-25 13:41:37.325 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=oWXvgC-r_IAFKpM00eKFlg - null null
+2024-06-25 13:41:37.348 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:37.470 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-25 13:41:37.486 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-25 13:41:37.490 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-25 13:41:43.012 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-25 13:41:43.019 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-06-25 13:41:43.022 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-06-25 13:41:43.062 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-06-25 13:41:43.081 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-06-25 13:41:43.133 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-06-25 13:41:43.140 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 118.7026ms
+2024-06-25 13:41:45.167 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryPATxE5fCj1DRwlWr 359
+2024-06-25 13:41:45.173 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:45.177 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:45.182 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=oWXvgC-r_IAFKpM00eKFlg - 200 null null 7856.5754ms
+2024-06-25 13:41:45.191 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:45.196 +08:00 [INF] Connection id "0HN4KR5T50UF2", Request id "0HN4KR5T50UF2:00000013": the application completed without reading the entire request body.
+2024-06-25 13:41:45.197 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 30.7029ms
+2024-06-25 13:41:46.171 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 276
+2024-06-25 13:41:46.212 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-06-25 13:41:46.663 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-06-25 13:41:46.667 +08:00 [INF] User logged in.----admin@admin8.com
+2024-06-25 13:41:46.708 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-06-25 13:41:46.709 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-06-25 13:41:46.740 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 568.9721ms
+2024-06-25 13:41:46.742 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-06-25 13:41:46.769 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-06-25 13:41:46.773 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 65.7447ms
+2024-06-25 13:41:46.778 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-06-25 13:41:46.795 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-06-25 13:41:46.795 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-25 13:41:46.797 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-06-25 13:41:46.819 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 25.2983ms
+2024-06-25 13:41:46.821 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-06-25 13:41:46.844 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.8832ms
+2024-06-25 13:41:46.849 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-06-25 13:41:46.867 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 89.038ms
+2024-06-25 13:41:46.885 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-06-25 13:41:46.902 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:46.909 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:46.915 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 29.2807ms
+2024-06-25 13:41:46.918 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-06-25 13:41:46.931 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:46.941 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:46.945 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 28.1657ms
+2024-06-25 13:41:46.948 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=uLOYVAmHoWEgdiP7QVRjJA - null null
+2024-06-25 13:41:46.965 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-06-25 13:41:48.273 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-06-25 13:41:48.306 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-06-25 13:41:48.836 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-06-25 13:41:48.841 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 567.8058ms
+2024-06-25 13:41:49.700 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-06-25 13:41:49.737 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-06-25 13:41:49.746 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-06-25 13:41:49.749 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 50.0473ms

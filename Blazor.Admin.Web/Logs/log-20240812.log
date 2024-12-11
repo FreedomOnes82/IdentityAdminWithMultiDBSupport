@@ -1,0 +1,6 @@
+2024-08-12 16:10:31.298 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-12 16:10:31.910 +08:00 [INF] Now listening on: https://localhost:7025
+2024-08-12 16:10:31.912 +08:00 [INF] Now listening on: http://localhost:5003
+2024-08-12 16:10:31.918 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-12 16:10:31.921 +08:00 [INF] Hosting environment: Development
+2024-08-12 16:10:31.923 +08:00 [INF] Content root path: C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web

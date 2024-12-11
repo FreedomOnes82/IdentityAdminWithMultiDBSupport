@@ -1,0 +1,735 @@
+2024-09-04 14:54:50.467 +08:00 [INF] User profile is available. Using 'C:\Users\jameson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-04 14:54:50.954 +08:00 [INF] Now listening on: https://localhost:7025
+2024-09-04 14:54:50.955 +08:00 [INF] Now listening on: http://localhost:5003
+2024-09-04 14:54:50.961 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-04 14:54:50.963 +08:00 [INF] Hosting environment: Development
+2024-09-04 14:54:50.964 +08:00 [INF] Content root path: C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\src\Blazor.Admin.Web
+2024-09-04 14:54:53.887 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-04 14:54:54.058 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-04 14:54:54.285 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-04 14:54:54.291 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css - null null
+2024-09-04 14:54:54.296 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - null null
+2024-09-04 14:54:54.291 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/shared.js - null null
+2024-09-04 14:54:54.291 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/app.css - null null
+2024-09-04 14:54:54.291 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css - null null
+2024-09-04 14:54:54.300 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/font-awesome.css - null null
+2024-09-04 14:54:54.309 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery.min.js - null null
+2024-09-04 14:54:54.316 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js - null null
+2024-09-04 14:54:54.319 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 435.7334ms
+2024-09-04 14:54:54.322 +08:00 [INF] The file /bootstrap/bootstrap.min.css was not modified
+2024-09-04 14:54:54.323 +08:00 [INF] The file /Blazor.Admin.Web.styles.css was not modified
+2024-09-04 14:54:54.326 +08:00 [INF] The file /_content/MagicPropsComponents/js/shared.js was not modified
+2024-09-04 14:54:54.331 +08:00 [INF] The file /app.css was not modified
+2024-09-04 14:54:54.360 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/bootstrap/bootstrap.min.css - 304 null text/css 70.0493ms
+2024-09-04 14:54:54.336 +08:00 [INF] The file /_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css was not modified
+2024-09-04 14:54:54.341 +08:00 [INF] The file /_content/MagicPropsComponents/css/font-awesome.css was not modified
+2024-09-04 14:54:54.347 +08:00 [INF] The file /_content/MagicPropsComponents/libs/jquery/jquery.min.js was not modified
+2024-09-04 14:54:54.351 +08:00 [INF] The file /_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js was not modified
+2024-09-04 14:54:54.361 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/svgcss.css - null null
+2024-09-04 14:54:54.363 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Blazor.Admin.Web.styles.css - 304 null text/css 66.7873ms
+2024-09-04 14:54:54.364 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/js/shared.js - 304 null text/javascript 73.3042ms
+2024-09-04 14:54:54.366 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/app.css - 304 null text/css 75.6822ms
+2024-09-04 14:54:54.375 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/css/bootstrap.min.css - 304 null text/css 84.9936ms
+2024-09-04 14:54:54.377 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/font-awesome.css - 304 null text/css 77.7929ms
+2024-09-04 14:54:54.379 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/input/input.js - null null
+2024-09-04 14:54:54.381 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery.min.js - 304 null text/javascript 72.3715ms
+2024-09-04 14:54:54.383 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/jquery/jquery-ui.min.js - 304 null text/javascript 66.7578ms
+2024-09-04 14:54:54.390 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/svgcss.css was not modified
+2024-09-04 14:54:54.393 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js - null null
+2024-09-04 14:54:54.398 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/tabctrl/tabctrl.js - null null
+2024-09-04 14:54:54.403 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/popup/popup.js - null null
+2024-09-04 14:54:54.410 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/modal/modal.js - null null
+2024-09-04 14:54:54.415 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/toast/toast.js - null null
+2024-09-04 14:54:54.419 +08:00 [INF] The file /_content/MagicPropsComponents/components/input/input.js was not modified
+2024-09-04 14:54:54.426 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/css/theme.css - null null
+2024-09-04 14:54:54.433 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - null null
+2024-09-04 14:54:54.435 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/svgcss.css - 304 null text/css 73.5734ms
+2024-09-04 14:54:54.441 +08:00 [INF] The file /_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js was not modified
+2024-09-04 14:54:54.445 +08:00 [INF] The file /_content/MagicPropsComponents/components/tabctrl/tabctrl.js was not modified
+2024-09-04 14:54:54.449 +08:00 [INF] The file /_content/MagicPropsComponents/components/popup/popup.js was not modified
+2024-09-04 14:54:54.454 +08:00 [INF] The file /_content/MagicPropsComponents/components/modal/modal.js was not modified
+2024-09-04 14:54:54.462 +08:00 [INF] The file /_content/MagicPropsComponents/components/toast/toast.js was not modified
+2024-09-04 14:54:54.464 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/input/input.js - 304 null text/javascript 85.3597ms
+2024-09-04 14:54:54.470 +08:00 [INF] The file /css/theme.css was not modified
+2024-09-04 14:54:54.476 +08:00 [INF] The file /_content/MagicPropsComponents/css/themes/default.css was not modified
+2024-09-04 14:54:54.482 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js - null null
+2024-09-04 14:54:54.484 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js - 304 null text/javascript 90.8397ms
+2024-09-04 14:54:54.485 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/tabctrl/tabctrl.js - 304 null text/javascript 87.1384ms
+2024-09-04 14:54:54.487 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/popup/popup.js - 304 null text/javascript 84.3998ms
+2024-09-04 14:54:54.489 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/modal/modal.js - 304 null text/javascript 78.9485ms
+2024-09-04 14:54:54.493 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/toast/toast.js - 304 null text/javascript 78.0421ms
+2024-09-04 14:54:54.501 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/draggabledroppable.js - null null
+2024-09-04 14:54:54.503 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/css/theme.css - 304 null text/css 76.6857ms
+2024-09-04 14:54:54.506 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/css/themes/default.css - 304 null text/css 72.6148ms
+2024-09-04 14:54:54.511 +08:00 [INF] The file /_content/MagicPropsComponents/components/datagrid/mpdatagrid.js was not modified
+2024-09-04 14:54:54.518 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/mppivottable/pivottable.js - null null
+2024-09-04 14:54:54.525 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:54:54.531 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/js/shared.js - null null
+2024-09-04 14:54:54.568 +08:00 [INF] The file /_content/MagicPropsComponents/components/mppivottable/pivottable.js was not modified
+2024-09-04 14:54:54.545 +08:00 [INF] The file /_content/MagicPropsComponents/components/draggabledroppable.js was not modified
+2024-09-04 14:54:54.562 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/datagrid/mpdatagrid.js - 304 null text/javascript 80.6265ms
+2024-09-04 14:54:54.573 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:54:54.578 +08:00 [INF] The file /js/shared.js was not modified
+2024-09-04 14:54:54.580 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/mppivottable/pivottable.js - 304 null text/javascript 62.1313ms
+2024-09-04 14:54:54.581 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/components/draggabledroppable.js - 304 null text/javascript 80.883ms
+2024-09-04 14:54:54.595 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:54:54.598 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/js/shared.js - 304 null text/javascript 67.1588ms
+2024-09-04 14:54:54.614 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:54:54.619 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 94.6068ms
+2024-09-04 14:54:55.664 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - null null
+2024-09-04 14:54:55.664 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - null null
+2024-09-04 14:54:55.664 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - null null
+2024-09-04 14:54:55.665 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:54:55.677 +08:00 [INF] The file /_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css was not modified
+2024-09-04 14:54:55.680 +08:00 [INF] The file /_content/Framework.WebCore/Framework.WebCore.bundle.scp.css was not modified
+2024-09-04 14:54:55.686 +08:00 [INF] The file /_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css was not modified
+2024-09-04 14:54:55.695 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.WebCore/Framework.WebCore.bundle.scp.css - 304 null text/css 31.4116ms
+2024-09-04 14:54:55.692 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/MagicPropsComponents.bundle.scp.css - 304 null text/css 28.8726ms
+2024-09-04 14:54:55.694 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 29.3792ms
+2024-09-04 14:54:55.697 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:54:55.698 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/Framework.Core.Blazor.Admin.SqlServer/Framework.Core.Blazor.Admin.SqlServer.bundle.scp.css - 304 null text/css 35.2523ms
+2024-09-04 14:54:55.783 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:54:55.790 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:55.793 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.695ms
+2024-09-04 14:54:55.797 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:55.800 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 17.1194ms
+2024-09-04 14:54:55.819 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:54:55.819 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/favicon.png - null null
+2024-09-04 14:54:55.823 +08:00 [INF] The file /favicon.png was not modified
+2024-09-04 14:54:55.828 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:55.829 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/favicon.png - 304 null image/png 9.605ms
+2024-09-04 14:54:55.836 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - null null
+2024-09-04 14:54:55.837 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:55.841 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 21.7428ms
+2024-09-04 14:54:55.844 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=1pLra-LyGOUvXNJbNYE4-Q - null null
+2024-09-04 14:54:55.848 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:55.890 +08:00 [INF] Sending file. Request path: '/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\jameson\source\repos\ShinetechFZ\orchard_saas_admin\OrchardCore.Cms.SaasAdmin\MagicPropsComponents\wwwroot\libs\bootstrap\js\bootstrap.bundle.min.js.map'
+2024-09-04 14:54:55.893 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/_content/MagicPropsComponents/libs/bootstrap/js/bootstrap.bundle.min.js.map - 200 325834 text/plain 57.6993ms
+2024-09-04 14:54:56.072 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:54:56.083 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/logo-en.svg - null null
+2024-09-04 14:54:56.084 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/auth/register-v2.0a9e487c.svg - null null
+2024-09-04 14:54:56.083 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/login/left.svg - null null
+2024-09-04 14:54:56.089 +08:00 [INF] The file /img/mainLayout/logo-en.svg was not modified
+2024-09-04 14:54:56.094 +08:00 [INF] The file /img/auth/register-v2.0a9e487c.svg was not modified
+2024-09-04 14:54:56.099 +08:00 [INF] The file /img/login/left.svg was not modified
+2024-09-04 14:54:56.102 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/auth/register-v2.0a9e487c.svg - 304 null image/svg+xml 19.2804ms
+2024-09-04 14:54:56.107 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/login/left.svg - 304 null image/svg+xml 23.1779ms
+2024-09-04 14:54:56.101 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/logo-en.svg - 304 null image/svg+xml 18.6762ms
+2024-09-04 14:54:56.459 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:54:56.462 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:54:57.513 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:54:57.516 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:54:57.517 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:54:57.551 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:54:57.571 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:54:57.615 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:54:57.619 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 103.1711ms
+2024-09-04 14:54:57.622 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/avatar/1.svg - null null
+2024-09-04 14:54:57.622 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/icons/home.svg - null null
+2024-09-04 14:54:57.634 +08:00 [INF] The file /img/avatar/1.svg was not modified
+2024-09-04 14:54:57.642 +08:00 [INF] The file /img/icons/home.svg was not modified
+2024-09-04 14:54:57.644 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/avatar/1.svg - 304 null image/svg+xml 22.1322ms
+2024-09-04 14:54:57.647 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/icons/home.svg - 304 null image/svg+xml 25.6032ms
+2024-09-04 14:54:59.664 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundarybVIkOSS6VfIPAHyY 359
+2024-09-04 14:54:59.672 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:59.676 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:59.678 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=1pLra-LyGOUvXNJbNYE4-Q - 200 null null 3834.4559ms
+2024-09-04 14:54:59.683 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:54:59.684 +08:00 [INF] Connection id "0HN6CLPSN8TFM", Request id "0HN6CLPSN8TFM:0000003F": the application completed without reading the entire request body.
+2024-09-04 14:54:59.686 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 22.1417ms
+2024-09-04 14:55:03.230 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 242
+2024-09-04 14:55:03.264 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:03.358 +08:00 [ERR] Counld not found this user.
+2024-09-04 14:55:03.364 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:03.367 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 138.8993ms
+2024-09-04 14:55:03.372 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:55:03.372 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:55:03.373 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:55:03.382 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 9.4129ms
+2024-09-04 14:55:03.387 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:55:03.465 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:55:03.469 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.6737ms
+2024-09-04 14:55:03.469 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:55:03.479 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 106.415ms
+2024-09-04 14:55:06.682 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Register - null null
+2024-09-04 14:55:06.710 +08:00 [INF] Executing endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:55:06.723 +08:00 [INF] Executed endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:55:06.725 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Register - 200 null text/html; charset=utf-8 42.4808ms
+2024-09-04 14:55:06.731 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/avatar/8.svg - null null
+2024-09-04 14:55:06.736 +08:00 [INF] The file /img/avatar/8.svg was not modified
+2024-09-04 14:55:06.739 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/avatar/8.svg - 304 null image/svg+xml 8.2995ms
+2024-09-04 14:55:15.493 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Register - application/x-www-form-urlencoded 290
+2024-09-04 14:55:15.524 +08:00 [INF] Executing endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:55:15.792 +08:00 [INF] User created a new account with password.---admin@admin8.com
+2024-09-04 14:55:16.061 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-04 14:55:16.097 +08:00 [INF] Executed endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:55:16.098 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-04 14:55:16.100 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Register - 302 null text/html; charset=utf-8 607.4227ms
+2024-09-04 14:55:16.126 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-04 14:55:16.136 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-04 14:55:16.138 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 40.4994ms
+2024-09-04 14:55:16.140 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:55:16.140 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:55:16.140 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:55:16.153 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 13.3664ms
+2024-09-04 14:55:16.158 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:55:16.180 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:55:16.184 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:55:16.184 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.0287ms
+2024-09-04 14:55:16.185 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 45.5656ms
+2024-09-04 14:55:16.216 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:55:16.223 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:16.225 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:16.228 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 11.1758ms
+2024-09-04 14:55:16.234 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:55:16.240 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:16.242 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:16.244 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 10.9672ms
+2024-09-04 14:55:16.257 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=HoulqJXkWhrhKtv7TcxL5w - null null
+2024-09-04 14:55:16.262 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:17.593 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:55:17.625 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:55:17.632 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:55:17.634 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 41.5515ms
+2024-09-04 14:55:17.695 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/avatar/9.svg - null null
+2024-09-04 14:55:17.695 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/language.png - null null
+2024-09-04 14:55:17.714 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2?v=4.7.0 - null null
+2024-09-04 14:55:17.733 +08:00 [INF] The file /img/mainLayout/language.png was not modified
+2024-09-04 14:55:17.756 +08:00 [INF] The file /_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2 was not modified
+2024-09-04 14:55:17.756 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/language.png - 304 null image/png 61.1188ms
+2024-09-04 14:55:17.758 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/fonts/fontawesome-webfont.woff2?v=4.7.0 - 304 null font/woff2 45.6358ms
+2024-09-04 14:55:17.695 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/english.png - null null
+2024-09-04 14:55:17.704 +08:00 [INF] The file /img/avatar/9.svg was not modified
+2024-09-04 14:55:17.832 +08:00 [INF] The file /img/mainLayout/english.png was not modified
+2024-09-04 14:55:17.834 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/avatar/9.svg - 304 null image/svg+xml 139.0287ms
+2024-09-04 14:55:17.695 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/img/mainLayout/china.png - null null
+2024-09-04 14:55:17.754 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:55:17.836 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/english.png - 304 null image/png 140.8955ms
+2024-09-04 14:55:17.848 +08:00 [INF] The file /img/mainLayout/china.png was not modified
+2024-09-04 14:55:17.874 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:55:17.878 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/img/mainLayout/china.png - 304 null image/png 182.9461ms
+2024-09-04 14:55:17.887 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:55:17.891 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 137.4045ms
+2024-09-04 14:55:18.682 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-04 14:55:18.718 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-04 14:55:18.731 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-04 14:55:18.735 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 53.9244ms
+2024-09-04 14:55:20.196 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:55:20.233 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:55:20.240 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:55:20.242 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 46.6495ms
+2024-09-04 14:55:21.392 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-04 14:55:21.435 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-04 14:55:21.443 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-04 14:55:21.445 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 53.9897ms
+2024-09-04 14:55:36.184 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Logout - null null
+2024-09-04 14:55:36.219 +08:00 [INF] Executing endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 14:55:36.223 +08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-09-04 14:55:36.226 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:55:36.227 +08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-09-04 14:55:36.229 +08:00 [INF] User logout.
+2024-09-04 14:55:36.285 +08:00 [INF] Executed endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 14:55:36.289 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Logout - 302 null text/html; charset=utf-8 104.4463ms
+2024-09-04 14:55:36.289 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:55:36.320 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:36.323 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:55:36.331 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:36.334 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 45.8002ms
+2024-09-04 14:55:37.739 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-04 14:55:37.769 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-04 14:55:37.777 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-04 14:55:37.780 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 41.7818ms
+2024-09-04 14:55:46.509 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-04 14:55:46.545 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-04 14:55:46.553 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-04 14:55:46.556 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 49.5012ms
+2024-09-04 14:55:46.557 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryTRbVro1d3NIpr5hO 359
+2024-09-04 14:55:46.563 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:55:46.564 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:55:46.573 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.564 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.564 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:55:46.582 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 18.9424ms
+2024-09-04 14:55:46.586 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:55:46.607 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:55:46.590 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=HoulqJXkWhrhKtv7TcxL5w - 200 null null 30333.567ms
+2024-09-04 14:55:46.606 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.6575ms
+2024-09-04 14:55:46.589 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.620 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 63.5473ms
+2024-09-04 14:55:46.608 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:55:46.624 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 60.9161ms
+2024-09-04 14:55:46.649 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:55:46.654 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.656 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.659 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 9.82ms
+2024-09-04 14:55:46.663 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:55:46.671 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.673 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.675 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 12.5392ms
+2024-09-04 14:55:46.683 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=8Rc3ThB5m7gDcwauaTId9Q - null null
+2024-09-04 14:55:46.688 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:46.714 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:55:46.732 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:55:46.734 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:55:52.233 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:55:52.242 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:55:52.243 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:55:52.280 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:52.282 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:55:52.289 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:52.293 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 53.2596ms
+2024-09-04 14:55:54.304 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundarysyWPLYe3vBzAGJzC 359
+2024-09-04 14:55:54.307 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:54.309 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:54.310 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=8Rc3ThB5m7gDcwauaTId9Q - 200 null null 7627.0982ms
+2024-09-04 14:55:54.312 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:55:54.318 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:00000047": the application completed without reading the entire request body.
+2024-09-04 14:55:54.321 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 16.9306ms
+2024-09-04 14:55:57.505 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 242
+2024-09-04 14:55:57.534 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:57.570 +08:00 [ERR] Counld not found this user.
+2024-09-04 14:55:57.578 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:55:57.581 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 75.8133ms
+2024-09-04 14:55:57.584 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:55:57.584 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:55:57.584 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:55:57.591 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 6.9692ms
+2024-09-04 14:55:57.595 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:55:57.614 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.5513ms
+2024-09-04 14:55:57.616 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:55:57.620 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:55:57.622 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 38.5442ms
+2024-09-04 14:56:09.822 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-04 14:56:09.849 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-04 14:56:09.857 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-04 14:56:09.860 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 38.5923ms
+2024-09-04 14:56:09.866 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:56:09.872 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:09.873 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:09.875 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 9.2508ms
+2024-09-04 14:56:09.879 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:56:09.885 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:09.887 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:09.890 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 10.3887ms
+2024-09-04 14:56:09.892 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=MWpujKphK_wH2sFmYJWPIw - null null
+2024-09-04 14:56:09.903 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:09.928 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:09.949 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:09.951 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:22.098 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:22.106 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:56:22.110 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:22.143 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:22.147 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:56:22.153 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:22.155 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 49.3636ms
+2024-09-04 14:56:24.173 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryamzxpKv5FjaLbBss 359
+2024-09-04 14:56:24.174 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:24.178 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:24.180 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=MWpujKphK_wH2sFmYJWPIw - 200 null null 14288.531ms
+2024-09-04 14:56:24.183 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:24.188 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:0000005B": the application completed without reading the entire request body.
+2024-09-04 14:56:24.190 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 17.2509ms
+2024-09-04 14:56:26.310 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Register - null null
+2024-09-04 14:56:26.336 +08:00 [INF] Executing endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:56:26.345 +08:00 [INF] Executed endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:56:26.347 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Register - 200 null text/html; charset=utf-8 37.2703ms
+2024-09-04 14:56:27.474 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:56:27.503 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:27.505 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:56:27.513 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:27.517 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 42.7858ms
+2024-09-04 14:56:29.177 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/ - null null
+2024-09-04 14:56:29.204 +08:00 [INF] Executing endpoint '/ (/)'
+2024-09-04 14:56:29.209 +08:00 [INF] Executed endpoint '/ (/)'
+2024-09-04 14:56:29.211 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/ - 200 null text/html; charset=utf-8 33.6799ms
+2024-09-04 14:56:29.216 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:56:29.223 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:29.225 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:29.228 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 11.6276ms
+2024-09-04 14:56:29.230 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=mjUlebJZHN8vzewuO7fvvw - null null
+2024-09-04 14:56:29.237 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:29.264 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:29.286 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:29.289 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:30.647 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:30.650 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-04 14:56:30.652 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:56:30.683 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:30.686 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:56:30.692 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:30.693 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 43.0995ms
+2024-09-04 14:56:32.709 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryH5AHyszzGybfFlwx 359
+2024-09-04 14:56:32.712 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:32.715 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:32.717 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=mjUlebJZHN8vzewuO7fvvw - 200 null null 3486.7059ms
+2024-09-04 14:56:32.719 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:56:32.725 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:00000069": the application completed without reading the entire request body.
+2024-09-04 14:56:32.728 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 19.6336ms
+2024-09-04 14:56:36.710 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Register - null null
+2024-09-04 14:56:36.739 +08:00 [INF] Executing endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:56:36.747 +08:00 [INF] Executed endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:56:36.750 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Register - 200 null text/html; charset=utf-8 39.8663ms
+2024-09-04 14:56:44.189 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:56:44.224 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:44.226 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:56:44.233 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:56:44.236 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 47.3734ms
+2024-09-04 14:56:49.043 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Register - null null
+2024-09-04 14:56:49.069 +08:00 [INF] Executing endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:56:49.076 +08:00 [INF] Executed endpoint '/Account/Register (/Account/Register)'
+2024-09-04 14:56:49.079 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Register - 200 null text/html; charset=utf-8 36.5555ms
+2024-09-04 14:57:15.018 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:57:15.061 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:15.065 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:57:15.072 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:15.074 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 56.2743ms
+2024-09-04 14:57:23.357 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 242
+2024-09-04 14:57:23.382 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:23.414 +08:00 [ERR] Counld not found this user.
+2024-09-04 14:57:23.420 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:23.422 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 65.5105ms
+2024-09-04 14:57:23.432 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:57:23.432 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:57:23.432 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:57:23.444 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:57:23.450 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 18.5129ms
+2024-09-04 14:57:23.464 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:57:23.480 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.4692ms
+2024-09-04 14:57:23.480 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:57:23.485 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 53.9419ms
+2024-09-04 14:57:30.024 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 254
+2024-09-04 14:57:30.051 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:30.078 +08:00 [ERR] Counld not found this user.
+2024-09-04 14:57:30.085 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:30.089 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 64.9733ms
+2024-09-04 14:57:30.094 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:57:30.094 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:57:30.094 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:57:30.102 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:57:30.127 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 32.2824ms
+2024-09-04 14:57:30.127 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:57:30.132 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.8875ms
+2024-09-04 14:57:30.137 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:57:30.147 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 52.6118ms
+2024-09-04 14:57:44.290 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 254
+2024-09-04 14:57:44.318 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:44.498 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-04 14:57:44.500 +08:00 [INF] User logged in.----admin@admin8.com
+2024-09-04 14:57:44.525 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:57:44.529 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:57:44.530 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 239.5633ms
+2024-09-04 14:57:44.553 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:57:44.563 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:57:44.566 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 37.3477ms
+2024-09-04 14:57:44.568 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:57:44.568 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:57:44.568 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:57:44.584 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 16.3407ms
+2024-09-04 14:57:44.607 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:57:44.610 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.0471ms
+2024-09-04 14:57:44.615 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:57:44.626 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:57:44.628 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 59.4489ms
+2024-09-04 14:57:44.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:57:44.661 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:57:44.663 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:57:44.665 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 9.8287ms
+2024-09-04 14:57:44.671 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:57:44.676 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:57:44.678 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:57:44.680 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 9.5701ms
+2024-09-04 14:57:44.692 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=WNL59BtoMouJ9O6SPMq7KQ - null null
+2024-09-04 14:57:44.697 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:57:44.782 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:57:44.853 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:57:44.867 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:57:44.869 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 88.1508ms
+2024-09-04 14:57:46.114 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-04 14:57:46.159 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-04 14:57:46.168 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-04 14:57:46.170 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 55.845ms
+2024-09-04 14:59:01.024 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Logout - null null
+2024-09-04 14:59:01.081 +08:00 [INF] Executing endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 14:59:01.084 +08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-09-04 14:59:01.086 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:59:01.087 +08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-09-04 14:59:01.089 +08:00 [INF] User logout.
+2024-09-04 14:59:01.138 +08:00 [INF] Executed endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 14:59:01.141 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:59:01.143 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Logout - 302 null text/html; charset=utf-8 118.4469ms
+2024-09-04 14:59:01.168 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:01.173 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:59:01.178 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:01.181 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 40.406ms
+2024-09-04 14:59:03.202 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundary22yzw4YAZvZd99xq 359
+2024-09-04 14:59:03.204 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:03.207 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:03.208 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=WNL59BtoMouJ9O6SPMq7KQ - 200 null null 78516.2416ms
+2024-09-04 14:59:03.210 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:03.214 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:00000095": the application completed without reading the entire request body.
+2024-09-04 14:59:03.215 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 13.7259ms
+2024-09-04 14:59:11.056 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 254
+2024-09-04 14:59:11.083 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:11.257 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-04 14:59:11.259 +08:00 [INF] User logged in.----admin@admin1.com
+2024-09-04 14:59:11.289 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:11.292 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:59:11.294 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 238.1976ms
+2024-09-04 14:59:11.321 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:11.331 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:11.333 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 41.2355ms
+2024-09-04 14:59:11.337 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:59:11.338 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:59:11.338 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:59:11.346 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:59:11.366 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 27.8892ms
+2024-09-04 14:59:11.368 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:59:11.375 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.0546ms
+2024-09-04 14:59:11.378 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:59:11.386 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 48.7001ms
+2024-09-04 14:59:11.417 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:59:11.432 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:11.433 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:11.435 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 18.4622ms
+2024-09-04 14:59:11.449 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:59:11.453 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:11.454 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:11.455 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 5.9632ms
+2024-09-04 14:59:11.457 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=ykskhoJ1fM1ogsNvAhVO_g - null null
+2024-09-04 14:59:11.463 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:11.564 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:59:11.630 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:11.649 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:11.651 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 87.8312ms
+2024-09-04 14:59:13.572 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-04 14:59:13.603 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-04 14:59:13.625 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-04 14:59:13.671 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 98.8719ms
+2024-09-04 14:59:13.746 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg - null null
+2024-09-04 14:59:13.746 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg - null null
+2024-09-04 14:59:13.756 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg was not modified
+2024-09-04 14:59:13.764 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg was not modified
+2024-09-04 14:59:13.767 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-firstpage-disabled.svg - 304 null image/svg+xml 20.6917ms
+2024-09-04 14:59:13.785 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-next-page-disabled.svg - 304 null image/svg+xml 38.906ms
+2024-09-04 14:59:13.747 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg - null null
+2024-09-04 14:59:13.747 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg - null null
+2024-09-04 14:59:13.836 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg was not modified
+2024-09-04 14:59:13.844 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg was not modified
+2024-09-04 14:59:13.854 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-pre-page-disabled.svg - 304 null image/svg+xml 107.2332ms
+2024-09-04 14:59:13.857 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/pager-lastpage-disabled.svg - 304 null image/svg+xml 109.9897ms
+2024-09-04 14:59:13.784 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg - null null
+2024-09-04 14:59:13.785 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/filter.svg - null null
+2024-09-04 14:59:13.919 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg was not modified
+2024-09-04 14:59:13.939 +08:00 [INF] The file /_content/MagicPropsComponents/svgs/primary/filter.svg was not modified
+2024-09-04 14:59:13.942 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/sort-unsorted.svg - 304 null image/svg+xml 158.9844ms
+2024-09-04 14:59:13.946 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_content/MagicPropsComponents/svgs/primary/filter.svg - 304 null image/svg+xml 160.8212ms
+2024-09-04 14:59:26.836 +08:00 [INF] Update User :admin@admin.com
+2024-09-04 14:59:35.849 +08:00 [INF] Update User :admin@admin1.com
+2024-09-04 14:59:39.018 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Logout - null null
+2024-09-04 14:59:39.079 +08:00 [INF] Executing endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 14:59:39.087 +08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-09-04 14:59:39.095 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:59:39.102 +08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-09-04 14:59:39.108 +08:00 [INF] User logout.
+2024-09-04 14:59:39.156 +08:00 [INF] Executed endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 14:59:39.162 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Logout - 302 null text/html; charset=utf-8 145.8813ms
+2024-09-04 14:59:39.163 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 14:59:39.220 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:39.225 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 14:59:39.249 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:39.254 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 91.2673ms
+2024-09-04 14:59:41.288 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundarypW0R5CDd29pbU1PT 359
+2024-09-04 14:59:41.290 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:41.294 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:41.296 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=ykskhoJ1fM1ogsNvAhVO_g - 200 null null 29838.7281ms
+2024-09-04 14:59:41.298 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:41.304 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:000000AF": the application completed without reading the entire request body.
+2024-09-04 14:59:41.306 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 17.5186ms
+2024-09-04 14:59:47.951 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 254
+2024-09-04 14:59:47.981 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:48.153 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-04 14:59:48.155 +08:00 [INF] User logged in.----admin@admin1.com
+2024-09-04 14:59:48.185 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 14:59:48.186 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:59:48.188 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 237.8351ms
+2024-09-04 14:59:48.217 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:48.227 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:48.229 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 43.9635ms
+2024-09-04 14:59:48.236 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 14:59:48.236 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 14:59:48.236 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 14:59:48.253 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.5437ms
+2024-09-04 14:59:48.258 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 22.367ms
+2024-09-04 14:59:48.263 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 14:59:48.287 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 14:59:48.289 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 14:59:48.290 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 55.3578ms
+2024-09-04 14:59:48.322 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 14:59:48.333 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:48.334 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:48.337 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 14.9867ms
+2024-09-04 14:59:48.341 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 14:59:48.346 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:48.349 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:48.350 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 9.5187ms
+2024-09-04 14:59:48.365 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=Z4aaHaoLHiw5UlawGHaXvQ - null null
+2024-09-04 14:59:48.369 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 14:59:48.455 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:59:48.533 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:48.564 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:48.569 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 114.3939ms
+2024-09-04 14:59:50.232 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-04 14:59:50.286 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-04 14:59:50.308 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-04 14:59:50.315 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 83.1924ms
+2024-09-04 14:59:51.212 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 14:59:51.262 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:51.275 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 14:59:51.280 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 67.9209ms
+2024-09-04 14:59:51.984 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/users - null null
+2024-09-04 14:59:52.052 +08:00 [INF] Executing endpoint '/users (/users)'
+2024-09-04 14:59:52.069 +08:00 [INF] Executed endpoint '/users (/users)'
+2024-09-04 14:59:52.076 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/users - 200 null text/html; charset=utf-8 92.1279ms
+2024-09-04 15:00:02.245 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Logout - null null
+2024-09-04 15:00:02.292 +08:00 [INF] Executing endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 15:00:02.309 +08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-09-04 15:00:02.321 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 15:00:02.334 +08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-09-04 15:00:02.345 +08:00 [INF] User logout.
+2024-09-04 15:00:02.405 +08:00 [INF] Executed endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 15:00:02.408 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 15:00:02.416 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Logout - 302 null text/html; charset=utf-8 171.2323ms
+2024-09-04 15:00:02.462 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:02.474 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 15:00:02.496 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:02.517 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 104.152ms
+2024-09-04 15:00:04.531 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryhZUPhp7LRVSAOmbL 359
+2024-09-04 15:00:04.536 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:04.539 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:04.541 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=Z4aaHaoLHiw5UlawGHaXvQ - 200 null null 16176.3102ms
+2024-09-04 15:00:04.543 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:04.547 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:000000D5": the application completed without reading the entire request body.
+2024-09-04 15:00:04.548 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 17.5717ms
+2024-09-04 15:00:07.123 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 253
+2024-09-04 15:00:07.152 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:07.318 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-04 15:00:07.320 +08:00 [INF] User logged in.----admin@admin.com
+2024-09-04 15:00:07.349 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:07.352 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 15:00:07.355 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 231.6479ms
+2024-09-04 15:00:07.382 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:07.393 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:07.396 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 43.6346ms
+2024-09-04 15:00:07.401 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 15:00:07.401 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 15:00:07.401 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 15:00:07.411 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 15:00:07.417 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 16.3063ms
+2024-09-04 15:00:07.425 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 15:00:07.439 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 15:00:07.439 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.3218ms
+2024-09-04 15:00:07.441 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 40.6244ms
+2024-09-04 15:00:07.471 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 15:00:07.475 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:07.480 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:07.484 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 12.8908ms
+2024-09-04 15:00:07.489 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 15:00:07.495 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:07.499 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:07.502 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 13.3922ms
+2024-09-04 15:00:07.504 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=SUQdGHGyjxTjKzmMtp-9Xg - null null
+2024-09-04 15:00:07.512 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:07.581 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 15:00:07.646 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:07.654 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:07.656 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 74.9339ms
+2024-09-04 15:00:22.730 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-04 15:00:22.775 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-04 15:00:22.782 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-04 15:00:22.784 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 54.6549ms
+2024-09-04 15:00:24.505 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 15:00:24.545 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:24.553 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:24.556 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 51.2664ms
+2024-09-04 15:00:25.748 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-04 15:00:25.788 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-04 15:00:25.794 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-04 15:00:25.796 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 47.9212ms
+2024-09-04 15:00:28.656 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Logout - null null
+2024-09-04 15:00:28.693 +08:00 [INF] Executing endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 15:00:28.695 +08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-09-04 15:00:28.698 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 15:00:28.700 +08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-09-04 15:00:28.701 +08:00 [INF] User logout.
+2024-09-04 15:00:28.739 +08:00 [INF] Executed endpoint '/Account/Logout (/Account/Logout)'
+2024-09-04 15:00:28.743 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/Account/Login - null null
+2024-09-04 15:00:28.745 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Logout - 302 null text/html; charset=utf-8 88.8911ms
+2024-09-04 15:00:28.773 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:28.778 +08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-09-04 15:00:28.785 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:28.788 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/Account/Login - 200 null text/html; charset=utf-8 45.1519ms
+2024-09-04 15:00:30.812 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryFwIdhZwJ5JfpRx8K 359
+2024-09-04 15:00:30.813 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:30.818 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:30.819 +08:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7025/_blazor?id=SUQdGHGyjxTjKzmMtp-9Xg - 200 null null 23314.9978ms
+2024-09-04 15:00:30.821 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:30.824 +08:00 [INF] Connection id "0HN6CLPSN8TFO", Request id "0HN6CLPSN8TFO:000000F3": the application completed without reading the entire request body.
+2024-09-04 15:00:30.826 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/disconnect - 200 0 null 14.2683ms
+2024-09-04 15:00:47.136 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/Account/Login - application/x-www-form-urlencoded 254
+2024-09-04 15:00:47.163 +08:00 [INF] Executing endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:47.325 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-09-04 15:00:47.326 +08:00 [INF] User logged in.----admin@admin1.com
+2024-09-04 15:00:47.357 +08:00 [INF] Executed endpoint '/Account/Login (/Account/Login)'
+2024-09-04 15:00:47.362 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 15:00:47.362 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/Account/Login - 302 null text/html; charset=utf-8 225.9307ms
+2024-09-04 15:00:47.389 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:47.399 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:47.402 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 40.6721ms
+2024-09-04 15:00:47.406 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 15:00:47.406 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - null null
+2024-09-04 15:00:47.406 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2024-09-04 15:00:47.416 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 10.1507ms
+2024-09-04 15:00:47.420 +08:00 [INF] Executing endpoint 'Blazor web static files'
+2024-09-04 15:00:47.438 +08:00 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-04 15:00:47.440 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.6408ms
+2024-09-04 15:00:47.441 +08:00 [INF] Executed endpoint 'Blazor web static files'
+2024-09-04 15:00:47.448 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/blazor.web.js - 304 null text/javascript 41.5751ms
+2024-09-04 15:00:47.480 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_blazor/initializers - null null
+2024-09-04 15:00:47.482 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:47.483 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:47.485 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_blazor/initializers - 200 null application/json; charset=utf-8 4.984ms
+2024-09-04 15:00:47.491 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-04 15:00:47.501 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:47.503 +08:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:47.505 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7025/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 13.6662ms
+2024-09-04 15:00:47.508 +08:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7025/_blazor?id=QbthnMELFqz2PDi2kp85rg - null null
+2024-09-04 15:00:47.515 +08:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-04 15:00:47.582 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/dashboard - null null
+2024-09-04 15:00:47.632 +08:00 [INF] Executing endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:47.666 +08:00 [INF] Executed endpoint '/dashboard (/dashboard)'
+2024-09-04 15:00:47.669 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/dashboard - 200 null text/html; charset=utf-8 86.5688ms
+2024-09-04 15:00:48.778 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7025/weather - null null
+2024-09-04 15:00:48.823 +08:00 [INF] Executing endpoint '/weather (/weather)'
+2024-09-04 15:00:48.828 +08:00 [INF] Executed endpoint '/weather (/weather)'
+2024-09-04 15:00:48.830 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7025/weather - 200 null text/html; charset=utf-8 52.2064ms

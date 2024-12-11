@@ -1,0 +1,191 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows,browser
+build_property.RootNamespace = MagicPropsComponents
+build_property.RootNamespace = MagicPropsComponents
+build_property.ProjectDir = F:\ShinetechFZProjects\OpenSource\IdentityAdminWithMultiDBSupport\MagicPropsComponents\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\ShinetechFZProjects\OpenSource\IdentityAdminWithMultiDBSupport\MagicPropsComponents
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Accordion/MPAccordion.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvcmRpb25cTVBBY2NvcmRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/CheckboxGroup/MPCheckboxGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGVja2JveEdyb3VwXE1QQ2hlY2tib3hHcm91cC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/CheckboxGroup/MPCheckboxOption.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGVja2JveEdyb3VwXE1QQ2hlY2tib3hPcHRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/DialogEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxEaWFsb2dFZGl0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/GridColumn.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxHcmlkQ29sdW1uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/GridEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxHcmlkRWRpdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/GridFilter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxHcmlkRmlsdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/GridToolbar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxHcmlkVG9vbGJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/MPDataGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxNUERhdGFHcmlkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DataGrid/MPGridColumn.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRhR3JpZFxNUEdyaWRDb2x1bW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DatePicker/MPDateItem.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRlUGlja2VyXE1QRGF0ZUl0ZW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DatePicker/MPDatePicker.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRlUGlja2VyXE1QRGF0ZVBpY2tlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DatePicker/MPMonthSelector.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRlUGlja2VyXE1QTW9udGhTZWxlY3Rvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DatePicker/MPYearSelector.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXRlUGlja2VyXE1QWWVhclNlbGVjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DropDownList/MPDropDownList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEcm9wRG93bkxpc3RcTVBEcm9wRG93bkxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/DropDownList/MPDropDownListOption.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEcm9wRG93bkxpc3RcTVBEcm9wRG93bkxpc3RPcHRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Input/MPInput.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnB1dFxNUElucHV0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Loader/MPLoader.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMb2FkZXJcTVBMb2FkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Modal/MPModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNb2RhbFxNUE1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/NumberInput/MPNumberInput.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOdW1iZXJJbnB1dFxNUE51bWJlcklucHV0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Pager/MPPager.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlclxNUFBhZ2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/PivotTable/MPPivotTable.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQaXZvdFRhYmxlXE1QUGl2b3RUYWJsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/PivotTable/PivotField.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQaXZvdFRhYmxlXFBpdm90RmllbGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/PivotTable/PivotFilter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQaXZvdFRhYmxlXFBpdm90RmlsdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/PivotTable/PivotTableDataSourceSettings.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQaXZvdFRhYmxlXFBpdm90VGFibGVEYXRhU291cmNlU2V0dGluZ3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/PivotTable/PivotToolbar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQaXZvdFRhYmxlXFBpdm90VG9vbGJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Popup/MPPopup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQb3B1cFxNUFBvcHVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RadioGroup/MPRadioGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSYWRpb0dyb3VwXE1QUmFkaW9Hcm91cC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RadioGroup/MPRadioOption.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSYWRpb0dyb3VwXE1QUmFkaW9PcHRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RichEditor/EditorButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSaWNoRWRpdG9yXEVkaXRvckJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RichEditor/ImageEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSaWNoRWRpdG9yXEltYWdlRWRpdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RichEditor/LinkEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSaWNoRWRpdG9yXExpbmtFZGl0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RichEditor/MPRichEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSaWNoRWRpdG9yXE1QUmljaEVkaXRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/RichEditor/Toolbar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSaWNoRWRpdG9yXFRvb2xiYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/TabGroup/MPTabGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUYWJHcm91cFxNUFRhYkdyb3VwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/TabGroup/MPTabOption.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUYWJHcm91cFxNUFRhYk9wdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Timeline/MPTimeline.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUaW1lbGluZVxNUFRpbWVsaW5lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Timeline/MPTimelineItem.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUaW1lbGluZVxNUFRpbWVsaW5lSXRlbS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Components/Toast/MPToast.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUb2FzdFxNUFRvYXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/References/BasicModuleRef.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVmZXJlbmNlc1xCYXNpY01vZHVsZVJlZi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/References/ThemeRef.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVmZXJlbmNlc1xUaGVtZVJlZi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ShinetechFZProjects/OpenSource/IdentityAdminWithMultiDBSupport/MagicPropsComponents/Component1.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50MS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-o5aegkbe7t

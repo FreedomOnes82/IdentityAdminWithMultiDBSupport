@@ -1,0 +1,177 @@
+﻿@page "/Account/Register"
+@layout EmptyLayout
+@using System.ComponentModel.DataAnnotations
+@using System.Text
+@using System.Text.Encodings.Web
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.WebUtilities
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<ApplicationRole> RoleManager
+@inject IUserStore<ApplicationUser> UserStore
+@inject SignInManager<ApplicationUser> SignInManager
+@inject ILogger<Register> Logger
+
+<div class="row">
+    <div class="col-12">
+        <div class="m-auto" style="width:510px;height:680px;">
+
+            <div class="mt-5 mx-auto text-center" style="width:420px;">
+                <img class="hover-pointer mb-5" height="80" src="/img/avatar/8.svg" />
+                <h4 class="mt-2 mb-4">@L["Model.RegisterTitle"] 👋</h4>
+                <EditForm Model="Input" asp-route-returnUrl="@ReturnUrl" method="post" OnValidSubmit="RegisterUser" FormName="register">
+                    <DataAnnotationsValidator />
+                    @if (!string.IsNullOrEmpty(_errorMsg))
+                    {
+                        <div style="width:100%;display:flex;color:red">@_errorMsg</div>
+                    }
+                    <hr />
+                    <ValidationSummary class="text-danger" role="alert" />
+                    <div class="form-floating mb-3">
+                        <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                        <label for="email">@L["Model.Email"]</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText type="password" @bind-Value="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                        <label for="password">@L["Model.Password"]</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText type="password" @bind-Value="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                        <label for="confirm-password">@L["Model.PasswordConfirm"]</label>
+                    </div>
+                    <button type="submit" class="w-100 btn btn-lg btn-success" style="border-radius: 30px;">@L["Home.Register"]</button>
+                </EditForm>
+                <div class="mt-4 mx-auto d-flex justify-content-center">
+                    <span class="py-3">@L["Model.HaveYet"]</span>
+                    <a href="/Account/Login" class="py-3 px-1">
+                        @L["Model.Goto"] @L["Home.Login"].
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string _errorMsg = string.Empty;
+    private InputModel Input { get; set; }
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    public async Task RegisterUser(EditContext editContext)
+    {
+        var user = new ApplicationUser();
+        user.UserName = Input.Email.Replace("@", "_").Replace(".", "_");
+        user.Email = Input.Email;
+        var result = await UserManager.CreateAsync(user, Input.Password);
+        if (!result.Succeeded)
+        {
+            _errorMsg = string.Empty;
+            List<string> errorCodes = result.Errors.Select(x => x.Code).ToList();
+            if (errorCodes.Any(x => x == "DuplicateEmail"))
+            {
+                _errorMsg += L["Model.Email"] + L["Error.AlreadyExists"] + "; ";
+            }
+            if (errorCodes.Any(x => x == "PasswordRequiresLower"))
+            {
+                _errorMsg += L["Model.Password"] + L["Error.RequiresLower"] + "; ";
+            }
+            if (errorCodes.Any(x => x == "PasswordRequiresUpper"))
+            {
+                _errorMsg += L["Model.Password"] + L["Error.RequiresUpper"] + "; ";
+            }
+            if (errorCodes.Any(x => x == "PasswordRequiresDigit"))
+            {
+                _errorMsg += L["Model.Password"] + L["Error.RequiresDigit"] + "; ";
+            }
+            //other error code...
+            if (string.IsNullOrEmpty(_errorMsg))
+            {
+                _errorMsg = L["Error.Default"] + L["Action.Update"] + " " + L["Model.Password"];
+            }
+            else
+            {
+                _errorMsg = _errorMsg.Substring(0, _errorMsg.Length - 2);
+            }
+            return;
+        }
+
+        Logger.LogInformation("User created a new account with password.---" + user.Email);
+
+        var userId = await UserManager.GetUserIdAsync(user);
+        var code = await UserManager.GenerateEmailConfirmationTokenAsync(user);
+        code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+        if (UserManager.Options.SignIn.RequireConfirmedAccount)
+        {
+            NavigationManager.NavigateTo("Account/ConfirmEmail?userId=" + Input.Email + "$code=" + ReturnUrl);
+        }
+        await AddToRole(user);
+        await SignInManager.SignInAsync(user, isPersistent: false);
+        NavigationManager.NavigateTo(ReturnUrl);
+    }
+
+    private async Task AddToRole(ApplicationUser user)
+    {
+        var role = await RoleManager.FindByNameAsync("Authenticated");
+        if (role == null)
+        {
+            await RoleManager.CreateAsync(new ApplicationRole { Name = "Authenticated" });
+        }
+        await UserManager.AddToRoleAsync(user, "Authenticated");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Input = new InputModel(L);
+
+        if (HttpMethods.IsPost(HttpContext.Request.Method))
+        {
+            var form = HttpContext.Request.Form;
+            Input.Email = form["Input.Email"];
+            Input.Password = form["Input.Password"];
+            Input.ConfirmPassword = form["Input.ConfirmPassword"];
+        }
+    }
+
+    private sealed class InputModel : IValidatableObject
+    {
+        private readonly IStringLocalizer<Resource> _localizer;
+
+        public InputModel(IStringLocalizer<Resource> localizer)
+        {
+            _localizer = localizer;
+        }
+        public string Email { get; set; } = "";
+
+        public string Password { get; set; } = "";
+
+        public string ConfirmPassword { get; set; } = "";
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (string.IsNullOrEmpty(Email))
+            {
+                yield return new ValidationResult(_localizer["Model.Email"] + _localizer["Error.Required"], new[] { nameof(Email) });
+            }
+
+            Regex emailRegex = new Regex(GlobalSettings.EmailRegularExpression);
+            if (!emailRegex.IsMatch(Email))
+            {
+                yield return new ValidationResult(_localizer["Error.EmailFormat"], new[] { nameof(Email) });
+            }
+
+            if (Password.Length < 8 || Password.Length > 100)
+            {
+                yield return new ValidationResult(_localizer["Model.Password"] + _localizer["Error.LengthLimitation"] + "8-100", new[] { nameof(Password) });
+            }
+            if (ConfirmPassword != Password)
+            {
+                yield return new ValidationResult(_localizer["Error.PwdNotMatch"], new[] { nameof(ConfirmPassword) });
+            }
+        }
+    }
+}

@@ -1,0 +1,559 @@
+﻿@page "/roles"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using System.ComponentModel.DataAnnotations
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using Microsoft.AspNetCore.Identity
+@using MagicPropsComponents.ViewModels.DataGrid
+@using MagicPropsComponents.ViewModels.Modal
+@inject UserManager<ApplicationUser> _userManager;
+@inject RoleManager<ApplicationRole> _roleManager;
+@inject SignInManager<ApplicationUser> _signInManager
+@inject ILogger<Roles> _logger;
+<div class="card-container">
+    <MagicPropsComponents.Components.DataGrid.MPDataGrid @ref=_grid Datasource="@datasource" CustomToolBtns="@_myToolBtn" EditMode=EditMode.Dialog PaginationSettings="_paginationSettings" Height="612"
+                                                         OperationSettings="@GetOperationSettings()" NoDataText="@L["Result.NoData"]" OnDeleteRowData="async()=>{await _loader.AwaitFor(DeleteRole());}" SelectedRow=@_selectedRole SelectedRowChanged="HandleSelectedRowChanged"
+                                                         SaveText="@(L["Action.Save"])" AddText="@(L["Action.Add"])" DeleteText="@(L["Action.Delete"])" CancelText="@(L["Action.Cancel"])" ConfirmText="@(L["Action.Confirm"])"
+                                                         AddDialogTitle="@(L["RolePage.CreateRoleTitle"])" EditDialogTitle="@(L["RolePage.UpdateRoleTitle"])" DeleteDialogTitle="@(L["RolePage.DeleteRoleTitle"])">
+
+        <DeleteDialogTemplate>
+            @{
+                var selectedRole = _selectedRole as RoleModel;
+                if (selectedRole != null && !string.IsNullOrEmpty(selectedRole.Id))
+                {
+                    <div class="mt-3">
+                        @L["Result.DeleteConfirm"]<span style="color:red">@selectedRole.RoleName</span> ?
+                    </div>
+                }
+                else
+                {
+                    _selectedRole = null;
+                    <div class="mt-3">
+                        @L["Result.DataNoFound"]
+                    </div>
+                }
+            }
+        </DeleteDialogTemplate>
+        <EditDialogTemplate Context="dialogContext">
+            @if (_grid.NewData != null)
+            {
+                <EditForm Model="_newRole" OnValidSubmit="@(async()=>{await _loader.AwaitFor(CreateRole());})">
+                    <DataAnnotationsValidator />
+                    <div class="m-3">
+                        <MagicPropsComponents.Components.Input.MPInput Title="@L["Model.RoleName"]" @bind-Value=@_newRole.RoleName FixedTitle Width="450" ValidationFieldName="RoleName" />
+                        <ValidationMessage For="()=>_newRole.RoleName" />
+                    </div>
+                    <div class="mx-4 d-flex mt-2">
+                        <button class="btn btn-primary ms-auto" type="submit">@L["Action.Save"]</button>
+                        <button class="btn btn-secondary ms-2" @onclick="@(()=>{_grid.ResetOperationSettings();_newRole=new EditRoleModel(L);})">@L["Action.Cancel"]</button>
+                    </div>
+                </EditForm>
+            }
+        </EditDialogTemplate>
+        <ChildContent>
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="Id" Visible=false PrimaryColumn>
+                <EditTemplate></EditTemplate>
+            </MagicPropsComponents.Components.DataGrid.MPGridColumn>
+            <MagicPropsComponents.Components.DataGrid.MPGridColumn ColumnName="RoleName" HeaderText="@L["Model.RoleName"]" Sortable="true">
+                <Template Context="rowContent">
+                    @{
+                        var role = rowContent as RoleModel;
+                        if (!_accordions.ContainsKey(role.Id))
+                            _accordions.Add(role.Id, new MagicPropsComponents.Components.Accordion.MPAccordion());
+                        if (role.Id != null)
+                        {
+                            <MagicPropsComponents.Components.Accordion.MPAccordion @ref="@_accordions[role.Id]" OnClickHeader="()=>{ HandelClickHeader(role); }">
+                                <HeaderTemplate>
+                                    @role.RoleName
+                                </HeaderTemplate>
+                                <BodyTemplate>
+                                    @{
+                                        var isDisabled = IsBlockEdit(role);
+                                    }
+                                    <div id="content_@(role.Id)" class="mt-2 p-3 pe-0 d-flex flex-column" style="background-color:white;border:1px dashed black;border-radius:3px;" @onclick:stopPropagation=true>
+                                        <div class="d-flex align-items-baseline">
+                                            <MagicPropsComponents.Components.Input.MPInput Disabled="@(isDisabled||!_canUpdateRoleName)" Title="@L["Model.RoleName"]" @bind-Value=@role.RoleName FixedTitle Width="450" ValidationFieldName="RoleName" />
+                                            <div class="btn btn-theme ms-auto me-4 @(isDisabled||(!_canManageClaims&&!_canUpdateRoleName)?"disabled":"")" style="width:70px;height:35px;" @onclick="async()=>{if(isDisabled||(!_canManageClaims&&!_canUpdateRoleName))return;await _loader.AwaitFor(UpdateRole(role));}">@L["Action.Update"]</div>
+                                        </div>
+                                        @if (!string.IsNullOrEmpty(_errorMsg))
+                                        {
+                                            <div><span style="color:red">@_errorMsg</span></div>
+                                        }
+                                        <div class="mt-2">
+                                            @{
+                                                var claimsGroup = ClaimsByCategory();
+                                                if (!_roleClaimsGroup.ContainsKey(role.Id))
+                                                    _roleClaimsGroup.Add(role.Id, claimsGroup);
+                                            }
+                                            @foreach (var claimGroup in _roleClaimsGroup[role.Id])
+                                            {
+                                                var permissionAccordion = new MagicPropsComponents.Components.Accordion.MPAccordion();
+                                                <MagicPropsComponents.Components.Accordion.MPAccordion @ref=permissionAccordion>
+                                                    <HeaderTemplate>
+
+                                                        <div style="height:50px;line-height:50px;border-radius: 10px;">
+                                                            @if (isDisabled || !_canManageClaims)
+                                                            {
+                                                                @if (!CheckIsSelectedAllCategory(role, claimGroup.Value))
+                                                                {
+                                                                    <input type="checkbox" class="me-2 checkbox-theme" disabled />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <input type="checkbox" class="me-2 checkbox-theme" checked disabled />
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                @if (!CheckIsSelectedAllCategory(role, claimGroup.Value))
+                                                                {
+                                                                    <input type="checkbox" class="me-2 checkbox-theme" @onclick="()=>HandleSelectAll(role,claimGroup.Value,true)" @onclick:stopPropagation=true />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <input type="checkbox" class="me-2 checkbox-theme" checked @onclick="()=>HandleSelectAll(role,claimGroup.Value,false)" @onclick:stopPropagation=true />
+                                                                }
+                                                            }
+                                                            @claimGroup.Key
+                                                        </div>
+                                                    </HeaderTemplate>
+                                                    <BodyTemplate>
+                                                        @foreach (var claim in claimGroup.Value)
+                                                        {
+                                                            <div class="my-2 d-flex hover-pointer" @onclick="()=>{if(isDisabled || !_canManageClaims)return;ChangeClaimState(role,claim,claimGroup.Value);}">
+                                                                @if (isDisabled || !_canManageClaims)
+                                                                {
+                                                                    @if (CheckIsSelected(role, claim))
+                                                                    {
+                                                                        <input type="checkbox" class="me-2 checkbox-theme" checked disabled />
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <input type="checkbox" class="me-2 checkbox-theme" disabled />
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    @if (CheckIsSelected(role, claim))
+                                                                    {
+                                                                        <input type="checkbox" class="me-2 checkbox-theme" checked />
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <input type="checkbox" class="me-2" />
+                                                                    }
+                                                                }
+                                                                @claim.ClaimValue
+                                                            </div>
+                                                        }
+                                                    </BodyTemplate>
+                                                </MagicPropsComponents.Components.Accordion.MPAccordion>
+                                            }
+                                        </div>
+                                    </div>
+                                </BodyTemplate>
+                            </MagicPropsComponents.Components.Accordion.MPAccordion>
+                        }
+                    }
+                </Template>
+            </MagicPropsComponents.Components.DataGrid.MPGridColumn>
+        </ChildContent>
+    </MagicPropsComponents.Components.DataGrid.MPDataGrid>
+</div>
+<MagicPropsComponents.Components.Loader.MPLoader @ref="_loader" />
+
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    private List<string> tools = new List<string>() { "Search" };
+    private List<ToolButton> _myToolBtn = new List<ToolButton>() { };
+    public PaginationSettings _paginationSettings = new PaginationSettings() { EnablePagination = true, PaginationMode = PaginationModes.ClientSide, PageSize = 10 };
+    private EditRoleModel _newRole { get; set; }
+    private List<RoleModel> AllRoles { get; set; } = new List<RoleModel>();
+    private List<RoleModel> datasource { get; set; } = new List<RoleModel>();
+    private MagicPropsComponents.Components.DataGrid.MPDataGrid _grid;
+    private MagicPropsComponents.Components.Loader.MPLoader _loader = new MagicPropsComponents.Components.Loader.MPLoader();
+    private List<CustomClaims> _claims = new List<CustomClaims>();
+    private Dictionary<string, MagicPropsComponents.Components.Accordion.MPAccordion> _accordions = new Dictionary<string, MagicPropsComponents.Components.Accordion.MPAccordion>();
+    private bool _canCreateRole = false;
+    private bool _canDeleteRole = false;
+    private bool _canUpdateRoleName = false;
+    private bool _canManageClaims = false;
+    private string _errorMsg = string.Empty;
+
+    private Dictionary<string, Dictionary<string, List<CustomClaims>>> _roleClaimsGroup = new Dictionary<string, Dictionary<string, List<CustomClaims>>>();
+    private object _selectedRole { get; set; } = default;
+
+    private bool IsBlockEdit(RoleModel currentRole)
+    {
+        var selectedRole = _selectedRole as RoleModel;
+        var isDisabled = selectedRole == null || currentRole.Id != selectedRole.Id;
+        return isDisabled;
+    }
+
+    private string GetSelectedRoleName()
+    {
+        var selectedRole = _selectedRole as RoleModel;
+        if (selectedRole != null && !string.IsNullOrEmpty(selectedRole.Id))
+        {
+            return selectedRole.RoleName;
+        }
+        return string.Empty;
+    }
+
+    private void HandelClickHeader(RoleModel role)
+    {
+        _errorMsg = string.Empty;
+        var selectedRole = _selectedRole as RoleModel;
+        if (_accordions[role.Id].Expanded == true && selectedRole != null && selectedRole.Id == role.Id)
+        {
+            _selectedRole = null;
+            return;
+        }
+        _selectedRole = role;
+    }
+
+    private void HandleSelectedRowChanged(object obj)
+    {
+        var newSelectedRole = obj as RoleModel;
+        var selectedRole = _selectedRole as RoleModel;
+        if (newSelectedRole == null)
+        {
+            return;
+        }
+        else if (selectedRole == null)
+        {
+            _selectedRole = newSelectedRole;
+        }
+        else if (selectedRole != null)
+        {
+            if (newSelectedRole.Id == selectedRole.Id)
+            {
+                if (_accordions[selectedRole.Id].Expanded == false)
+                {
+                    _selectedRole = selectedRole;
+                    //_accordions[selectedRole.Id].Expanded = true;
+                }
+                else if (_accordions[selectedRole.Id].Expanded == true)
+                {
+                    //_accordions[selectedRole.Id].Expanded = false;
+                    _selectedRole = null;
+                }
+            }
+            else
+            {
+                _selectedRole = newSelectedRole;
+            }
+        }
+    }
+
+    private void ChangeClaimState(RoleModel role, CustomClaims claim, List<CustomClaims> categoryClaims)
+    {
+        var currentClaim = role.Claims.Find(x => x.Value == claim.ClaimValue);
+        if (currentClaim != null)
+        {
+            if (claim.IsCategoryBase)
+            {
+                var otherClaims = role.Claims.FindAll(x => categoryClaims.Any(c => c.ClaimValue == x.Value));
+                otherClaims.ForEach(x => role.Claims.Remove(x));
+            }
+            role.Claims.Remove(currentClaim);
+        }
+        else
+        {
+            if (claim.Category == "Role Management" && !role.Claims.Any(x => x.Value == "View Roles"))
+            {
+                role.Claims.Add(new System.Security.Claims.Claim("Permission", "View Roles"));
+            }
+            else if (claim.Category == "User Management" && !role.Claims.Any(x => x.Value == "View Users"))
+            {
+                role.Claims.Add(new System.Security.Claims.Claim("Permission", "View Users"));
+            }
+            role.Claims.Add(new System.Security.Claims.Claim(claim.ClaimType, claim.ClaimValue));
+        }
+    }
+
+    private void HandleSelectAll(RoleModel role, List<CustomClaims> claims, bool selectedAll)
+    {
+        var selectedRole = _selectedRole as RoleModel;
+        if (selectedRole == null || role.Id != selectedRole.Id)
+        {
+            _selectedRole = role;
+        }
+        if (selectedAll)
+        {
+            claims.ForEach(x =>
+            {
+                if (!role.Claims.Any(c => c.Value == x.ClaimValue))
+                {
+                    role.Claims.Add(new System.Security.Claims.Claim(x.ClaimType, x.ClaimValue));
+                }
+            });
+        }
+        else
+        {
+            claims.ForEach(x =>
+            {
+                var item = role.Claims.Find(c => c.Value == x.ClaimValue);
+                if (item != null)
+                {
+                    role.Claims.Remove(item);
+                }
+            });
+        }
+    }
+
+    private bool CheckIsSelectedAllCategory(RoleModel role, List<CustomClaims> claims)
+    {
+        if (role.Claims == null) role.Claims = new List<System.Security.Claims.Claim>();
+        bool res = true;
+        claims.ForEach(c =>
+        {
+            if (res)
+            {
+                if (!role.Claims.Any(claim => claim.Value == c.ClaimValue)) { res = false; return; }
+            }
+        });
+        return res;
+    }
+
+    private bool CheckIsSelected(RoleModel role, CustomClaims claim)
+    {
+        if (role.Claims == null) role.Claims = new List<System.Security.Claims.Claim>();
+        return role.Claims.Any(x => x.Value == claim.ClaimValue);
+    }
+
+    private async Task CreateRole()
+    {
+        if (_newRole.RoleName != null)
+        {
+            var result = await _roleManager.CreateAsync(new ApplicationRole { Name = _newRole.RoleName });
+            if (result.Succeeded)
+            {
+                MainLayout!.ChangedRoleInfo = true;
+                var newRole = await _roleManager.FindByNameAsync(_newRole.RoleName);
+                if (newRole != null)
+                {
+                    AllRoles.Add(new RoleModel { RoleName = newRole.Name ?? string.Empty, Id = newRole.Id, Claims = newRole.Claims });
+                    RenderTable();
+                    _logger.LogInformation("Create Role '" + newRole.Name + "'");
+                    await MainLayout!.NewAuditlog("Create Role '" + newRole.Name + "'");
+                    await MainLayout!.AddNotice(L["RolePage.CreateRoleTitle"] + " " + L["Result.Success"]);
+                    _grid.ResetOperationSettings();
+                }
+            }
+            else
+            {
+                List<string> errorCodes = result.Errors.Select(x => x.Code).ToList();
+                if (errorCodes.Any(x => x == "DuplicateRoleName"))
+                {
+                    _errorMsg = "'" + _newRole.RoleName + "'" + L["Error.AlreadyExists"];
+                }
+                else
+                {
+                    _errorMsg = L["Error.Default"] + L["UserPage.UpdateUserTitle"] + "-" + L["Result.Failed"];
+                }
+                _logger.LogDebug("Create Role '" + _newRole.RoleName + "' failed: " + _errorMsg);
+                await MainLayout!.NewAuditlog("Create Role '" + _newRole.RoleName + "' failed: " + _errorMsg, false);
+                await MainLayout!.AddNotice(_errorMsg, NoticeStatus.Falied);
+            }
+        }
+        else
+        {
+            _logger.LogDebug("Create Role failed.");
+            await MainLayout!.NewAuditlog("Create Role failed.", false);
+            await MainLayout!.AddNotice(L["RolePage.CreateRoleTitle"] + " " + L["Result.Failed"], NoticeStatus.Warning);
+        }
+        _newRole = new EditRoleModel(L);
+    }
+
+    private async Task DeleteRole()
+    {
+        if (!_canDeleteRole) return;
+        var selectedRole = _selectedRole as RoleModel;
+        if (selectedRole != null)
+        {
+            var role = await _roleManager.FindByNameAsync(selectedRole.RoleName);
+            if (role != null)
+            {
+                var result = await _roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                {
+                    MainLayout!.ChangedRoleInfo = true;
+                    AllRoles = AllRoles.Where(x => x.RoleName != selectedRole.RoleName).ToList();
+                    RenderTable();
+                    _logger.LogInformation("Delete role '" + role.Name + "'");
+                    await MainLayout!.NewAuditlog("Delete role '" + role.Name + "'");
+                    await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + " " + L["Result.Success"]);
+                }
+                else
+                {
+                    _logger.LogDebug("Delete role failed:" + result.Errors);
+                    await MainLayout!.NewAuditlog("Delete role failed:" + result.Errors, false);
+                    await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+                }
+            }
+            else
+            {
+                _logger.LogDebug("Delete role failed: Could not found this role from db.");
+                await MainLayout!.NewAuditlog("Delete role failed: Could not found this role from db.", false);
+                await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Falied);
+            }
+        }
+        else
+        {
+            _logger.LogDebug(System.Reflection.MethodInfo.GetCurrentMethod()?.Name + ": The item returned by the grid cannot be converted to the specified ones.");
+            await MainLayout!.NewAuditlog("Delete role failed.", false);
+            await MainLayout!.AddNotice(L["RolePage.DeleteRoleTitle"] + "-" + L["Result.Failed"], NoticeStatus.Warning);
+        }
+        _selectedRole = new RoleModel();
+    }
+
+    private async Task UpdateRole(RoleModel editRole)
+    {
+        if (!_canManageClaims && !_canUpdateRoleName)
+        {
+            return;
+        }
+        var role = await _roleManager.FindByIdAsync(editRole.Id);
+        var originalRole = new RoleModel();
+        if (role != null)
+        {
+            originalRole.RoleName = role.Name ?? string.Empty;
+            originalRole.Claims = role.Claims;
+            if (!IsBlockEdit(editRole) && _canUpdateRoleName)
+            {//change rolename
+                Regex nameRegex = new Regex(GlobalSettings.NameRegularExpression);
+                if (string.IsNullOrEmpty(editRole.RoleName))
+                {
+                    _errorMsg = L["Model.RoleName"] + L["Error.Required"];
+                    return;
+                }
+                else if (!nameRegex.IsMatch(editRole.RoleName))
+                {
+                    _errorMsg = L["Model.RoleName"] + L["Error.NameLimitation"];
+                    return;
+                }
+                role.Name = editRole.RoleName;
+            }
+            else
+            {//reset
+                editRole.RoleName = role.Name ?? editRole.RoleName;
+            }
+            if (!IsBlockEdit(editRole) && _canManageClaims)
+            {//change claims
+                if (role.Claims != null)
+                {
+                    role.Claims.Clear();
+                }
+                else
+                {
+                    role.Claims = new List<System.Security.Claims.Claim>();
+                }
+                foreach (var claim in editRole.Claims)
+                {
+                    role.Claims.Add(claim);
+                }
+            }
+            else
+            {
+                editRole.Claims = role.Claims;
+            }
+            var res = await _roleManager.UpdateAsync(role);
+            if (res.Succeeded)
+            {
+                MainLayout!.ChangedRoleInfo = true;
+                MainLayout!.ChangedRoleClaims = true;
+                _logger.LogInformation("Update role '" + editRole.RoleName + "'");
+                await MainLayout!.NewAuditlog("Update role '" + editRole.RoleName + "'");
+                await MainLayout!.AddNotice(L["Action.Update"] + " " + editRole.RoleName + " " + L["Result.Success"]);
+            }
+            else
+            {
+                var errorName = editRole.RoleName;
+                List<string> errorCodes = res.Errors.Select(x => x.Code).ToList();
+                if (errorCodes.Any(x => x == "DuplicateRoleName"))
+                {
+                    _errorMsg = "'" + errorName + "'" + L["Error.AlreadyExists"];
+                }
+                else
+                {
+                    _errorMsg = L["Error.Default"] + L["UserPage.UpdateUserTitle"] + "-" + L["Result.Failed"];
+                }
+                _logger.LogDebug("Update Role '" + errorName + "' failed: " + _errorMsg);
+                await MainLayout!.NewAuditlog("Update Role '" + errorName + "' failed: " + _errorMsg, false);
+                await MainLayout!.AddNotice(_errorMsg, NoticeStatus.Falied);
+                editRole.RoleName = originalRole.RoleName;
+                editRole.Claims = originalRole.Claims;
+            }
+        }
+        else
+        {
+            _logger.LogDebug("Update Role failed: Counld not found role '" + editRole.RoleName + "'.");
+            await MainLayout!.NewAuditlog("Update Role failed: Counld not found role '" + editRole.RoleName + "'.", false);
+            await MainLayout!.AddNotice(L["Result.DataNoFound"] + " " + L["Model.RoleName"] + " '" + editRole.RoleName + "' " + L["Action.Update"] + L["Model.RoleName"] + " " + L["Result.Failed"], NoticeStatus.Falied);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        _newRole = new EditRoleModel(L);
+        _canCreateRole = global.GetUserClaims().Any(x => x == "Create Roles");
+        _canDeleteRole = global.GetUserClaims().Any(x => x == "Delete Roles");
+        _canUpdateRoleName = global.GetUserClaims().Any(x => x == "Update Roles");
+        _canManageClaims = global.GetUserClaims().Any(x => x == "Manage Role Claims");
+        _claims = CustomClaims.GetDefaultClaims();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!global.GetUserClaims().Any(x => x == "View Roles"))
+        {
+            NavigationManager.NavigateTo(GlobalSettings.NotAuthorizedRoute);
+        }
+        else
+        {
+            await LoadRoleData();
+        }
+    }
+
+    private Dictionary<string, List<CustomClaims>> ClaimsByCategory()
+    {
+        var claimsByCategory = _claims
+            .GroupBy(claim => claim.Category)
+            .ToDictionary(group => group.Key, group => group.ToList());
+        return claimsByCategory;
+    }
+
+    private void RenderTable()
+    {
+        datasource = AllRoles.ToList();
+    }
+
+    private async Task LoadRoleData()
+    {
+        var roles = _roleManager.Roles.ToList();
+        if (roles.Count == 0)
+        {
+            await MainLayout!.AddNotice(L["Result.NoData"], NoticeStatus.Warning);
+        }
+        AllRoles = new List<RoleModel>();
+        foreach (var role in roles)
+        {
+            var claims = await _roleManager.GetClaimsAsync(role);
+            AllRoles.Add(new RoleModel { RoleName = role.Name ?? string.Empty, Claims = claims.ToList(), Id = role.Id });
+        }
+        RenderTable();
+    }
+
+    private OperationSettings GetOperationSettings()
+    {
+        return new OperationSettings()
+            {
+                AllowAdding = _canCreateRole,
+                AllowEditing = false,
+                AllowDeleting = _canDeleteRole,
+                AllowGlobalSearch = true,
+                EditingTrigger = EditingTrigger.RowDblClick
+            };
+    }
+}

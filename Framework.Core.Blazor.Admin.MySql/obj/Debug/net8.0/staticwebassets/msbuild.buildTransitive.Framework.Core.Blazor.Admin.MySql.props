@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Framework.Core.Blazor.Admin.MySql.props" />
+</Project>

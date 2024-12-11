@@ -1,0 +1,117 @@
+.page[b-xgxd7auzxz] {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto !important;
+    overflow-x: hidden;
+}
+
+main[b-xgxd7auzxz] {
+    flex: 1;
+    padding-left: 30px;
+    padding-right: 20px;
+    background-color: #F0F3FA;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: calc(100% - 280px);
+}
+
+.top-row[b-xgxd7auzxz] {
+    justify-content: flex-end;
+    display: flex;
+    height: 3.5rem;
+    background-color: white;
+    align-items: center;
+}
+
+    .top-row[b-xgxd7auzxz] .popup {
+        padding: 0px;
+    }
+
+    .top-row[b-xgxd7auzxz]  .profile-item {
+        padding-left: .5rem;
+        padding-right: .5rem;
+        white-space: nowrap;
+        text-decoration: none;
+        display: flex;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        color: #1B2559
+    }
+
+        .top-row[b-xgxd7auzxz]  .profile-item:first-child {
+            border-start-end-radius: 5px;
+            border-start-start-radius: 5px;
+        }
+
+        .top-row[b-xgxd7auzxz]  .profile-item:last-child {
+            border-end-end-radius: 5px;
+            border-end-start-radius: 5px;
+        }
+
+        .top-row[b-xgxd7auzxz]  .profile-item:hover {
+            background-color: rgb(240,243,250);
+            cursor: pointer;
+        }
+
+        .top-row[b-xgxd7auzxz]  .profile-item.selected {
+            background-color: #4318FF;
+            color: white;
+        }
+
+    .top-row[b-xgxd7auzxz]  a {
+        text-decoration: none;
+    }
+
+    .top-row[b-xgxd7auzxz]  .profile-text {
+        padding: .5rem;
+        padding-bottom: 0px;
+        color: blue;
+        text-decoration: underline;
+    }
+
+        .top-row[b-xgxd7auzxz]  .profile-text:hover {
+            cursor: pointer;
+        }
+
+.body-container[b-xgxd7auzxz] {
+    padding-top: 20px;
+    flex: 1;
+    background-color: blue;
+}
+
+.navbar-expand-btn-shrink[b-xgxd7auzxz] {
+    border-radius: 50%;
+    background-color: blue;
+    padding-left: 12px;
+    padding-top: 7px;
+    color: white;
+    position: fixed;
+    bottom: 58px;
+    z-index: 7;
+    left: 270px;
+    visibility: visible;
+    opacity: 1;
+    height: 40px;
+    width: 40px;
+    font-size: large;
+}
+
+.navbar-expand-btn-expand[b-xgxd7auzxz] {
+    border-radius: 50%;
+    background-color: blue;
+    padding-left: 14.5px;
+    padding-top: 8px;
+    color: white;
+    position: fixed;
+    bottom: 58px;
+    z-index: 7;
+    left: 77px;
+    visibility: visible;
+    opacity: 1;
+    height: 40px;
+    width: 40px;
+    font-size: large;
+}

@@ -1,0 +1,269 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<div class="navbar-container" style="width:@(NavbarWidth)px;">
+    <div class="navbar-header-logo">
+        @if (NavbarWidth == 280)
+        {
+            <img class="hover-pointer" height="49" src="/img/mainLayout/logo-en.svg">
+        }
+        else
+        {
+            <img class="hover-pointer" height="49" src="/img/mainLayout/logo.svg">
+        }
+    </div>
+    <div class="navbar-list-container" style="width:@(NavbarWidth)px;">
+        @foreach (var menu in _menus)
+        {
+            @if (menu.IsAccessRestricted)
+            {
+                <Framework.Core.Blazor.Admin.SqlServer.Auth.CustomAuthorizeView ClaimValue="@menu.ClaimValue">
+                    <CustomAuthorized>
+                        <MagicPropsComponents.Components.Accordion.MPAccordion HideIcon="@(menu.ChildMenus.Count<1||NavbarWidth!=280)"
+                                                                               OnClickHeader="()=>NavigationTo(menu)" HoverTitle="@L[menu.MenuName]">
+                            <HeaderTemplate>
+                                <div class="w-100 navitem-container @(IsRouteActived(menu.MenuUrl)?"selected":"")">
+                                    @if (!string.IsNullOrEmpty(menu.IconClass))
+                                    {
+                                        <i class="@(menu.IconClass)" aria-hidden="true"></i>
+                                    }
+                                    else if (!string.IsNullOrEmpty(menu.IconUrl))
+                                    {
+                                        <img class="hover-pointer mx-1" height="20" src="@menu.IconUrl" />
+                                    }
+                                    @if (NavbarWidth == 280)
+                                    {
+                                        @L[menu.MenuName]
+                                    }
+                                    else if (string.IsNullOrEmpty(menu.IconClass) && string.IsNullOrEmpty(menu.IconUrl))
+                                    {
+                                        @L[menu.MenuName].ToString().Substring(0, 1).ToUpper()
+                                    }
+                                </div>
+                            </HeaderTemplate>
+                            <BodyTemplate>
+                                @if (menu.ChildMenus.Count > 0)
+                                {
+                                    foreach (var child in menu.ChildMenus)
+                                    {
+                                        if (child.IsAccessRestricted)
+                                        {
+                                            <Framework.Core.Blazor.Admin.SqlServer.Auth.CustomAuthorizeView ClaimValue="@child.ClaimValue">
+                                                <CustomAuthorized>
+                                                    <MagicPropsComponents.Components.Accordion.MPAccordion OnClickHeader="()=>NavigationTo(child)" HoverTitle="@L[child.MenuName]" HideIcon>
+                                                        <HeaderTemplate>
+                                                            <div class="w-100 navitem-container @(IsRouteActived(child.MenuUrl)?"selected":"")">
+                                                                @if (!string.IsNullOrEmpty(child.IconClass))
+                                                                {
+                                                                    <i class="@(child.IconClass)" aria-hidden="true"></i>
+                                                                }
+                                                                else if (!string.IsNullOrEmpty(child.IconUrl))
+                                                                {
+                                                                    <img class="hover-pointer mx-1" height="20" src="@child.IconUrl" />
+                                                                }
+                                                                @if (NavbarWidth == 280)
+                                                                {
+                                                                    @L[child.MenuName]
+                                                                }
+                                                                else if (string.IsNullOrEmpty(child.IconClass) && string.IsNullOrEmpty(child.IconUrl))
+                                                                {
+                                                                    @L[child.MenuName].ToString().Substring(0, 1).ToUpper()
+                                                                }
+                                                            </div>
+
+                                                        </HeaderTemplate>
+                                                    </MagicPropsComponents.Components.Accordion.MPAccordion>
+                                                </CustomAuthorized>
+                                            </Framework.Core.Blazor.Admin.SqlServer.Auth.CustomAuthorizeView>
+                                        }
+                                        else
+                                        {
+                                            <MagicPropsComponents.Components.Accordion.MPAccordion OnClickHeader="()=>NavigationTo(child)" HoverTitle="@L[child.MenuName]" HideIcon>
+                                                <HeaderTemplate>
+                                                    <div class="w-100 navitem-container @(IsRouteActived(child.MenuUrl)?"selected":"")">
+                                                        @if (!string.IsNullOrEmpty(child.IconClass))
+                                                        {
+                                                            <i class="@(child.IconClass)" aria-hidden="true"></i>
+                                                        }
+                                                        else if (!string.IsNullOrEmpty(child.IconUrl))
+                                                        {
+                                                            <img class="hover-pointer mx-1" height="20" src="@child.IconUrl" />
+                                                        }
+                                                        @if (NavbarWidth == 280)
+                                                        {
+                                                            @L[child.MenuName]
+                                                        }
+                                                        else if (string.IsNullOrEmpty(child.IconClass) && string.IsNullOrEmpty(child.IconUrl))
+                                                        {
+                                                            @L[child.MenuName].ToString().Substring(0, 1).ToUpper()
+                                                        }
+                                                    </div>
+
+                                                </HeaderTemplate>
+                                            </MagicPropsComponents.Components.Accordion.MPAccordion>
+                                        }
+                                    }
+                                }
+                            </BodyTemplate>
+                        </MagicPropsComponents.Components.Accordion.MPAccordion>
+                    </CustomAuthorized>
+                </Framework.Core.Blazor.Admin.SqlServer.Auth.CustomAuthorizeView>
+            }
+            else
+            {
+                <MagicPropsComponents.Components.Accordion.MPAccordion HideIcon="@(menu.ChildMenus.Count<1||NavbarWidth!=280)"
+                                                                       OnClickHeader="()=>NavigationTo(menu)" HoverTitle="@L[menu.MenuName]">
+                    <HeaderTemplate>
+                        <div class="w-100 navitem-container @(IsRouteActived(menu.MenuUrl)?"selected":"")">
+                            @if (!string.IsNullOrEmpty(menu.IconClass))
+                            {
+                                <i class="@(menu.IconClass)" aria-hidden="true"></i>
+                            }
+                            else if (!string.IsNullOrEmpty(menu.IconUrl))
+                            {
+                                <img class="hover-pointer mx-1" height="20" src="@menu.IconUrl" />
+                            }
+                            @if (NavbarWidth == 280)
+                            {
+                                @L[menu.MenuName]
+                            }
+                            else if (string.IsNullOrEmpty(menu.IconClass) && string.IsNullOrEmpty(menu.IconUrl))
+                            {
+                                @L[menu.MenuName].ToString().Substring(0, 1).ToUpper()
+                            }
+                        </div>
+
+                    </HeaderTemplate>
+                    <BodyTemplate>
+                        @if (menu.ChildMenus.Count > 0)
+                        {
+                            foreach (var child in menu.ChildMenus)
+                            {
+                                if (child.IsAccessRestricted)
+                                {
+                                    <Framework.Core.Blazor.Admin.SqlServer.Auth.CustomAuthorizeView ClaimValue="@child.ClaimValue">
+                                        <CustomAuthorized>
+                                            <MagicPropsComponents.Components.Accordion.MPAccordion OnClickHeader="()=>NavigationTo(child)" HoverTitle="@L[child.MenuName]" HideIcon>
+                                                <HeaderTemplate>
+                                                    <div class="w-100 navitem-container @(IsRouteActived(child.MenuUrl)?"selected":"")">
+                                                        @if (!string.IsNullOrEmpty(child.IconClass))
+                                                        {
+                                                            <i class="@(child.IconClass)" aria-hidden="true"></i>
+                                                        }
+                                                        else if (!string.IsNullOrEmpty(child.IconUrl))
+                                                        {
+                                                            <img class="hover-pointer mx-1" height="20" src="@child.IconUrl" />
+                                                        }
+                                                        @if (NavbarWidth == 280)
+                                                        {
+                                                            @L[child.MenuName]
+                                                        }
+                                                        else if (string.IsNullOrEmpty(child.IconClass) && string.IsNullOrEmpty(child.IconUrl))
+                                                        {
+                                                            @L[child.MenuName].ToString().Substring(0, 1).ToUpper()
+                                                        }
+                                                    </div>
+
+                                                </HeaderTemplate>
+                                            </MagicPropsComponents.Components.Accordion.MPAccordion>
+                                        </CustomAuthorized>
+                                    </Framework.Core.Blazor.Admin.SqlServer.Auth.CustomAuthorizeView>
+                                }
+                                else
+                                {
+                                    <MagicPropsComponents.Components.Accordion.MPAccordion OnClickHeader="()=>NavigationTo(child)" HoverTitle="@L[child.MenuName]" HideIcon>
+                                        <HeaderTemplate>
+                                            <div class="w-100 navitem-container @(IsRouteActived(child.MenuUrl)?"selected":"")">
+                                                @if (!string.IsNullOrEmpty(child.IconClass))
+                                                {
+                                                    <i class="@(child.IconClass)" aria-hidden="true"></i>
+                                                }
+                                                else if (!string.IsNullOrEmpty(child.IconUrl))
+                                                {
+                                                    <img class="hover-pointer mx-1" height="20" src="@child.IconUrl" />
+                                                }
+                                                @if (NavbarWidth == 280)
+                                                {
+                                                    @L[child.MenuName]
+                                                }
+                                                else if (string.IsNullOrEmpty(child.IconClass) && string.IsNullOrEmpty(child.IconUrl))
+                                                {
+                                                    @L[child.MenuName].ToString().Substring(0, 1).ToUpper()
+                                                }
+                                            </div>
+
+                                        </HeaderTemplate>
+                                    </MagicPropsComponents.Components.Accordion.MPAccordion>
+                                }
+                            }
+                        }
+                    </BodyTemplate>
+                </MagicPropsComponents.Components.Accordion.MPAccordion>
+            }
+
+        }
+    </div>
+
+</div>
+
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    [Parameter]
+    public int NavbarWidth { get; set; } = 280;
+    private async void NavigationTo(NavMenuModel menu)
+    {
+        if (menu.MenuUrl != null)
+        {
+            await MainLayout!.NavigationTo(menu.MenuUrl, menu.MenuName, menu.IconClass);
+        }
+        //StateHasChanged();
+    }
+    private List<NavMenuModel> _menus = new List<NavMenuModel>();
+    //private string currentRoute { get; set; } = string.Empty;
+    protected override async Task OnInitializedAsync()
+    {
+        _menus.Add(new NavMenuModel("Menu.Dashboard", "dashboard", null, "fa fa-home"));
+        //_menus.Add(new NavMenuModel("Menu.Weather", "weather", "fa fa-cloud"));
+        // _menus.Add(new NavMenuModel("System Log", "Log/SystemLogs"));
+        // _menus.Add(new NavMenuModel("Audit Log", "Log/AuditLogs"));
+        var securityMenu = new NavMenuModel("Menu.Security", null, null, "fa fa-shield");
+        var logMenu = new NavMenuModel("Menu.Logs", null, null, "fa fa-calendar-plus-o");
+
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        if (user?.Identity?.IsAuthenticated == true)
+        {
+            if (user.Claims.Any(x => x.Value == "View Users"))
+            {
+                securityMenu.AddChildMenu(new NavMenuModel("Menu.Users", "users", "View Users", "fa fa-user"));
+            }
+            if (user.Claims.Any(x => x.Value == "View Roles"))
+            {
+                securityMenu.AddChildMenu(new NavMenuModel("Menu.Roles", "roles", "View Roles", "fa fa-users"));
+            }
+            if (user.Claims.Any(x => x.Value == "View System Logs"))
+            {
+                logMenu.AddChildMenu(new NavMenuModel("Menu.SystemLogs", "systemLogs", "View System Logs", null, "/img/icons/auditLogIcon.png"));
+            }
+            if (user.Claims.Any(x => x.Value == "View Audit Logs"))
+            {
+                logMenu.AddChildMenu(new NavMenuModel("Menu.AuditLogs", "auditLogs", "View Audit Logs", null, "/img/icons/systemLogIcon.png"));
+            }
+            if (securityMenu.ChildMenus.Any())
+            {
+                _menus.Add(securityMenu);
+            }
+            if (logMenu.ChildMenus.Any())
+            {
+                _menus.Add(logMenu);
+            }
+        }
+    }
+
+    private bool IsRouteActived(string url)
+    {
+        if (url == MainLayout!.CurrentRoute) return true;
+        return false;
+    }
+}

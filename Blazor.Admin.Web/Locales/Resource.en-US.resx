@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action.Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Action.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Action.ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Action.Claims" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="Action.ColumnChooser" xml:space="preserve">
+    <value>Column Chooser</value>
+  </data>
+  <data name="Action.Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Action.Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Action.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Action.Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Action.Export" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="Action.Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Action.ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="Action.Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Action.Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Action.Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Error.AlreadyExists" xml:space="preserve">
+    <value> already exists</value>
+  </data>
+  <data name="Error.Default" xml:space="preserve">
+    <value>An unknow error occurred on </value>
+  </data>
+  <data name="Error.EmailFormat" xml:space="preserve">
+    <value>Email format incorrect.</value>
+  </data>
+  <data name="Error.NotFound" xml:space="preserve">
+    <value>The record was not found</value>
+  </data>
+  <data name="Error.LengthLimitation" xml:space="preserve">
+    <value>'s length range should be between </value>
+  </data>
+  <data name="Error.PwdNotMatch" xml:space="preserve">
+    <value>The passwords entered twice do not match</value>
+  </data>
+  <data name="Error.Required" xml:space="preserve">
+    <value> is required. </value>
+  </data>
+  <data name="Error.RequiresDigit" xml:space="preserve">
+    <value>Contains at least one digit</value>
+  </data>
+  <data name="Error.RequiresLower" xml:space="preserve">
+    <value>Contains at least one lowercase letter</value>
+  </data>
+  <data name="Error.RequiresUpper" xml:space="preserve">
+    <value>Contains at least one uppercase letter</value>
+  </data>
+  <data name="Error.NameLimitation" xml:space="preserve">
+    <value> should be composed of 3-50 digits, letters, and underscores.</value>
+  </data>
+  <data name="Home.ImageText" xml:space="preserve">
+    <value>Make changes simpler, make visuals better, and enrich experiences. Welcome to MagicPros Frontend.</value>
+  </data>
+  <data name="Home.ImageTitle" xml:space="preserve">
+    <value>Make changes simpler</value>
+  </data>
+  <data name="Home.Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Home.MyDashboard" xml:space="preserve">
+    <value>My Dashboard</value>
+  </data>
+  <data name="Home.Or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="Home.Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Home.Text" xml:space="preserve">
+    <value>What's going on next?</value>
+  </data>
+  <data name="Home.Title" xml:space="preserve">
+    <value>Welcome to MagicPros.Blazor.Frontend!</value>
+  </data>
+  <data name="Language.Chinese" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="Language.English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LogPage.EarlierThan" xml:space="preserve">
+    <value>eariler than</value>
+  </data>
+  <data name="LogPage.NodataString" xml:space="preserve">
+    <value>There are no records that match the criteria!</value>
+  </data>
+  <data name="Menu.AuditLogs" xml:space="preserve">
+    <value>Audit Logs</value>
+  </data>
+  <data name="Menu.Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Menu.Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Menu.Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Menu.Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="Menu.SystemLogs" xml:space="preserve">
+    <value>System Logs</value>
+  </data>
+  <data name="Menu.Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Menu.Weather" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="Model.CreateNew" xml:space="preserve">
+    <value>New on our platform?</value>
+  </data>
+  <data name="Model.DateEnd" xml:space="preserve">
+    <value>DateEnd</value>
+  </data>
+  <data name="Model.DateForm" xml:space="preserve">
+    <value>Date From</value>
+  </data>
+  <data name="Model.Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Model.Goto" xml:space="preserve">
+    <value>Go to</value>
+  </data>
+  <data name="Model.HaveYet" xml:space="preserve">
+    <value>Have an account yet?</value>
+  </data>
+  <data name="Model.Keywords" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="Model.Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Model.LoginTitle" xml:space="preserve">
+    <value>Log in to your account!</value>
+  </data>
+  <data name="Model.Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Model.NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="Model.NewPasswordConfirm" xml:space="preserve">
+    <value>New Password Confirm</value>
+  </data>
+  <data name="Model.Operator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="Model.Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Model.PasswordConfirm" xml:space="preserve">
+    <value>Password Confirm</value>
+  </data>
+  <data name="Model.RegisterTitle" xml:space="preserve">
+    <value>Register New Account!</value>
+  </data>
+  <data name="Model.RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Model.RoleName" xml:space="preserve">
+    <value>Role Name</value>
+  </data>
+  <data name="Model.Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Model.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Model.TimeSpan" xml:space="preserve">
+    <value>TimeSpan</value>
+  </data>
+  <data name="Model.UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Profile.About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Profile.Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Profile.MyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Profile.Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Profile.UpdateProfile" xml:space="preserve">
+    <value>Update your profile</value>
+  </data>
+  <data name="Result.DataNoFound" xml:space="preserve">
+    <value>Could not found the record that you want to edit!</value>
+  </data>
+  <data name="Result.DeleteConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete </value>
+  </data>
+  <data name="Result.Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="Result.NoData" xml:space="preserve">
+    <value>There is no data to show!</value>
+  </data>
+  <data name="Result.NotAuthorized" xml:space="preserve">
+    <value>Sorry, you do not have permission to operate!</value>
+  </data>
+  <data name="Result.ResetPwdConfirm" xml:space="preserve">
+    <value>is certain that need to reset password to</value>
+  </data>
+  <data name="Result.Success" xml:space="preserve">
+    <value>Successfully</value>
+  </data>
+  <data name="RolePage.CreateRoleTitle" xml:space="preserve">
+    <value>Create Role</value>
+  </data>
+  <data name="RolePage.DeleteRoleTitle" xml:space="preserve">
+    <value>Delete Role</value>
+  </data>
+  <data name="RolePage.UpdateRoleTitle" xml:space="preserve">
+    <value>Update Role</value>
+  </data>
+  <data name="UserPage.CreateUserTitle" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="UserPage.DeleteUserTitle" xml:space="preserve">
+    <value>Delete User</value>
+  </data>
+  <data name="UserPage.SuperAdminLimitation" xml:space="preserve">
+    <value>Unable to operate super administrator!</value>
+  </data>
+  <data name="UserPage.UpdateUserTitle" xml:space="preserve">
+    <value>Update User</value>
+  </data>
+  <data name="Error.PwdError" xml:space="preserve">
+    <value>Password error.</value>
+  </data>
+  <data name="Error.BackHome" xml:space="preserve">
+    <value>Back to Home</value>
+  </data>
+</root>

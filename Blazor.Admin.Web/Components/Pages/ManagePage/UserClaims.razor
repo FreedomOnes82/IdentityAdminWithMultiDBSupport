@@ -1,0 +1,242 @@
+﻿@page "/users/claims/{UserName}"
+@rendermode @(new InteractiveServerRenderMode(prerender:false) )
+@using Framework.Core.Blazor.Admin.SqlServer.Auth.Models
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> _userManager;
+@inject RoleManager<ApplicationRole> _roleManager;
+@inject ILogger<UserClaims> Logger;
+<div class="card-container">
+    <div class="d-flex">
+        <h2>
+            @L["Action.Claims"]  : @UserName
+        </h2>
+        <div class="ms-auto">
+            <div class="btn btn-theme" style="width:70px" @onclick=Save>@L["Action.Save"]</div>
+        </div>
+    </div>
+    @foreach (var claimGroup in ClaimsByCategory())
+    {
+        if (!_accordions.ContainsKey(claimGroup.Key))
+            _accordions.Add(claimGroup.Key, new MagicPropsComponents.Components.Accordion.MPAccordion());
+        <MagicPropsComponents.Components.Accordion.MPAccordion Expanded HideIcon @ref=@_accordions[claimGroup.Key]>
+            <HeaderTemplate>
+                <div style="height:50px;line-height:50px;background-color:#f0f3fa;border-radius: 10px;">
+                    <i class="@(_accordions[claimGroup.Key].Expanded?"fa fa-angle-up" : "fa fa-angle-down") mx-3" />
+                    @if (IsDefaultAdmin() || IsClaimGroupAllFromRole(claimGroup.Value))
+                    {
+                        if (IsClaimGroupAllSelected(claimGroup.Value))
+                        {
+                            <input type="checkbox" class="me-2 checkbox-theme" disabled checked />
+                        }
+                        else
+                        {
+                            <input type="checkbox" class="me-2 checkbox-theme" disabled />
+                        }
+                    }
+                    else
+                    {
+                        if (IsClaimGroupAllSelected(claimGroup.Value))
+                        {
+                            <input type="checkbox" class="me-2 checkbox-theme" checked @onclick="()=>HandleSelectAll(claimGroup.Value,false)" @onclick:stopPropagation=true />
+                        }
+                        else
+                        {
+                            <input type="checkbox" class="me-2 checkbox-theme" @onclick="()=>HandleSelectAll(claimGroup.Value,true)" @onclick:stopPropagation=true />
+                        }
+                    }
+                    @claimGroup.Key
+                </div>
+            </HeaderTemplate>
+            <BodyTemplate>
+                @foreach (var claim in claimGroup.Value)
+                {
+                    <div class="my-2 d-flex hover-pointer" @onclick="()=>{HandleValueChanged(claim,claimGroup.Value);}">
+                        @if (BlockModifiedClaim(claim))
+                        {
+                            @if (claim.IsChecked)
+                            {
+                                <input type="checkbox" class="me-2 checkbox-theme" checked disabled />
+
+                                @claim.ClaimValue
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="me-2" disabled />
+
+                                @claim.ClaimValue
+                            }
+                        }
+                        else
+                        {
+                            @if (claim.IsChecked)
+                            {
+                                <input type="checkbox" class="me-2 checkbox-theme" checked />
+
+                                @claim.ClaimValue
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="me-2" />
+
+                                @claim.ClaimValue
+                            }
+                        }
+                    </div>
+                }
+            </BodyTemplate>
+        </MagicPropsComponents.Components.Accordion.MPAccordion>
+    }
+</div>
+
+@code {
+    [CascadingParameter(Name = "NewLayout")]
+    public IMainLayout? MainLayout { get; set; }
+    [Parameter]
+    public string UserName { get; set; }
+    private Dictionary<string, MagicPropsComponents.Components.Accordion.MPAccordion> _accordions = new Dictionary<string, MagicPropsComponents.Components.Accordion.MPAccordion>();
+    private List<CustomClaims> _claims = new List<CustomClaims>();
+    private List<System.Security.Claims.Claim> _userPrivateClaims = new List<System.Security.Claims.Claim>();
+    private List<System.Security.Claims.Claim> _roleClaims = new List<System.Security.Claims.Claim>();
+    private ApplicationUser currentUser { get; set; } = new ApplicationUser();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _claims = CustomClaims.GetDefaultClaims();
+        await LoadUserInfo();
+    }
+
+    protected override async void OnParametersSet()
+    {
+        if (MainLayout!.ChangedRoleClaims)
+        {
+            await LoadUserInfo();
+            StateHasChanged();
+            MainLayout!.ChangedRoleClaims = false;
+        }
+    }
+
+    private async Task LoadUserInfo()
+    {
+        if (!string.IsNullOrEmpty(UserName))
+            currentUser = await _userManager.FindByNameAsync(UserName) ?? new ApplicationUser();
+        if (!string.IsNullOrEmpty(currentUser.Id))
+        {
+            _userPrivateClaims = (await _userManager.GetClaimsAsync(currentUser)).ToList();
+            var roles = await _userManager.GetRolesAsync(currentUser);
+            if (roles != null)
+            {
+                foreach (var roleName in roles)
+                {
+                    var role = await _roleManager.FindByNameAsync(roleName);
+                    if (role != null)
+                    {
+                        _roleClaims.AddRange(await _roleManager.GetClaimsAsync(role));
+                    }
+                }
+                _roleClaims = _roleClaims.Distinct().ToList();
+            }
+        }
+        foreach (var c in _claims)
+        {
+            if (_roleClaims.Any(x => x.Value == c.ClaimValue && x.Type == c.ClaimType))
+            {
+                c.IsChecked = true;
+                c.IsFromRole = true;
+            }
+            else if (_userPrivateClaims.Any(x => x.Value == c.ClaimValue && x.Type == c.ClaimType))
+            {
+                c.IsChecked = true;
+            }
+        }
+    }
+
+    private bool BlockModifiedClaim(CustomClaims claim)
+    {
+        return claim.IsFromRole || IsDefaultAdmin();
+    }
+
+    private bool IsClaimGroupAllSelected(List<CustomClaims> claims)
+    {
+        var flag = true;
+        if (claims.Any(x => !x.IsChecked)) flag = false;
+        return flag;
+    }
+
+    private bool IsClaimGroupAllFromRole(List<CustomClaims> claims)
+    {
+        var flag = true;
+        if (claims.Any(x => !x.IsFromRole)) flag = false;
+        return flag;
+    }
+
+    private bool IsDefaultAdmin()
+    {
+        return UserName == GlobalSettings.DefaultAdminUserName;
+    }
+
+    private void HandleSelectAll(List<CustomClaims> claims, bool selectedAll)
+    {
+        if (selectedAll)
+            claims.ForEach(x => { if (!x.IsFromRole) x.IsChecked = true; });
+        else
+            claims.ForEach(x => { if (!x.IsFromRole) x.IsChecked = false; });
+    }
+
+    private void HandleValueChanged(CustomClaims claim, List<CustomClaims> groupClaims)
+    {
+        if (UserName == GlobalSettings.DefaultAdminUserName || claim.IsFromRole) return;
+        var baseClaim = groupClaims.FirstOrDefault(x => x.IsCategoryBase);
+        if (claim.IsChecked && claim.IsCategoryBase)
+        {
+            groupClaims.ForEach(x => x.IsChecked = false);
+        }
+        else if (baseClaim != null && !claim.IsChecked && !claim.IsCategoryBase && !baseClaim.IsChecked)
+        {
+            claim.IsChecked = true;
+            baseClaim.IsChecked = true;
+        }
+        else
+        {
+            claim.IsChecked = !claim.IsChecked;
+        }
+    }
+
+    private Dictionary<string, List<CustomClaims>> ClaimsByCategory()
+    {
+        var claimsByCategory = _claims
+            .GroupBy(claim => claim.Category)
+            .ToDictionary(group => group.Key, group => group.ToList());
+        return claimsByCategory;
+    }
+
+    private async Task Save()
+    {
+        var newClaims = _claims.Where(x => x.IsFromRole == false && x.IsChecked == true).ToList();
+        var roles = await _userManager.GetRolesAsync(currentUser);
+        currentUser.Claims.Clear();
+        foreach (var c in newClaims)
+        {
+            currentUser.Claims.Add(new System.Security.Claims.Claim(c.ClaimType, c.ClaimValue));
+        }
+        var res = await _userManager.UpdateAsync(currentUser);
+        if (res.Succeeded)
+        {
+            var newUser = await _userManager.FindByNameAsync(UserName);
+            if (newUser != null)
+            {
+                await _userManager.AddToRolesAsync(newUser, roles);
+                await _userManager.AddClaimsAsync(newUser, currentUser.Claims);
+            }
+            Logger.LogInformation("Update " + UserName + " cliams success");
+            global.DeleteTab("users/claims/" + currentUser.UserName);
+            await MainLayout!.AddNotice(L["Action.Update"] + " '" + UserName + "' " + L["Action.Claims"] + " " + L["Result.Success"]);
+            await MainLayout!.NavigationTo("users", L["Menu.User"], "fa fa-user");
+        }
+        else
+        {
+            Logger.LogError("Update" + UserName + " cliams error: " + string.Join(",", res.Errors));
+            await MainLayout!.AddNotice(L["Action.Update"] + " " + UserName + "' " + L["Action.Claims"] + " " + L["Result.Failed"], NoticeStatus.Falied);
+        }
+    }
+
+}

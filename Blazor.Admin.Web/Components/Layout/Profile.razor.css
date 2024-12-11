@@ -1,0 +1,14 @@
+﻿.modal-body ::deep .tabContainer {
+    background-color: white;
+}
+
+.tab-header {
+    border: none;
+    border-end-start-radius: 15px;
+    border-end-end-radius: 15px;
+    background-color: white;
+}
+
+.tab-list-container {
+    width: calc(100% - 80px);
+}
