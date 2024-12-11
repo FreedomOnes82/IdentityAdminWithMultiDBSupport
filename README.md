@@ -1,7 +1,9 @@
 # IdentityAdminWithMultiDBSupport
 **Overview**  
 
-IdentityAdminWithMultiDBSupport is an open-source project designed to provide a robust identity management and administration solution. This project is tailored to support multiple database systems, making it versatile and adaptable to various organizational needs.
+IdentityAdminWithMultiDBSupport is an open-source project designed to provide a robust identity management and administration solution.
+This system is a framework that utilizes Microsoft Identity to establish a comprehensive user management system. 
+Within this system, you can effortlessly manage users and roles, and have the flexibility to add numerous menus tailored to your specific business needs.
 
 **Features**  
 
