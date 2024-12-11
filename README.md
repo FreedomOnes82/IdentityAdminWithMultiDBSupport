@@ -5,10 +5,10 @@ IdentityAdminWithMultiDBSupport is an open-source project designed to provide a 
 
 **Features**  
 
-Multi-Database Support: Seamlessly integrate with various database systems(for now, it can use Mysql and MS SQL Server), ensuring flexibility and scalability.
-User Management: Comprehensive tools for managing user accounts, roles, and permissions.
-Secure Authentication: Implement secure authentication mechanisms to protect user data and privacy.
-Admin Dashboard: Intuitive and user-friendly admin dashboard for easy navigation and management.
+Multi-Database Support: Seamlessly integrate with various database systems(for now, it can use Mysql and MS SQL Server), ensuring flexibility and scalability.  
+User Management: Comprehensive tools for managing user accounts, roles, and permissions.  
+Secure Authentication: Implement secure authentication mechanisms to protect user data and privacy.  
+Admin Dashboard: Intuitive and user-friendly admin dashboard for easy navigation and management.  
 Customizable: Highly customizable to fit the specific requirements of different organizations.
 
 **Getting Started**  
