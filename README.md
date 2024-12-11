@@ -20,6 +20,6 @@ To get started with IdentityAdminWithMultiDBSupport, follow these steps:
 3. Configure the Database: Update the configuration file to connect to your preferred database system.
 4. Run the Application
 
-**Contributing ** 
+**Contributing** 
 
 We welcome contributions from the community! If you are interested in contributing to IdentityAdminWithMultiDBSupport, please fork the repository and submit a pull request.
